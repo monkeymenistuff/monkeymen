@@ -1,34 +1,16 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Monkey World | Explore. Learn. Play.</title>
-
-<meta name="description" content="Explore the fascinating world of monkeys through interactive facts, quizzes, species guides and games.">
+<title>Monkey World 🐒</title>
 
 <style>
 
 /* =========================================================
-   MONKEY WORLD
-   COMPLETE WEBSITE
+   RESET
 ========================================================= */
-
-:root {
-    --green: #a8ff72;
-    --green-dark: #3fb950;
-    --dark: #06120b;
-    --dark2: #0b2114;
-    --card: rgba(9, 30, 17, .72);
-    --text: #ffffff;
-    --muted: rgba(255,255,255,.68);
-    --border: rgba(255,255,255,.11);
-    --gold: #ffd166;
-    --red: #ff6b6b;
-    --blue: #65d8ff;
-}
 
 * {
     margin: 0;
@@ -41,84 +23,71 @@ html {
 }
 
 body {
-    font-family:
-        Inter,
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    background: var(--dark);
-    color: var(--text);
-
+    font-family: Arial, Helvetica, sans-serif;
+    background: #06140a;
+    color: white;
     overflow-x: hidden;
-
-    transition:
-        background .4s,
-        color .4s;
 }
 
+button {
+    font-family: inherit;
+}
+
+
 /* =========================================================
-   BACKGROUNDS
+   VARIABLES
+========================================================= */
+
+:root {
+    --green: #a8ff72;
+    --green2: #52db62;
+    --dark: #06140a;
+    --card: rgba(10, 35, 18, 0.78);
+    --muted: #aebbaa;
+}
+
+
+/* =========================================================
+   BACKGROUND
 ========================================================= */
 
 body::before {
     content: "";
-
     position: fixed;
     inset: 0;
 
-    z-index: -5;
-
     background:
         linear-gradient(
-            rgba(2,18,9,.70),
-            rgba(2,18,9,.92)
+            rgba(2, 15, 7, 0.78),
+            rgba(2, 15, 7, 0.90)
         ),
         url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLh-zhEqgezfM8iIm1yztPEFNOGt_TVvC4gwh9gMxJuQ&s=10")
         center / cover no-repeat;
 
-    transform: scale(1.04);
+    z-index: -2;
 }
 
 body::after {
     content: "";
-
     position: fixed;
     inset: 0;
 
-    z-index: -4;
-
-    pointer-events: none;
-
     background:
         radial-gradient(
-            circle at 15% 15%,
-            rgba(120,255,100,.15),
+            circle at 20% 20%,
+            rgba(168,255,114,.08),
             transparent 30%
         ),
         radial-gradient(
-            circle at 85% 80%,
-            rgba(255,193,7,.08),
+            circle at 80% 70%,
+            rgba(82,219,98,.06),
             transparent 30%
         );
+
+    pointer-events: none;
+    z-index: -1;
 }
 
-/* =========================================================
-   SCROLLBAR
-========================================================= */
-
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: #06120b;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #3c7e42;
-    border-radius: 20px;
-}
 
 /* =========================================================
    NAVBAR
@@ -126,21 +95,20 @@ body::after {
 
 nav {
     position: fixed;
-
     top: 0;
     left: 0;
-    width: 100%;
+    right: 0;
 
-    z-index: 9999;
+    z-index: 100;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    padding: 15px 6%;
+    padding: 18px 7%;
 
     background:
-        rgba(3,17,9,.62);
+        rgba(3, 17, 8, 0.72);
 
     backdrop-filter: blur(18px);
 
@@ -149,51 +117,19 @@ nav {
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-
-    gap: 10px;
-
-    font-size: 1.25rem;
+    font-size: 1.3rem;
     font-weight: 900;
+    color: var(--green);
 }
 
-.logo-icon {
-    width: 40px;
-    height: 40px;
-
-    display: grid;
-    place-items: center;
-
-    background:
-        linear-gradient(
-            135deg,
-            #b8ff83,
-            #39aa58
-        );
-
-    color: #06120b;
-
-    border-radius: 13px;
-
-    font-size: 22px;
-
-    box-shadow:
-        0 8px 25px rgba(80,220,80,.25);
-}
-
-nav ul {
-    display: flex;
-    gap: 25px;
-
-    list-style: none;
+.logo span {
+    color: white;
 }
 
 nav a {
-    color: rgba(255,255,255,.75);
-
+    color: #dce9d9;
     text-decoration: none;
-
+    margin-left: 25px;
     font-size: .9rem;
     font-weight: 700;
 
@@ -204,28 +140,6 @@ nav a:hover {
     color: var(--green);
 }
 
-.nav-buttons {
-    display: flex;
-    gap: 8px;
-}
-
-.icon-button {
-    border: 1px solid var(--border);
-
-    background:
-        rgba(255,255,255,.06);
-
-    color: white;
-
-    width: 40px;
-    height: 40px;
-
-    border-radius: 12px;
-
-    cursor: pointer;
-
-    font-size: 17px;
-}
 
 /* =========================================================
    HERO
@@ -238,114 +152,83 @@ nav a:hover {
     align-items: center;
 
     padding:
-        140px 8%
-        80px;
+        120px 7% 80px;
+
+    position: relative;
 }
 
 .hero-content {
-    max-width: 900px;
-
-    animation:
-        heroIn 1s ease;
+    max-width: 850px;
 }
 
-@keyframes heroIn {
+.badge {
+    display: inline-block;
 
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.eyebrow {
-    display: inline-flex;
-
-    padding:
-        9px 15px;
-
-    margin-bottom: 24px;
+    padding: 9px 15px;
 
     border:
         1px solid rgba(168,255,114,.25);
 
     background:
-        rgba(80,180,80,.10);
-
-    color:
-        var(--green);
+        rgba(168,255,114,.07);
 
     border-radius: 100px;
 
-    font-size: .8rem;
+    color: var(--green);
+
+    font-size: .75rem;
     font-weight: 900;
 
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
+
+    margin-bottom: 25px;
 }
 
 .hero h1 {
     font-size:
-        clamp(3.2rem, 8vw, 7rem);
+        clamp(3rem, 9vw, 7rem);
 
-    line-height: .93;
+    line-height: .92;
 
     letter-spacing: -5px;
 
-    margin-bottom: 28px;
+    margin-bottom: 30px;
 }
 
 .hero h1 span {
     color: var(--green);
-
-    text-shadow:
-        0 0 50px rgba(140,255,90,.22);
 }
 
 .hero p {
-    max-width: 700px;
+    max-width: 650px;
 
     color: var(--muted);
 
-    font-size: 1.15rem;
+    font-size:
+        clamp(1rem, 2vw, 1.25rem);
 
     line-height: 1.8;
 
-    margin-bottom: 32px;
+    margin-bottom: 35px;
 }
 
 .buttons {
     display: flex;
+    gap: 14px;
     flex-wrap: wrap;
-    gap: 12px;
 }
 
 .btn {
     border: none;
+    cursor: pointer;
 
-    padding:
-        14px 21px;
+    padding: 15px 24px;
 
-    border-radius: 13px;
-
-    text-decoration: none;
-
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    border-radius: 12px;
 
     font-weight: 900;
 
-    cursor: pointer;
-
-    transition:
-        transform .25s,
-        background .25s,
-        box-shadow .25s;
+    transition: .25s;
 }
 
 .btn:hover {
@@ -354,10 +237,10 @@ nav a:hover {
 
 .primary {
     background: var(--green);
-    color: #06120b;
+    color: #06140a;
 
     box-shadow:
-        0 10px 30px rgba(140,255,90,.20);
+        0 10px 35px rgba(168,255,114,.16);
 }
 
 .secondary {
@@ -367,1807 +250,127 @@ nav a:hover {
         rgba(255,255,255,.07);
 
     border:
-        1px solid var(--border);
-}
-
-/* =========================================================
-   NEW GROUP IMAGE SECTION
-========================================================= */
-
-.social-section {
-    min-height: 650px;
-
-    display: flex;
-    align-items: center;
-
-    position: relative;
-
-    padding: 100px 7%;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(3,18,9,.92),
-            rgba(3,18,9,.52),
-            rgba(3,18,9,.80)
-        ),
-        url("PASTE_YOUR_SECOND_IMAGE_URL_HERE")
-        center / cover no-repeat;
-
-    border-top:
-        1px solid rgba(255,255,255,.08);
-
-    border-bottom:
-        1px solid rgba(255,255,255,.08);
-
-    overflow: hidden;
-}
-
-.social-content {
-    max-width: 750px;
-
-    padding: 45px;
-
-    background:
-        rgba(4,24,12,.65);
-
-    backdrop-filter:
-        blur(16px);
-
-    border:
         1px solid rgba(255,255,255,.12);
-
-    border-radius: 28px;
-
-    box-shadow:
-        0 30px 100px rgba(0,0,0,.35);
 }
 
-.social-content h2 {
-    font-size:
-        clamp(2.5rem, 5vw, 4.5rem);
-
-    line-height: 1;
-
-    letter-spacing: -2px;
-
-    margin-bottom: 20px;
-}
-
-.social-content h2 span {
-    color: var(--green);
-}
-
-.social-content p {
-    color: var(--muted);
-
-    line-height: 1.8;
-
-    font-size: 1.05rem;
-
-    margin-bottom: 20px;
-}
-
-.social-pills {
-    display: flex;
-    flex-wrap: wrap;
-
-    gap: 10px;
-
-    margin-top: 25px;
-}
-
-.pill {
-    padding:
-        9px 14px;
-
-    border-radius: 100px;
-
-    background:
-        rgba(168,255,114,.10);
-
-    border:
-        1px solid rgba(168,255,114,.20);
-
-    color:
-        #caffaa;
-
-    font-size: .82rem;
-    font-weight: 800;
-}
 
 /* =========================================================
    SECTIONS
 ========================================================= */
 
 section {
-    padding:
-        105px 7%;
+    padding: 100px 7%;
 }
 
 .section-header {
-    max-width: 760px;
-
-    margin-bottom: 50px;
+    max-width: 750px;
+    margin: 0 auto 55px;
+    text-align: center;
 }
 
 .label {
     color: var(--green);
-
     font-size: .75rem;
-
     font-weight: 900;
-
-    text-transform: uppercase;
-
     letter-spacing: 2px;
-
-    margin-bottom: 12px;
-}
-
-.section-header h2 {
-    font-size:
-        clamp(2.2rem, 5vw, 4rem);
-
-    line-height: 1;
-
-    letter-spacing: -2px;
-
-    margin-bottom: 17px;
-}
-
-.section-header p {
-    color: var(--muted);
-
-    line-height: 1.8;
-}
-
-/* =========================================================
-   STATS
-========================================================= */
-
-.stats {
-    display: grid;
-
-    grid-template-columns:
-        repeat(auto-fit, minmax(180px, 1fr));
-
-    gap: 16px;
-
-    margin-top: 35px;
-}
-
-.stat {
-    padding: 25px;
-
-    text-align: center;
-
-    background:
-        rgba(5,25,13,.63);
-
-    border:
-        1px solid var(--border);
-
-    backdrop-filter:
-        blur(15px);
-
-    border-radius: 20px;
-}
-
-.stat-number {
-    color: var(--green);
-
-    font-size: 2.5rem;
-
-    font-weight: 900;
-}
-
-.stat-label {
-    color: var(--muted);
-
-    margin-top: 5px;
-
-    font-size: .85rem;
-}
-
-/* =========================================================
-   SPECIES
-========================================================= */
-
-.search-box {
-    width: 100%;
-
-    max-width: 500px;
-
-    padding:
-        15px 18px;
-
-    margin-bottom: 30px;
-
-    color: white;
-
-    background:
-        rgba(255,255,255,.06);
-
-    border:
-        1px solid var(--border);
-
-    border-radius: 14px;
-
-    outline: none;
-
-    font-size: 1rem;
-}
-
-.search-box:focus {
-    border-color:
-        rgba(168,255,114,.5);
-}
-
-.species-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(auto-fit, minmax(235px, 1fr));
-
-    gap: 18px;
-}
-
-.card {
-    padding: 27px;
-
-    border-radius: 22px;
-
-    background:
-        var(--card);
-
-    backdrop-filter:
-        blur(16px);
-
-    border:
-        1px solid var(--border);
-
-    transition:
-        transform .3s,
-        border-color .3s;
-
-    position: relative;
-
-    overflow: hidden;
-}
-
-.card:hover {
-    transform:
-        translateY(-8px);
-
-    border-color:
-        rgba(168,255,114,.35);
-}
-
-.card-icon {
-    width: 55px;
-    height: 55px;
-
-    display: grid;
-    place-items: center;
-
-    border-radius: 16px;
-
-    background:
-        rgba(168,255,114,.10);
-
-    font-size: 26px;
-
-    margin-bottom: 20px;
-}
-
-.card h3 {
-    margin-bottom: 10px;
-}
-
-.card p {
-    color: var(--muted);
-
-    line-height: 1.7;
-
-    font-size: .92rem;
-}
-
-.favorite {
-    position: absolute;
-
-    right: 17px;
-    top: 17px;
-
-    border: none;
-
-    background:
-        rgba(255,255,255,.06);
-
-    color: white;
-
-    width: 36px;
-    height: 36px;
-
-    border-radius: 10px;
-
-    cursor: pointer;
-}
-
-.favorite.active {
-    color: #ff6b81;
-}
-
-/* =========================================================
-   HABITATS
-========================================================= */
-
-.habitat-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(auto-fit, minmax(250px, 1fr));
-
-    gap: 18px;
-}
-
-.habitat {
-    min-height: 240px;
-
-    padding: 28px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-
-    border-radius: 24px;
-
-    overflow: hidden;
-
-    position: relative;
-
-    border:
-        1px solid var(--border);
-
-    background:
-        linear-gradient(
-            0deg,
-            rgba(0,0,0,.80),
-            rgba(0,0,0,.08)
-        );
-}
-
-.habitat::before {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        radial-gradient(
-            circle at 70% 20%,
-            rgba(168,255,114,.22),
-            transparent 30%
-        );
-
-    transition: .4s;
-}
-
-.habitat:hover::before {
-    transform: scale(1.5);
-}
-
-.habitat > * {
-    position: relative;
-    z-index: 2;
-}
-
-.habitat h3 {
-    font-size: 1.5rem;
-
-    margin-bottom: 8px;
-}
-
-.habitat p {
-    color:
-        rgba(255,255,255,.7);
-
-    line-height: 1.6;
-}
-
-/* =========================================================
-   RANDOM FACT
-========================================================= */
-
-.fact-container {
-    max-width: 850px;
-
-    margin: auto;
-
-    text-align: center;
-
-    padding: 45px;
-
-    border-radius: 28px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(150,255,100,.12),
-            rgba(255,255,255,.04)
-        );
-
-    border:
-        1px solid rgba(168,255,114,.18);
-}
-
-.fact-icon {
-    font-size: 4rem;
+    text-transform: uppercase;
 
     margin-bottom: 15px;
 }
 
-#factText {
-    min-height: 80px;
-
-    color:
-        rgba(255,255,255,.82);
-
-    font-size: 1.25rem;
-
-    line-height: 1.7;
-
-    margin-bottom: 25px;
-}
-
-/* =========================================================
-   QUIZ
-========================================================= */
-
-.quiz-box {
-    max-width: 900px;
-
-    margin: auto;
-
-    padding: 35px;
-
-    background:
-        rgba(4,22,11,.75);
-
-    backdrop-filter:
-        blur(20px);
-
-    border:
-        1px solid var(--border);
-
-    border-radius: 28px;
-
-    box-shadow:
-        0 30px 100px rgba(0,0,0,.25);
-}
-
-.quiz-top {
-    display: flex;
-
-    justify-content: space-between;
-
-    gap: 20px;
+.section-header h2 {
+    font-size:
+        clamp(2rem, 5vw, 4rem);
 
     margin-bottom: 18px;
+}
 
+.section-header p {
     color: var(--muted);
-
-    font-weight: 800;
+    line-height: 1.8;
 }
 
-.progress {
-    height: 8px;
-
-    background:
-        rgba(255,255,255,.08);
-
-    border-radius: 20px;
-
-    overflow: hidden;
-
-    margin-bottom: 35px;
-}
-
-.progress-bar {
-    width: 0%;
-
-    height: 100%;
-
-    background:
-        linear-gradient(
-            90deg,
-            #4edc61,
-            #c4ff78
-        );
-
-    transition: width .4s;
-}
-
-.question {
-    font-size:
-        clamp(1.4rem, 3vw, 2.1rem);
-
-    line-height: 1.35;
-
-    margin-bottom: 25px;
-}
-
-.answers {
-    display: grid;
-
-    gap: 12px;
-}
-
-.answer {
-    padding: 17px;
-
-    text-align: left;
-
-    border:
-        1px solid var(--border);
-
-    border-radius: 14px;
-
-    background:
-        rgba(255,255,255,.045);
-
-    color: white;
-
-    font-size: 1rem;
-
-    cursor: pointer;
-
-    transition: .2s;
-}
-
-.answer:hover:not(:disabled) {
-    transform:
-        translateX(5px);
-
-    border-color:
-        rgba(168,255,114,.35);
-}
-
-.answer.correct {
-    background:
-        rgba(80,220,90,.18);
-
-    border-color:
-        #68e86c;
-
-    color:
-        #c4ffb5;
-}
-
-.answer.wrong {
-    background:
-        rgba(255,80,80,.15);
-
-    border-color:
-        #ff6b6b;
-}
-
-.quiz-footer {
-    margin-top: 25px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 20px;
-}
-
-#quizMessage {
-    color: var(--muted);
-}
-
-.next {
-    display: none;
-}
 
 /* =========================================================
-   RESULT
+   MONKEY INFO CARDS
 ========================================================= */
 
-.result {
-    display: none;
-
-    text-align: center;
-
-    padding: 20px;
-}
-
-.result-icon {
-    font-size: 5rem;
-}
-
-.final-score {
-    color: var(--green);
-
-    font-size: 4rem;
-
-    font-weight: 900;
-
-    margin: 10px;
-}
-
-.result p {
-    color: var(--muted);
-
-    line-height: 1.7;
-
-    margin-bottom: 20px;
-}
-
-/* =========================================================
-   GUESS GAME
-========================================================= */
-
-.guess-box {
-    max-width: 850px;
-
+.monkey-grid {
+    max-width: 1200px;
     margin: auto;
 
-    text-align: center;
-
-    padding: 40px;
-
-    background:
-        rgba(5,25,13,.68);
-
-    backdrop-filter:
-        blur(18px);
-
-    border:
-        1px solid var(--border);
-
-    border-radius: 28px;
-}
-
-.monkey-emoji {
-    font-size: 7rem;
-
-    margin:
-        10px 0 25px;
-
-    animation:
-        bounce 2s infinite;
-}
-
-@keyframes bounce {
-
-    0%,100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-.guess-options {
     display: grid;
 
     grid-template-columns:
-        repeat(2, 1fr);
-
-    gap: 12px;
-
-    max-width: 600px;
-
-    margin: auto;
-}
-
-.guess-option {
-    padding: 15px;
-
-    border:
-        1px solid var(--border);
-
-    background:
-        rgba(255,255,255,.05);
-
-    color: white;
-
-    border-radius: 13px;
-
-    cursor: pointer;
-
-    font-weight: 800;
-
-    transition: .2s;
-}
-
-.guess-option:hover {
-    border-color:
-        rgba(168,255,114,.4);
-
-    background:
-        rgba(168,255,114,.08);
-}
-
-/* =========================================================
-   CONSERVATION
-========================================================= */
-
-.conservation {
-    display: grid;
-
-    grid-template-columns:
-        repeat(auto-fit, minmax(250px, 1fr));
+        repeat(auto-fit, minmax(220px, 1fr));
 
     gap: 18px;
 }
 
-.conservation-card {
-    padding: 30px;
+.monkey-card {
+    padding: 28px;
+
+    min-height: 220px;
+
+    background:
+        rgba(7, 29, 14, .75);
+
+    border:
+        1px solid rgba(255,255,255,.09);
 
     border-radius: 22px;
 
-    background:
-        rgba(5,27,14,.70);
-
-    border:
-        1px solid var(--border);
-}
-
-.conservation-card span {
-    font-size: 2rem;
-}
-
-.conservation-card h3 {
-    margin:
-        15px 0 10px;
-}
-
-.conservation-card p {
-    color: var(--muted);
-
-    line-height: 1.7;
-}
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-footer {
-    padding:
-        55px 7%;
-
-    text-align: center;
-
-    border-top:
-        1px solid var(--border);
-
-    background:
-        rgba(0,0,0,.35);
-}
-
-footer .big {
-    font-size: 1.3rem;
-
-    font-weight: 900;
-
-    margin-bottom: 10px;
-}
-
-footer .green {
-    color: var(--green);
-}
-
-footer p {
-    color:
-        rgba(255,255,255,.45);
-
-    font-size: .9rem;
-
-    line-height: 1.7;
-}
-
-/* =========================================================
-   BACK TO TOP
-========================================================= */
-
-#topButton {
-    position: fixed;
-
-    right: 20px;
-    bottom: 20px;
-
-    width: 45px;
-    height: 45px;
-
-    border: none;
-
-    border-radius: 13px;
-
-    background:
-        var(--green);
-
-    color:
-        #06120b;
-
-    font-weight: 900;
+    transition: .3s;
 
     cursor: pointer;
 
-    opacity: 0;
+    position: relative;
 
-    pointer-events: none;
-
-    transition: .3s;
-
-    z-index: 100;
+    overflow: hidden;
 }
 
-#topButton.show {
-    opacity: 1;
+.monkey-card::before {
+    content: "";
 
-    pointer-events: auto;
+    position: absolute;
+
+    width: 130px;
+    height: 130px;
+
+    right: -50px;
+    top: -50px;
+
+    background:
+        rgba(168,255,114,.08);
+
+    border-radius: 50%;
 }
 
-/* =========================================================
-   MOBILE
-========================================================= */
+.monkey-card:hover {
+    transform:
+        translateY(-8px);
 
-@media(max-width:750px) {
+    border-color:
+        rgba(168,255,114,.3);
 
-    nav ul {
-        display: none;
-    }
-
-    .hero {
-        padding-left: 6%;
-        padding-right: 6%;
-    }
-
-    .hero h1 {
-        letter-spacing: -3px;
-    }
-
-    section {
-        padding:
-            75px 6%;
-    }
-
-    .social-section {
-        padding:
-            75px 6%;
-    }
-
-    .social-content {
-        padding: 28px;
-    }
-
-    .quiz-box {
-        padding: 22px;
-    }
-
-    .guess-options {
-        grid-template-columns: 1fr;
-    }
-
-    .quiz-footer {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .quiz-footer .btn {
-        width: 100%;
-    }
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.25);
 }
 
-</style>
-</head>
-
-<body>
-
-<!-- =======================================================
-     NAVIGATION
-======================================================= -->
-
-<nav>
-
-    <div class="logo">
-        <div class="logo-icon">🐒</div>
-        Monkey World
-    </div>
-
-    <ul>
-        <li><a href="#explore">Explore</a></li>
-        <li><a href="#species">Species</a></li>
-        <li><a href="#facts">Facts</a></li>
-        <li><a href="#quiz">Quiz</a></li>
-        <li><a href="#game">Game</a></li>
-    </ul>
-
-    <div class="nav-buttons">
-
-        <button
-            class="icon-button"
-            onclick="toggleSound()"
-            id="soundButton"
-            title="Toggle sounds">
-            🔊
-        </button>
-
-    </div>
-
-</nav>
-
-
-<!-- =======================================================
-     HERO
-======================================================= -->
-
-<header class="hero" id="explore">
-
-    <div class="hero-content">
-
-        <div class="eyebrow">
-            🌿 The Ultimate Monkey Experience
-        </div>
-
-        <h1>
-            Welcome to
-            <span>Monkey World.</span>
-        </h1>
-
-        <p>
-            Explore amazing monkey species, discover surprising
-            facts, test your knowledge, play interactive games,
-            and learn why these incredible animals matter.
-        </p>
-
-        <div class="buttons">
-
-            <a
-                href="#species"
-                class="btn primary">
-                Explore Species →
-            </a>
-
-            <a
-                href="#quiz"
-                class="btn secondary">
-                Take the Quiz 🧠
-            </a>
-
-        </div>
-
-    </div>
-
-</header>
-
-
-<!-- =======================================================
-     NEW IMAGE SECTION
-======================================================= -->
-
-<section class="social-section">
-
-    <div class="social-content">
-
-        <div class="label">
-            Monkey Social Life
-        </div>
-
-        <h2>
-            Monkeys are
-            <span>social animals.</span>
-        </h2>
-
-        <p>
-            Many monkey species live in groups where individuals
-            communicate, cooperate, compete, protect one another,
-            and form complex relationships.
-        </p>
-
-        <p>
-            From grooming to vocal communication, social behavior
-            plays a huge role in the lives of many primates.
-        </p>
-
-        <div class="social-pills">
-
-            <div class="pill">🤝 Cooperation</div>
-            <div class="pill">🗣️ Communication</div>
-            <div class="pill">❤️ Relationships</div>
-            <div class="pill">👥 Groups</div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =======================================================
-     STATS
-======================================================= -->
-
-<section>
-
-    <div class="section-header">
-
-        <div class="label">
-            Monkey World By The Numbers
-        </div>
-
-        <h2>
-            Small animals. Huge variety.
-        </h2>
-
-        <p>
-            The primate world contains an incredible range of
-            body shapes, behaviors, habitats and lifestyles.
-        </p>
-
-    </div>
-
-    <div class="stats">
-
-        <div class="stat">
-            <div class="stat-number" data-target="6">0</div>
-            <div class="stat-label">Featured Quiz Questions</div>
-        </div>
-
-        <div class="stat">
-            <div class="stat-number" data-target="8">0</div>
-            <div class="stat-label">Random Facts</div>
-        </div>
-
-        <div class="stat">
-            <div class="stat-number" data-target="8">0</div>
-            <div class="stat-label">Species Profiles</div>
-        </div>
-
-        <div class="stat">
-            <div class="stat-number" data-target="4">0</div>
-            <div class="stat-label">Habitat Types</div>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =======================================================
-     SPECIES
-======================================================= -->
-
-<section id="species">
-
-    <div class="section-header">
-
-        <div class="label">
-            Encyclopedia
-        </div>
-
-        <h2>
-            Meet the monkeys.
-        </h2>
-
-        <p>
-            Search through our collection of fascinating monkey
-            species and learn something new.
-        </p>
-
-    </div>
-
-    <input
-        type="text"
-        class="search-box"
-        id="speciesSearch"
-        placeholder="🔎 Search for a monkey...">
-
-    <div
-        class="species-grid"
-        id="speciesGrid">
-
-        <!-- CAPUCHIN -->
-
-        <article
-            class="card species-card"
-            data-name="capuchin">
-
-            <button
-                class="favorite"
-                onclick="favorite(this)">
-                ♥
-            </button>
-
-            <div class="card-icon">🐒</div>
-
-            <h3>Capuchin</h3>
-
-            <p>
-                Capuchins are intelligent New World monkeys known
-                for curiosity, dexterity and problem-solving.
-            </p>
-
-        </article>
-
-
-        <!-- SPIDER -->
-
-        <article
-            class="card species-card"
-            data-name="spider monkey">
-
-            <button
-                class="favorite"
-                onclick="favorite(this)">
-                ♥
-            </button>
-
-            <div class="card-icon">🌳</div>
-
-            <h3>Spider Monkey</h3>
-
-            <p>
-                Spider monkeys have long limbs and prehensile tails
-                that help them navigate forest canopies.
-            </p>
-
-        </article>
-
-
-        <!-- HOWLER -->
-
-        <article
-            class="card species-card"
-            data-name="howler monkey">
-
-            <button
-                class="favorite"
-                onclick="favorite(this)">
-                ♥
-            </button>
-
-            <div class="card-icon">📣</div>
-
-            <h3>Howler Monkey</h3>
-
-            <p>
-                Howler monkeys are famous for powerful calls that
-                can carry long distances through forests.
-            </p>
-
-        </article>
-
-
-        <!-- SQUIRREL -->
-
-        <article
-            class="card species-card"
-            data-name="squirrel monkey">
-
-            <button
-                class="favorite"
-                onclick="favorite(this)">
-                ♥
-            </button>
-
-            <div class="card-icon">🌿</div>
-
-            <h3>Squirrel Monkey</h3>
-
-            <p>
-                Small and energetic, squirrel monkeys often move
-                through trees in lively social groups.
-            </p>
-
-        </article>
-
-
-        <!-- PROBOSCIS -->
-
-        <article
-            class="card species-card"
-            data-name="proboscis monkey">
-
-            <button
-                class="favorite"
-                onclick="favorite(this)">
-                ♥
-            </button>
-
-            <div class="card-icon">🌴</div>
-
-            <h3>Proboscis Monkey</h3>
-
-            <p>
-                Proboscis monkeys are known for their distinctive
-                noses and their association with wetland forests.
-            </p>
-
-        </article>
-
-
-        <!-- GELADA -->
-
-        <article
-            class="card species-card"
-            data-name="gelada">
-
-            <button
-                class="favorite"
-                onclick="favorite(this)">
-                ♥
-            </button>
-
-            <div class="card-icon">🏔️</div>
-
-            <h3>Gelada</h3>
-
-            <p>
-                Geladas are grass-eating primates associated with
-                highland environments.
-            </p>
-
-        </article>
-
-
-        <!-- TAMARIN -->
-
-        <article
-            class="card species-card"
-            data-name="tamarin">
-
-            <button
-                class="favorite"
-                onclick="favorite(this)">
-                ♥
-            </button>
-
-            <div class="card-icon">👑</div>
-
-            <h3>Tamarin</h3>
-
-            <p>
-                Tamarins are tiny primates with distinctive
-                appearances and highly social lifestyles.
-            </p>
-
-        </article>
-
-
-        <!-- MACAQUE -->
-
-        <article
-            class="card species-card"
-            data-name="macaque">
-
-            <button
-                class="favorite"
-                onclick="favorite(this)">
-                ♥
-            </button>
-
-            <div class="card-icon">🐵</div>
-
-            <h3>Macaque</h3>
-
-            <p>
-                Macaques are a diverse group of Old World monkeys
-                found across parts of Asia and Africa.
-            </p>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-<!-- =======================================================
-     HABITATS
-======================================================= -->
-
-<section>
-
-    <div class="section-header">
-
-        <div class="label">
-            Where They Live
-        </div>
-
-        <h2>
-            From rainforest to mountains.
-        </h2>
-
-        <p>
-            Different monkey species have adapted to dramatically
-            different environments.
-        </p>
-
-    </div>
-
-    <div class="habitat-grid">
-
-        <div
-            class="habitat"
-            style="
-            background:
-            linear-gradient(0deg,rgba(0,0,0,.85),rgba(0,0,0,.1)),
-            radial-gradient(circle at 70% 20%,#39a95a,#062b15);
-            ">
-
-            <h3>🌴 Rainforest</h3>
-
-            <p>
-                Dense forests provide food, shelter and a huge
-                network of branches for tree-dwelling primates.
-            </p>
-
-        </div>
-
-
-        <div
-            class="habitat"
-            style="
-            background:
-            linear-gradient(0deg,rgba(0,0,0,.85),rgba(0,0,0,.1)),
-            radial-gradient(circle at 70% 20%,#8b7a42,#332b12);
-            ">
-
-            <h3>🏔️ Highlands</h3>
-
-            <p>
-                Some primates are adapted to cooler high-elevation
-                environments.
-            </p>
-
-        </div>
-
-
-        <div
-            class="habitat"
-            style="
-            background:
-            linear-gradient(0deg,rgba(0,0,0,.85),rgba(0,0,0,.1)),
-            radial-gradient(circle at 70% 20%,#1b9fd0,#062d45);
-            ">
-
-            <h3>🌊 Wetlands</h3>
-
-            <p>
-                Rivers, mangroves and swamp forests support unique
-                monkey communities.
-            </p>
-
-        </div>
-
-
-        <div
-            class="habitat"
-            style="
-            background:
-            linear-gradient(0deg,rgba(0,0,0,.85),rgba(0,0,0,.1)),
-            radial-gradient(circle at 70% 20%,#d18b35,#45240a);
-            ">
-
-            <h3>🌾 Grasslands</h3>
-
-            <p>
-                Some primates spend significant amounts of time
-                feeding on open grassland environments.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =======================================================
-     RANDOM FACT
-======================================================= -->
-
-<section id="facts">
-
-    <div class="section-header">
-
-        <div class="label">
-            Random Fact Generator
-        </div>
-
-        <h2>
-            Press the button. Learn something weird.
-        </h2>
-
-    </div>
-
-    <div class="fact-container">
-
-        <div class="fact-icon">
-            🧠
-        </div>
-
-        <p id="factText">
-            Click the button to reveal a random monkey fact!
-        </p>
-
-        <button
-            class="btn primary"
-            onclick="generateFact()">
-            🐒 Give Me A Fact
-        </button>
-
-    </div>
-
-</section>
-
-
-<!-- =======================================================
-     QUIZ
-======================================================= -->
-
-<section id="quiz">
-
-    <div class="section-header">
-
-        <div class="label">
-            Interactive Quiz
-        </div>
-
-        <h2>
-            Are you a Monkey Master?
-        </h2>
-
-        <p>
-            Answer all six questions and see how much you know.
-        </p>
-
-    </div>
-
-
-    <div class="quiz-box">
-
-        <div id="quizContent">
-
-            <div class="quiz-top">
-
-                <span id="questionNumber">
-                    Question 1 of 6
-                </span>
-
-                <span id="quizScore">
-                    Score: 0
-                </span>
-
-            </div>
-
-
-            <div class="progress">
-
-                <div
-                    class="progress-bar"
-                    id="progressBar">
-                </div>
-
-            </div>
-
-
-            <div
-                class="question"
-                id="question">
-            </div>
-
-
-            <div
-                class="answers"
-                id="answers">
-            </div>
-
-
-            <div class="quiz-footer">
-
-                <span id="quizMessage">
-                    Choose an answer.
-                </span>
-
-                <button
-                    class="btn primary next"
-                    id="nextButton"
-                    onclick="nextQuestion()">
-                    Next →
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <div
-            class="result"
-            id="result">
-
-            <div class="result-icon">
-                🏆
-            </div>
-
-            <h2>
-                Quiz Complete!
-            </h2>
-
-            <div
-                class="final-score"
-                id="finalScore">
-                0/6
-            </div>
-
-            <p id="resultMessage">
-            </p>
-
-            <button
-                class="btn primary"
-                onclick="restartQuiz()">
-                🔄 Try Again
-            </button>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =======================================================
-     GUESS THE MONKEY GAME
-======================================================= -->
-
-<section id="game">
-
-    <div class="section-header">
-
-        <div class="label">
-            Mini Game
-        </div>
-
-        <h2>
-            Guess the monkey.
-        </h2>
-
-        <p>
-            Look at the clues and choose the monkey you think
-            matches them.
-        </p>
-
-    </div>
-
-
-    <div class="guess-box">
-
-        <div class="monkey-emoji">
-            🐒
-        </div>
-
-        <h3 id="guessClue">
-            This monkey is famous for an extremely loud call.
-        </h3>
-
-        <br>
-
-        <div
-            class="guess-options"
-            id="guessOptions">
-
-        </div>
-
-        <br>
-
-        <p id="guessResult">
-            Choose an answer!
-        </p>
-
-        <br>
-
-        <button
-            class="btn secondary"
-            onclick="newGuess()">
-            🔄 New Monkey
-        </button>
-
-    </div>
-
-</section>
-
-
-<!-- =======================================================
-     CONSERVATION
-======================================================= -->
-
-<section>
-
-    <div class="section-header">
-
-        <div class="label">
-            Protect Wildlife
-        </div>
-
-        <h2>
-            Their future depends on us.
-        </h2>
-
-        <p>
-            Learning about wildlife is one small step toward
-            understanding why habitats and biodiversity matter.
-        </p>
-
-    </div>
-
-
-    <div class="conservation">
-
-        <div class="conservation-card">
-
-            <span>🌳</span>
-
-            <h3>Protect Habitats</h3>
-
-            <p>
-                Forests, wetlands and grasslands provide food,
-                shelter and space for wildlife.
-            </p>
-
-        </div>
-
-
-        <div class="conservation-card">
-
-            <span>🚫</span>
-
-            <h3>Reduce Wildlife Trafficking</h3>
-
-            <p>
-                Wild animals belong in healthy ecosystems rather
-                than being taken from the wild.
-            </p>
-
-        </div>
-
-
-        <div class="conservation-card">
-
-            <span>📚</span>
-
-            <h3>Keep Learning</h3>
-
-            <p>
-                Education helps people understand wildlife and
-                make better choices for the natural world.
-            </p>
-
-        </div>
-
-
-        <div class="conservation-card">
-
-            <span>❤️</span>
-
-            <h3>Respect Wildlife</h3>
-
-            <p>
-                Admire wild animals while giving them the space
-                and conditions they need to thrive.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =======================================================
-     FOOTER
-======================================================= -->
-
-<footer>
-
-    <div class="big">
-        🐒 <span class="green">Monkey World</span>
-    </div>
-
-    <p>
-        Explore. Learn. Play. Protect wildlife.
-    </p>
-
-    <br>
-
-    <p>
-        Built with HTML, CSS & JavaScript.
-    </p>
-
-</footer>
-
-
-<!-- =======================================================
-     BACK TO TOP
-======================================================= -->
-
-<button
-    id="topButton"
-    onclick="window.scrollTo({top:0,behavior:'smooth'})">
-    ↑
-</button>
-
-
-<script>
-
-/* =========================================================
-   SOUND
-========================================================= */
-
-let soundEnabled = true;
-
-function toggleSound() {
-
-    soundEnabled = !soundEnabled;
-
-    const button =
-        document.getElementById("soundButton");
-
-    button.textContent =
-        soundEnabled ? "🔊" : "🔇";
+.monkey-emoji {
+    font-size: 3rem;
+    margin-bottom: 18px;
 }
 
+.monkey-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
 
-/* =========================================================
-   SPECIES SEARCH
-========================================================= */
-
-const search =
-    document.getElementById("speciesSearch");
-
-const species =
-    document.querySelectorAll(".species-card");
-
-search.addEventListener("input", () => {
-
-    const value =
-        search.value.toLowerCase().trim();
-
-    species.forEach(card => {
-
-        const name =
-            card.dataset.name;
-
-        card.style.display =
-            name.includes(value)
-                ? "block"
-                : "none";
-
-    });
-
-});
-
-
-/* =========================================================
-   FAVORITES
-========================================================= */
-
-function favorite(button) {
-
-    button.classList.toggle("active");
-
-    if (button.classList.contains("active")) {
-        button.textContent = "♥";
-    } else {
-        button.textContent = "♡";
-    }
-
+.monkey-card p {
+    color: var(--muted);
+    line-height: 1.6;
+    font-size: .9rem;
 }
 
 
@@ -2175,49 +378,45 @@ function favorite(button) {
    FACTS
 ========================================================= */
 
-const facts = [
+.facts {
+    display: grid;
 
-    "Some monkeys use tools to help them access food.",
+    grid-template-columns:
+        repeat(auto-fit, minmax(200px, 1fr));
 
-    "Howler monkeys are famous for powerful calls that can travel through forests.",
+    max-width: 1000px;
 
-    "Spider monkeys have prehensile tails that can help them move through trees.",
+    margin: auto;
 
-    "Capuchin monkeys are known for impressive problem-solving abilities.",
+    gap: 18px;
+}
 
-    "Many monkeys live in social groups.",
+.fact {
+    padding: 35px 25px;
 
-    "Monkeys can communicate through sounds, gestures and body language.",
+    text-align: center;
 
-    "Squirrel monkeys are small, energetic and highly social.",
+    background:
+        rgba(8, 30, 15, .72);
 
-    "Different monkey species have adapted to forests, wetlands, grasslands and mountains."
+    border:
+        1px solid rgba(255,255,255,.08);
 
-];
+    border-radius: 20px;
+}
 
+.fact strong {
+    display: block;
 
-function generateFact() {
+    font-size: 2.5rem;
 
-    const text =
-        document.getElementById("factText");
+    color: var(--green);
 
-    const fact =
-        facts[
-            Math.floor(
-                Math.random() * facts.length
-            )
-        ];
+    margin-bottom: 8px;
+}
 
-    text.style.opacity = "0";
-
-    setTimeout(() => {
-
-        text.textContent = fact;
-
-        text.style.opacity = "1";
-
-    }, 150);
-
+.fact span {
+    color: var(--muted);
 }
 
 
@@ -2225,132 +424,1204 @@ function generateFact() {
    QUIZ
 ========================================================= */
 
-const questions = [
+.quiz-box {
+    max-width: 850px;
+
+    margin: auto;
+
+    padding: 45px;
+
+    background:
+        rgba(4,22,11,.82);
+
+    backdrop-filter:
+        blur(20px);
+
+    border:
+        1px solid rgba(255,255,255,.1);
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 30px 100px rgba(0,0,0,.3);
+}
+
+.quiz-progress {
+    height: 8px;
+
+    background:
+        rgba(255,255,255,.07);
+
+    border-radius: 50px;
+
+    overflow: hidden;
+
+    margin-bottom: 35px;
+}
+
+.quiz-progress div {
+    width: 0%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--green2),
+            var(--green)
+        );
+
+    transition: .4s;
+}
+
+.quiz-question {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+}
+
+.quiz-answers {
+    display: grid;
+    gap: 12px;
+}
+
+.quiz-answer {
+    width: 100%;
+
+    text-align: left;
+
+    padding: 17px;
+
+    background:
+        rgba(255,255,255,.045);
+
+    border:
+        1px solid rgba(255,255,255,.1);
+
+    color: white;
+
+    border-radius: 13px;
+
+    cursor: pointer;
+
+    font-weight: 700;
+
+    transition: .25s;
+}
+
+.quiz-answer:hover {
+    background:
+        rgba(168,255,114,.09);
+
+    border-color:
+        rgba(168,255,114,.35);
+
+    transform:
+        translateX(6px);
+}
+
+.quiz-result {
+    text-align: center;
+}
+
+.quiz-result .emoji {
+    font-size: 6rem;
+    margin-bottom: 15px;
+}
+
+.quiz-result h3 {
+    color: var(--green);
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.quiz-result p {
+    color: var(--muted);
+    line-height: 1.8;
+    max-width: 600px;
+    margin: auto auto 25px;
+}
+
+
+/* =========================================================
+   PERSONALITY QUIZ SECTION
+========================================================= */
+
+.personality-section {
+    position: relative;
+
+    min-height: 800px;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3,18,9,.94),
+            rgba(3,18,9,.55),
+            rgba(3,18,9,.88)
+        ),
+
+        url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSl5-8uH0oLdqHOtUY6UumpRGmUIw99KpBdn92SdVRYYw&s=10")
+        center / cover no-repeat;
+}
+
+.personality-box {
+    max-width: 900px;
+
+    width: 100%;
+
+    margin: auto;
+
+    padding: 45px;
+
+    background:
+        rgba(4,22,11,.80);
+
+    backdrop-filter:
+        blur(22px);
+
+    border:
+        1px solid rgba(255,255,255,.12);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 30px 100px rgba(0,0,0,.4);
+}
+
+.personality-start {
+    text-align: center;
+
+    padding: 30px 10px;
+}
+
+.big-monkey {
+    font-size: 7rem;
+
+    margin-bottom: 20px;
+
+    animation:
+        monkeyFloat 3s ease-in-out infinite;
+}
+
+.personality-start h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.personality-start p {
+    max-width: 600px;
+
+    margin:
+        0 auto 28px;
+
+    color: var(--muted);
+
+    line-height: 1.8;
+}
+
+.personality-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    color: var(--muted);
+
+    font-size: .9rem;
+
+    font-weight: 800;
+
+    margin-bottom: 15px;
+}
+
+.personality-progress {
+    height: 8px;
+
+    background:
+        rgba(255,255,255,.07);
+
+    border-radius: 50px;
+
+    overflow: hidden;
+
+    margin-bottom: 40px;
+}
+
+.personality-progress div {
+    width: 0%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #52db62,
+            #baff70
+        );
+
+    transition:
+        width .4s ease;
+}
+
+.personality-question {
+    font-size:
+        clamp(1.5rem,4vw,2.4rem);
+
+    line-height: 1.3;
+
+    margin-bottom: 25px;
+}
+
+.personality-answers {
+    display: grid;
+
+    gap: 13px;
+}
+
+.personality-answer {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    width: 100%;
+
+    padding: 18px;
+
+    color: white;
+
+    text-align: left;
+
+    background:
+        rgba(255,255,255,.045);
+
+    border:
+        1px solid rgba(255,255,255,.10);
+
+    border-radius: 15px;
+
+    cursor: pointer;
+
+    font-size: 1rem;
+
+    font-weight: 700;
+
+    transition: .25s;
+}
+
+.personality-answer span {
+    width: 35px;
+    height: 35px;
+
+    min-width: 35px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 10px;
+
+    background:
+        rgba(168,255,114,.10);
+
+    color: var(--green);
+}
+
+.personality-answer:hover {
+    transform:
+        translateX(7px);
+
+    background:
+        rgba(168,255,114,.08);
+
+    border-color:
+        rgba(168,255,114,.35);
+}
+
+.personality-result {
+    text-align: center;
+
+    padding: 25px 10px;
+}
+
+.result-monkey {
+    font-size: 8rem;
+
+    margin-bottom: 15px;
+
+    animation:
+        monkeyFloat 3s infinite;
+}
+
+.result-small {
+    color: var(--green);
+
+    font-size: .75rem;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+#resultMonkeyName {
+    font-size:
+        clamp(2rem,6vw,4rem);
+
+    margin-bottom: 20px;
+}
+
+#resultDescription {
+    max-width: 650px;
+
+    margin:
+        0 auto 25px;
+
+    color: var(--muted);
+
+    font-size: 1.1rem;
+
+    line-height: 1.8;
+}
+
+.result-traits {
+    display: inline-block;
+
+    padding: 13px 20px;
+
+    margin-bottom: 30px;
+
+    border:
+        1px solid rgba(168,255,114,.20);
+
+    background:
+        rgba(168,255,114,.07);
+
+    border-radius: 100px;
+
+    color: #d8ffc0;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   ANIMATION
+========================================================= */
+
+@keyframes monkeyFloat {
+
+    0%,100% {
+        transform:
+            translateY(0)
+            rotate(-2deg);
+    }
+
+    50% {
+        transform:
+            translateY(-14px)
+            rotate(2deg);
+    }
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    padding: 50px 7%;
+
+    text-align: center;
+
+    background:
+        rgba(1,10,5,.85);
+
+    border-top:
+        1px solid rgba(255,255,255,.08);
+}
+
+footer strong {
+    color: var(--green);
+}
+
+footer p {
+    margin-top: 10px;
+
+    color: var(--muted);
+
+    font-size: .85rem;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width: 700px) {
+
+    nav {
+        padding: 15px 5%;
+    }
+
+    nav .links {
+        display: none;
+    }
+
+    .hero {
+        padding:
+            120px 6% 70px;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+    section {
+        padding:
+            75px 6%;
+    }
+
+    .quiz-box,
+    .personality-box {
+        padding: 25px 18px;
+    }
+
+    .personality-top {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .big-monkey,
+    .result-monkey {
+        font-size: 5rem;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav>
+
+    <div class="logo">
+        🐒 MONKEY<span>WORLD</span>
+    </div>
+
+    <div class="links">
+
+        <a href="#home">Home</a>
+
+        <a href="#monkeys">Monkeys</a>
+
+        <a href="#facts">Facts</a>
+
+        <a href="#quiz">Quiz</a>
+
+        <a href="#personality">Personality</a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section
+    class="hero"
+    id="home">
+
+    <div class="hero-content">
+
+        <div class="badge">
+            WELCOME TO MONKEY WORLD 🐒
+        </div>
+
+        <h1>
+            ENTER THE<br>
+            <span>JUNGLE.</span>
+        </h1>
+
+        <p>
+            Discover amazing monkey species, learn bizarre
+            facts, test your knowledge and discover which
+            monkey matches your personality.
+        </p>
+
+        <div class="buttons">
+
+            <a
+                href="#personality"
+                class="btn primary"
+                style="text-decoration:none">
+
+                🐒 Find Your Monkey
+
+            </a>
+
+            <a
+                href="#monkeys"
+                class="btn secondary"
+                style="text-decoration:none">
+
+                Explore Species
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MONKEY SPECIES
+===================================================== -->
+
+<section id="monkeys">
+
+    <div class="section-header">
+
+        <div class="label">
+            Species
+        </div>
+
+        <h2>
+            Meet the Monkeys
+        </h2>
+
+        <p>
+            From tiny tamarins to powerful mandrills,
+            the monkey world is ridiculously diverse.
+        </p>
+
+    </div>
+
+
+    <div class="monkey-grid">
+
+
+        <div class="monkey-card">
+
+            <div class="monkey-emoji">
+                🐒
+            </div>
+
+            <h3>
+                Capuchin
+            </h3>
+
+            <p>
+                Highly intelligent and curious monkeys
+                famous for their problem-solving abilities.
+            </p>
+
+        </div>
+
+
+        <div class="monkey-card">
+
+            <div class="monkey-emoji">
+                🕷️
+            </div>
+
+            <h3>
+                Spider Monkey
+            </h3>
+
+            <p>
+                Amazing climbers that use their long limbs
+                and powerful tails to move through forests.
+            </p>
+
+        </div>
+
+
+        <div class="monkey-card">
+
+            <div class="monkey-emoji">
+                📣
+            </div>
+
+            <h3>
+                Howler Monkey
+            </h3>
+
+            <p>
+                Famous for incredibly loud calls that can
+                travel for miles through the rainforest.
+            </p>
+
+        </div>
+
+
+        <div class="monkey-card">
+
+            <div class="monkey-emoji">
+                🐵
+            </div>
+
+            <h3>
+                Squirrel Monkey
+            </h3>
+
+            <p>
+                Small, energetic and social monkeys that
+                spend much of their lives in large groups.
+            </p>
+
+        </div>
+
+
+        <div class="monkey-card">
+
+            <div class="monkey-emoji">
+                🌴
+            </div>
+
+            <h3>
+                Proboscis Monkey
+            </h3>
+
+            <p>
+                Famous for their enormous noses and love
+                of swampy forests and mangroves.
+            </p>
+
+        </div>
+
+
+        <div class="monkey-card">
+
+            <div class="monkey-emoji">
+                👑
+            </div>
+
+            <h3>
+                Golden Lion Tamarin
+            </h3>
+
+            <p>
+                Tiny Brazilian monkeys recognized by their
+                spectacular golden-orange fur.
+            </p>
+
+        </div>
+
+
+        <div class="monkey-card">
+
+            <div class="monkey-emoji">
+                🏔️
+            </div>
+
+            <h3>
+                Gelada
+            </h3>
+
+            <p>
+                Social Ethiopian primates that spend much
+                of their time living in huge groups.
+            </p>
+
+        </div>
+
+
+        <div class="monkey-card">
+
+            <div class="monkey-emoji">
+                ♨️
+            </div>
+
+            <h3>
+                Japanese Macaque
+            </h3>
+
+            <p>
+                Also called snow monkeys, they're famous
+                for relaxing in hot springs during winter.
+            </p>
+
+        </div>
+
+
+        <div class="monkey-card">
+
+            <div class="monkey-emoji">
+                🦁
+            </div>
+
+            <h3>
+                Mandrill
+            </h3>
+
+            <p>
+                One of the world's most colorful mammals,
+                known for its bright blue and red face.
+            </p>
+
+        </div>
+
+
+        <div class="monkey-card">
+
+            <div class="monkey-emoji">
+                🌿
+            </div>
+
+            <h3>
+                Vervet Monkey
+            </h3>
+
+            <p>
+                Clever African monkeys with surprisingly
+                complex communication systems.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FACTS
+===================================================== -->
+
+<section id="facts">
+
+    <div class="section-header">
+
+        <div class="label">
+            Did You Know?
+        </div>
+
+        <h2>
+            Monkey Facts
+        </h2>
+
+        <p>
+            A few things that make monkeys absolutely fascinating.
+        </p>
+
+    </div>
+
+
+    <div class="facts">
+
+        <div class="fact">
+
+            <strong>200+</strong>
+
+            <span>
+                Monkey species exist
+            </span>
+
+        </div>
+
+
+        <div class="fact">
+
+            <strong>50+</strong>
+
+            <span>
+                Different countries have native monkeys
+            </span>
+
+        </div>
+
+
+        <div class="fact">
+
+            <strong>30m</strong>
+
+            <span>
+                Some howler calls can be heard from very far away
+            </span>
+
+        </div>
+
+
+        <div class="fact">
+
+            <strong>IQ 🧠</strong>
+
+            <span>
+                Many monkeys display impressive problem-solving
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     KNOWLEDGE QUIZ
+===================================================== -->
+
+<section id="quiz">
+
+    <div class="section-header">
+
+        <div class="label">
+            Test Yourself
+        </div>
+
+        <h2>
+            Monkey Knowledge Quiz
+        </h2>
+
+        <p>
+            Think you know your monkeys? See how many
+            questions you can get right.
+        </p>
+
+    </div>
+
+
+    <div class="quiz-box">
+
+        <div id="knowledgeQuiz">
+
+            <div
+                id="knowledgeProgress"
+                class="quiz-progress">
+
+                <div></div>
+
+            </div>
+
+            <h3
+                id="knowledgeQuestion"
+                class="quiz-question">
+            </h3>
+
+            <div
+                id="knowledgeAnswers"
+                class="quiz-answers">
+            </div>
+
+        </div>
+
+
+        <div
+            id="knowledgeResult"
+            class="quiz-result"
+            style="display:none;">
+
+            <div class="emoji">
+                🧠🐒
+            </div>
+
+            <h3 id="knowledgeScore">
+            </h3>
+
+            <p>
+                Great work! Now discover which monkey
+                matches your personality below.
+            </p>
+
+            <a
+                href="#personality"
+                class="btn primary"
+                style="text-decoration:none">
+
+                Find My Monkey
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PERSONALITY QUIZ
+===================================================== -->
+
+<section
+    id="personality"
+    class="personality-section">
+
+    <div style="width:100%">
+
+        <div class="section-header">
+
+            <div class="label">
+                Personality Test
+            </div>
+
+            <h2>
+                Which Monkey Are You?
+            </h2>
+
+            <p>
+                Answer 10 questions and discover which
+                monkey species matches your personality.
+            </p>
+
+        </div>
+
+
+        <div class="personality-box">
+
+
+            <!-- START -->
+
+            <div
+                id="personalityStart"
+                class="personality-start">
+
+                <div class="big-monkey">
+                    🐒
+                </div>
+
+                <h3>
+                    Discover Your Monkey Personality
+                </h3>
+
+                <p>
+                    Are you a clever Capuchin?
+                    A fearless Mandrill?
+                    A chaotic Squirrel Monkey?
+                    Or something completely different?
+                </p>
+
+                <button
+                    class="btn primary"
+                    onclick="startPersonalityQuiz()">
+
+                    🐒 Find My Monkey
+
+                </button>
+
+            </div>
+
+
+            <!-- QUESTIONS -->
+
+            <div
+                id="personalityQuiz"
+                style="display:none;">
+
+                <div class="personality-top">
+
+                    <span id="personalityQuestionNumber">
+                        Question 1 of 10
+                    </span>
+
+                    <span>
+                        🐒 Personality Test
+                    </span>
+
+                </div>
+
+
+                <div class="personality-progress">
+
+                    <div
+                        id="personalityProgress">
+                    </div>
+
+                </div>
+
+
+                <h3
+                    id="personalityQuestion"
+                    class="personality-question">
+                </h3>
+
+
+                <div
+                    id="personalityAnswers"
+                    class="personality-answers">
+                </div>
+
+            </div>
+
+
+            <!-- RESULT -->
+
+            <div
+                id="personalityResult"
+                class="personality-result"
+                style="display:none;">
+
+                <div
+                    id="resultMonkeyEmoji"
+                    class="result-monkey">
+
+                    🐒
+
+                </div>
+
+                <div class="result-small">
+                    YOUR MONKEY PERSONALITY
+                </div>
+
+                <h3
+                    id="resultMonkeyName">
+                </h3>
+
+                <p
+                    id="resultDescription">
+                </p>
+
+                <div
+                    id="resultTraits"
+                    class="result-traits">
+                </div>
+
+                <br>
+
+                <button
+                    class="btn primary"
+                    onclick="retakePersonalityQuiz()">
+
+                    🔄 Take It Again
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <strong>
+        🐒 MONKEYWORLD
+    </strong>
+
+    <p>
+        Built for monkey enthusiasts everywhere.
+    </p>
+
+</footer>
+
+
+
+<script>
+
+/* =========================================================
+   KNOWLEDGE QUIZ
+========================================================= */
+
+const knowledgeQuestions = [
 
     {
-        q:
-        "What is a group of monkeys commonly called?",
-
-        answers:
-        [
-            "A troop",
-            "A pack",
-            "A herd",
-            "A flock"
+        q: "Which monkey is famous for its extremely loud call?",
+        answers: [
+            "Howler Monkey",
+            "Capuchin",
+            "Spider Monkey",
+            "Squirrel Monkey"
         ],
-
         correct: 0
     },
 
     {
-        q:
-        "Which monkey is famous for an extremely loud call?",
-
-        answers:
-        [
-            "Spider monkey",
-            "Howler monkey",
-            "Squirrel monkey",
-            "Tamarin"
+        q: "Which monkey is famous for relaxing in hot springs?",
+        answers: [
+            "Mandrill",
+            "Japanese Macaque",
+            "Vervet Monkey",
+            "Gelada"
         ],
-
         correct: 1
     },
 
     {
-        q:
-        "What helps spider monkeys move through trees?",
-
-        answers:
-        [
-            "Their ears",
-            "Their nose",
-            "Their prehensile tail",
-            "Their fur"
-        ],
-
-        correct: 2
-    },
-
-    {
-        q:
-        "Which monkey is famous for intelligence and dexterity?",
-
-        answers:
-        [
+        q: "Which monkey has a famous large nose?",
+        answers: [
+            "Proboscis Monkey",
             "Capuchin",
-            "Howler",
-            "Proboscis",
-            "Gelada"
+            "Gelada",
+            "Mandrill"
         ],
-
         correct: 0
     },
 
     {
-        q:
-        "Where do many monkey species spend significant time?",
-
-        answers:
-        [
-            "In trees",
-            "Under ice",
-            "In deep oceans",
-            "Inside volcanoes"
+        q: "Which monkey is known for its colorful face?",
+        answers: [
+            "Spider Monkey",
+            "Mandrill",
+            "Vervet Monkey",
+            "Squirrel Monkey"
         ],
-
-        correct: 0
+        correct: 1
     },
 
     {
-        q:
-        "Which is a way monkeys can communicate?",
-
-        answers:
-        [
-            "Sounds",
-            "Body language",
-            "Facial expressions",
-            "All of these"
+        q: "Which monkey is native to Ethiopia?",
+        answers: [
+            "Gelada",
+            "Capuchin",
+            "Proboscis Monkey",
+            "Japanese Macaque"
         ],
-
-        correct: 3
+        correct: 0
     }
 
 ];
 
+let knowledgeIndex = 0;
+let knowledgeScore = 0;
 
-let currentQuestion = 0;
-let quizScore = 0;
-let answered = false;
-
-
-function loadQuestion() {
-
-    answered = false;
+function loadKnowledgeQuestion() {
 
     const q =
-        questions[currentQuestion];
+        knowledgeQuestions[knowledgeIndex];
 
-    document.getElementById("question")
-        .textContent = q.q;
+    document.getElementById(
+        "knowledgeQuestion"
+    ).textContent = q.q;
 
-    document.getElementById("questionNumber")
-        .textContent =
-        `Question ${currentQuestion + 1} of ${questions.length}`;
+    document.querySelector(
+        "#knowledgeProgress div"
+    ).style.width =
+        `${(knowledgeIndex / knowledgeQuestions.length) * 100}%`;
 
-    document.getElementById("quizScore")
-        .textContent =
-        `Score: ${quizScore}`;
+    const container =
+        document.getElementById(
+            "knowledgeAnswers"
+        );
 
-    document.getElementById("progressBar")
-        .style.width =
-        `${(currentQuestion / questions.length) * 100}%`;
-
-    const answers =
-        document.getElementById("answers");
-
-    answers.innerHTML = "";
+    container.innerHTML = "";
 
     q.answers.forEach(
         (answer, index) => {
@@ -2359,472 +1630,510 @@ function loadQuestion() {
                 document.createElement("button");
 
             button.className =
-                "answer";
+                "quiz-answer";
 
             button.textContent =
                 answer;
 
-            button.onclick =
-                () =>
-                selectAnswer(
-                    index,
-                    button
-                );
+            button.onclick = () => {
 
-            answers.appendChild(button);
+                if (index === q.correct) {
+                    knowledgeScore++;
+                }
 
-        }
-    );
+                knowledgeIndex++;
 
-    document.getElementById("nextButton")
-        .style.display = "none";
+                if (
+                    knowledgeIndex >=
+                    knowledgeQuestions.length
+                ) {
 
-    document.getElementById("quizMessage")
-        .textContent =
-        "Choose an answer.";
+                    document.getElementById(
+                        "knowledgeQuiz"
+                    ).style.display = "none";
 
-}
+                    document.getElementById(
+                        "knowledgeResult"
+                    ).style.display = "block";
 
+                    document.getElementById(
+                        "knowledgeScore"
+                    ).textContent =
+                        `${knowledgeScore} / ${knowledgeQuestions.length} Correct! 🐒`;
 
-function selectAnswer(
-    selected,
-    button
-) {
+                } else {
 
-    if (answered) return;
+                    loadKnowledgeQuestion();
 
-    answered = true;
+                }
 
-    const q =
-        questions[currentQuestion];
+            };
 
-    const buttons =
-        document.querySelectorAll(".answer");
-
-    buttons.forEach(
-        (btn, index) => {
-
-            btn.disabled = true;
-
-            if (
-                index === q.correct
-            ) {
-                btn.classList.add("correct");
-            }
+            container.appendChild(button);
 
         }
     );
 
-
-    if (
-        selected === q.correct
-    ) {
-
-        quizScore++;
-
-        button.classList.add("correct");
-
-        document.getElementById("quizMessage")
-            .textContent =
-            "🎉 Correct!";
-
-    } else {
-
-        button.classList.add("wrong");
-
-        document.getElementById("quizMessage")
-            .textContent =
-            "❌ Not quite! The correct answer is highlighted.";
-
-    }
-
-
-    document.getElementById("quizScore")
-        .textContent =
-        `Score: ${quizScore}`;
-
-    document.getElementById("nextButton")
-        .style.display =
-        "inline-flex";
-
 }
 
+loadKnowledgeQuestion();
 
-function nextQuestion() {
-
-    currentQuestion++;
-
-    if (
-        currentQuestion >=
-        questions.length
-    ) {
-
-        showResults();
-
-        return;
-
-    }
-
-    loadQuestion();
-
-}
-
-
-function showResults() {
-
-    document.getElementById("quizContent")
-        .style.display = "none";
-
-    document.getElementById("result")
-        .style.display = "block";
-
-    document.getElementById("progressBar")
-        .style.width = "100%";
-
-    document.getElementById("finalScore")
-        .textContent =
-        `${quizScore}/${questions.length}`;
-
-    const percentage =
-        quizScore /
-        questions.length;
-
-    let message;
-
-    if (percentage === 1) {
-
-        message =
-            "🏆 PERFECT! You are officially a Monkey Master.";
-
-    } else if (percentage >= .66) {
-
-        message =
-            "🌿 Excellent! You know a lot about monkeys.";
-
-    } else if (percentage >= .5) {
-
-        message =
-            "🐒 Nice work! Keep exploring the monkey world.";
-
-    } else {
-
-        message =
-            "🌱 Keep learning! You'll get a higher score next time.";
-
-    }
-
-    document.getElementById("resultMessage")
-        .textContent = message;
-
-}
-
-
-function restartQuiz() {
-
-    currentQuestion = 0;
-
-    quizScore = 0;
-
-    document.getElementById("quizContent")
-        .style.display = "block";
-
-    document.getElementById("result")
-        .style.display = "none";
-
-    loadQuestion();
-
-}
 
 
 /* =========================================================
-   GUESS THE MONKEY GAME
+   PERSONALITY QUESTIONS
 ========================================================= */
 
-const guessGames = [
+const personalityQuestions = [
 
     {
-        clue:
-        "This monkey is famous for an extremely loud call.",
+        question:
+        "You have a completely free day. What are you doing?",
 
-        correct:
-        "Howler Monkey",
-
-        options:
-        [
-            "Howler Monkey",
-            "Capuchin",
-            "Tamarin",
-            "Spider Monkey"
+        answers: [
+            ["Exploring somewhere I've never been", "capuchin"],
+            ["Hanging out with a huge group of friends", "gelada"],
+            ["Finding somewhere peaceful to relax", "macaque"],
+            ["Going on a wild adventure", "spider"]
         ]
     },
 
     {
-        clue:
-        "This monkey is famous for a long, prehensile tail.",
+        question:
+        "Someone gives you a difficult puzzle. You...",
 
-        correct:
-        "Spider Monkey",
-
-        options:
-        [
-            "Gelada",
-            "Spider Monkey",
-            "Howler Monkey",
-            "Macaque"
+        answers: [
+            ["Immediately start experimenting with it", "capuchin"],
+            ["Ask everyone else what they think", "gelada"],
+            ["Quietly figure it out myself", "macaque"],
+            ["Try something completely unexpected", "lion"]
         ]
     },
 
     {
-        clue:
-        "This monkey is known for intelligence and dexterity.",
+        question:
+        "What's your biggest strength?",
 
-        correct:
-        "Capuchin",
-
-        options:
-        [
-            "Proboscis Monkey",
-            "Gelada",
-            "Capuchin",
-            "Squirrel Monkey"
+        answers: [
+            ["I'm extremely social", "gelada"],
+            ["I'm clever and adaptable", "capuchin"],
+            ["I'm confident", "mandrill"],
+            ["I'm calm under pressure", "macaque"]
         ]
     },
 
     {
-        clue:
-        "This small monkey is known for energetic social groups.",
+        question:
+        "Pick a place to live.",
 
-        correct:
-        "Squirrel Monkey",
+        answers: [
+            ["A huge rainforest", "spider"],
+            ["A beautiful mountain landscape", "gelada"],
+            ["A tropical island", "proboscis"],
+            ["A forest full of trees to explore", "capuchin"]
+        ]
+    },
 
-        options:
-        [
-            "Squirrel Monkey",
-            "Howler Monkey",
-            "Gelada",
-            "Proboscis Monkey"
+    {
+        question:
+        "Your friend is upset. What do you do?",
+
+        answers: [
+            ["Make them laugh", "squirrel"],
+            ["Stay beside them and listen", "macaque"],
+            ["Get everyone together to help", "gelada"],
+            ["Give them space but check on them later", "vervet"]
+        ]
+    },
+
+    {
+        question:
+        "Which word describes you best?",
+
+        answers: [
+            ["Curious", "capuchin"],
+            ["Dramatic", "howler"],
+            ["Fearless", "mandrill"],
+            ["Playful", "squirrel"]
+        ]
+    },
+
+    {
+        question:
+        "At a party, you're probably...",
+
+        answers: [
+            ["The loudest person there", "howler"],
+            ["Making everyone laugh", "squirrel"],
+            ["Talking to absolutely everyone", "gelada"],
+            ["Watching everything from the side", "vervet"]
+        ]
+    },
+
+    {
+        question:
+        "What's your ideal way to solve a problem?",
+
+        answers: [
+            ["Use creativity", "capuchin"],
+            ["Work with other people", "gelada"],
+            ["Use confidence and determination", "mandrill"],
+            ["Try something completely different", "lion"]
+        ]
+    },
+
+    {
+        question:
+        "Choose a vibe.",
+
+        answers: [
+            ["Chaotic genius 🧠", "capuchin"],
+            ["Elegant and mysterious ✨", "lion"],
+            ["Wild and energetic ⚡", "squirrel"],
+            ["Chill and observant 🌿", "macaque"]
+        ]
+    },
+
+    {
+        question:
+        "If your friends had to describe you, they'd say...",
+
+        answers: [
+            ["The clever one", "capuchin"],
+            ["The funny one", "squirrel"],
+            ["The leader", "mandrill"],
+            ["The adventurous one", "spider"]
         ]
     }
 
 ];
 
 
-let currentGuess = 0;
+/* =========================================================
+   MONKEY RESULTS
+========================================================= */
+
+const monkeyResults = {
+
+    capuchin: {
+        name: "Capuchin",
+        emoji: "🐒",
+        color: "#a8ff72",
+        description:
+        "You're curious, clever and incredibly adaptable. You love figuring things out and you're probably the person who touches every button just to see what happens.",
+        traits:
+        "🧠 Clever • 🔎 Curious • ⚡ Energetic"
+    },
+
+    spider: {
+        name: "Spider Monkey",
+        emoji: "🕷️",
+        color: "#65d8ff",
+        description:
+        "You're adventurous, flexible and love exploring. You aren't afraid of taking the unconventional route to get where you want to go.",
+        traits:
+        "🌳 Adventurous • 🤸 Flexible • 🌎 Explorer"
+    },
+
+    howler: {
+        name: "Howler Monkey",
+        emoji: "📣",
+        color: "#ff8a65",
+        description:
+        "You have a BIG personality. You're expressive, confident and definitely not afraid to make yourself heard.",
+        traits:
+        "📣 Loud • 😎 Confident • 🔥 Expressive"
+    },
+
+    squirrel: {
+        name: "Squirrel Monkey",
+        emoji: "🐵",
+        color: "#ffd166",
+        description:
+        "You're playful, energetic and always ready for fun. You bring energy into almost every room you enter.",
+        traits:
+        "😂 Funny • ⚡ Energetic • 🎉 Playful"
+    },
+
+    proboscis: {
+        name: "Proboscis Monkey",
+        emoji: "🌴",
+        color: "#ff9f43",
+        description:
+        "You're unique and comfortable being yourself. You don't need to follow everyone else — your individuality is your superpower.",
+        traits:
+        "🌟 Unique • 🌿 Relaxed • 😌 Independent"
+    },
+
+    lion: {
+        name: "Golden Lion Tamarin",
+        emoji: "👑",
+        color: "#ffb347",
+        description:
+        "You're charismatic, confident and impossible to overlook. You have a natural presence that makes people notice you.",
+        traits:
+        "👑 Charismatic • ✨ Stylish • 💪 Confident"
+    },
+
+    gelada: {
+        name: "Gelada",
+        emoji: "🏔️",
+        color: "#c084fc",
+        description:
+        "You're extremely social and value your friendships. You thrive when you're surrounded by people you trust.",
+        traits:
+        "👥 Social • ❤️ Loyal • 🤝 Cooperative"
+    },
+
+    macaque: {
+        name: "Japanese Macaque",
+        emoji: "♨️",
+        color: "#ff7b9c",
+        description:
+        "You're calm, observant and surprisingly adaptable. You know when to relax and when it's time to take action.",
+        traits:
+        "🧘 Calm • 👀 Observant • 🌿 Adaptable"
+    },
+
+    mandrill: {
+        name: "Mandrill",
+        emoji: "🦁",
+        color: "#ff4d6d",
+        description:
+        "You're bold, confident and naturally stand out from the crowd. When you want something, you go after it.",
+        traits:
+        "🔥 Bold • 👑 Leader • 💥 Fearless"
+    },
+
+    vervet: {
+        name: "Vervet Monkey",
+        emoji: "🌿",
+        color: "#74c69d",
+        description:
+        "You're observant, thoughtful and good at reading the room. You notice things that other people sometimes miss.",
+        traits:
+        "👀 Observant • 🧠 Thoughtful • 🌿 Calm"
+    }
+
+};
 
 
-function newGuess() {
+/* =========================================================
+   PERSONALITY QUIZ VARIABLES
+========================================================= */
 
-    currentGuess =
-        Math.floor(
-            Math.random() *
-            guessGames.length
-        );
+let personalityQuestion = 0;
 
-    const game =
-        guessGames[currentGuess];
+let personalityScores = {
 
-    document.getElementById("guessClue")
-        .textContent =
-        game.clue;
+    capuchin: 0,
+    spider: 0,
+    howler: 0,
+    squirrel: 0,
+    proboscis: 0,
+    lion: 0,
+    gelada: 0,
+    macaque: 0,
+    mandrill: 0,
+    vervet: 0
 
-    document.getElementById("guessResult")
-        .textContent =
-        "Choose an answer!";
+};
+
+
+/* =========================================================
+   START PERSONALITY QUIZ
+========================================================= */
+
+function startPersonalityQuiz() {
+
+    personalityQuestion = 0;
+
+    Object.keys(personalityScores).forEach(
+        monkey => {
+            personalityScores[monkey] = 0;
+        }
+    );
+
+    document.getElementById(
+        "personalityStart"
+    ).style.display = "none";
+
+    document.getElementById(
+        "personalityQuiz"
+    ).style.display = "block";
+
+    document.getElementById(
+        "personalityResult"
+    ).style.display = "none";
+
+    loadPersonalityQuestion();
+}
+
+
+/* =========================================================
+   LOAD PERSONALITY QUESTION
+========================================================= */
+
+function loadPersonalityQuestion() {
+
+    const question =
+        personalityQuestions[
+            personalityQuestion
+        ];
+
+    document.getElementById(
+        "personalityQuestionNumber"
+    ).textContent =
+        `Question ${personalityQuestion + 1} of 10`;
+
+    document.getElementById(
+        "personalityProgress"
+    ).style.width =
+        `${(personalityQuestion / 10) * 100}%`;
+
+    document.getElementById(
+        "personalityQuestion"
+    ).textContent =
+        question.question;
 
     const container =
-        document.getElementById("guessOptions");
+        document.getElementById(
+            "personalityAnswers"
+        );
 
     container.innerHTML = "";
 
-    game.options.forEach(option => {
+    question.answers.forEach(
+        (answer, index) => {
 
-        const button =
-            document.createElement("button");
+            const button =
+                document.createElement("button");
 
-        button.className =
-            "guess-option";
+            button.className =
+                "personality-answer";
 
-        button.textContent =
-            option;
+            button.innerHTML =
+                `<span>${String.fromCharCode(65 + index)}</span>
+                ${answer[0]}`;
 
-        button.onclick =
-            () =>
-            checkGuess(
-                option,
-                button
-            );
+            button.onclick = () => {
 
-        container.appendChild(button);
+                personalityScores[
+                    answer[1]
+                ]++;
+
+                personalityQuestion++;
+
+                if (
+                    personalityQuestion >=
+                    personalityQuestions.length
+                ) {
+
+                    showPersonalityResult();
+
+                } else {
+
+                    loadPersonalityQuestion();
+
+                }
+
+            };
+
+            container.appendChild(button);
+
+        }
+    );
+}
+
+
+/* =========================================================
+   SHOW PERSONALITY RESULT
+========================================================= */
+
+function showPersonalityResult() {
+
+    let winner =
+        Object.keys(
+            personalityScores
+        )[0];
+
+    Object.keys(
+        personalityScores
+    ).forEach(monkey => {
+
+        if (
+            personalityScores[monkey] >
+            personalityScores[winner]
+        ) {
+
+            winner = monkey;
+
+        }
 
     });
 
-}
-
-
-function checkGuess(
-    answer,
-    button
-) {
-
-    const game =
-        guessGames[currentGuess];
-
     const result =
-        document.getElementById("guessResult");
+        monkeyResults[winner];
 
-    if (
-        answer === game.correct
-    ) {
-
-        button.style.background =
-            "rgba(70,220,90,.2)";
-
-        button.style.borderColor =
-            "#6be86b";
-
-        result.textContent =
-            "🎉 Correct! Great monkey knowledge.";
-
-    } else {
-
-        button.style.background =
-            "rgba(255,70,70,.18)";
-
-        button.style.borderColor =
-            "#ff6b6b";
-
-        result.textContent =
-            `❌ Not quite. The answer is ${game.correct}.`;
-
-    }
-
-}
-
-
-/* =========================================================
-   ANIMATED STATS
-========================================================= */
-
-const statNumbers =
-    document.querySelectorAll(
-        ".stat-number"
-    );
-
-let statsAnimated = false;
-
-
-function animateStats() {
-
-    if (statsAnimated) return;
-
-    statsAnimated = true;
-
-    statNumbers.forEach(
-        element => {
-
-            const target =
-                Number(
-                    element.dataset.target
-                );
-
-            let current = 0;
-
-            const interval =
-                setInterval(() => {
-
-                    current++;
-
-                    element.textContent =
-                        current;
-
-                    if (
-                        current >= target
-                    ) {
-
-                        clearInterval(
-                            interval
-                        );
-
-                    }
-
-                }, 100);
-
-        }
-    );
-
-}
-
-
-window.addEventListener(
-    "scroll",
-    () => {
-
-        const stats =
-            document.querySelector(".stats");
-
-        if (!stats) return;
-
-        const position =
-            stats.getBoundingClientRect()
-                .top;
-
-        if (
-            position <
-            window.innerHeight - 100
-        ) {
-
-            animateStats();
-
-        }
-
-    }
-);
-
-
-/* =========================================================
-   BACK TO TOP
-========================================================= */
-
-const topButton =
     document.getElementById(
-        "topButton"
-    );
+        "personalityQuiz"
+    ).style.display = "none";
 
+    document.getElementById(
+        "personalityResult"
+    ).style.display = "block";
 
-window.addEventListener(
-    "scroll",
-    () => {
+    document.getElementById(
+        "personalityProgress"
+    ).style.width = "100%";
 
-        if (
-            window.scrollY > 500
-        ) {
+    document.getElementById(
+        "resultMonkeyEmoji"
+    ).textContent =
+        result.emoji;
 
-            topButton.classList.add(
-                "show"
-            );
+    document.getElementById(
+        "resultMonkeyName"
+    ).textContent =
+        `You are a ${result.name}!`;
 
-        } else {
+    document.getElementById(
+        "resultDescription"
+    ).textContent =
+        result.description;
 
-            topButton.classList.remove(
-                "show"
-            );
+    document.getElementById(
+        "resultTraits"
+    ).textContent =
+        result.traits;
 
-        }
+    document.getElementById(
+        "resultMonkeyName"
+    ).style.color =
+        result.color;
 
-    }
-);
+}
 
 
 /* =========================================================
-   START
+   RETAKE QUIZ
 ========================================================= */
 
-loadQuestion();
+function retakePersonalityQuiz() {
 
-newGuess();
+    document.getElementById(
+        "personalityResult"
+    ).style.display = "none";
+
+    document.getElementById(
+        "personalityQuiz"
+    ).style.display = "block";
+
+    startPersonalityQuiz();
+
+}
 
 </script>
 
 </body>
 </html>
-```
