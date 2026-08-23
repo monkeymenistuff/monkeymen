@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
 <title>Monkey World 🐒</title>
+
 
 <style>
 
 /* =========================================================
-   RESET
+   BASIC RESET
 ========================================================= */
 
 * {
@@ -23,121 +30,505 @@ html {
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #06140a;
-    color: white;
-    overflow-x: hidden;
-}
 
-button {
-    font-family: inherit;
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: white;
+
+    background:
+        #031008;
+
+    overflow-x: hidden;
+
 }
 
 
 /* =========================================================
-   VARIABLES
+   COLORS
 ========================================================= */
 
 :root {
-    --green: #a8ff72;
-    --green2: #52db62;
-    --dark: #06140a;
-    --card: rgba(10, 35, 18, 0.78);
-    --muted: #aebbaa;
+
+    --green:
+        #a8ff72;
+
+    --bright-green:
+        #62e66e;
+
+    --dark-green:
+        #031008;
+
+    --forest:
+        #082414;
+
+    --card:
+        rgba(7, 30, 15, .78);
+
+    --muted:
+        #aab9aa;
+
+    --white:
+        #f4fff2;
+
 }
 
 
 /* =========================================================
-   BACKGROUND
+   MAIN RAINFOREST BACKGROUND
 ========================================================= */
 
 body::before {
+
     content: "";
+
     position: fixed;
+
     inset: 0;
 
+    z-index: -10;
+
     background:
+
         linear-gradient(
-            rgba(2, 15, 7, 0.78),
-            rgba(2, 15, 7, 0.90)
+            rgba(1, 12, 5, .72),
+            rgba(1, 15, 7, .90)
         ),
+
         url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLh-zhEqgezfM8iIm1yztPEFNOGt_TVvC4gwh9gMxJuQ&s=10")
+
         center / cover no-repeat;
 
-    z-index: -2;
-}
-
-body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-
-    background:
-        radial-gradient(
-            circle at 20% 20%,
-            rgba(168,255,114,.08),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 80% 70%,
-            rgba(82,219,98,.06),
-            transparent 30%
-        );
-
-    pointer-events: none;
-    z-index: -1;
 }
 
 
 /* =========================================================
-   NAVBAR
+   GREEN ATMOSPHERIC GLOW
+========================================================= */
+
+body::after {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -9;
+
+    pointer-events: none;
+
+    background:
+
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(98,230,110,.12),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 85% 70%,
+            rgba(168,255,114,.08),
+            transparent 30%
+        );
+
+}
+
+
+/* =========================================================
+   SUBTLE RAIN
+========================================================= */
+
+.rain {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    opacity: .15;
+
+    overflow: hidden;
+
+}
+
+
+/* Individual rain drops */
+
+.drop {
+
+    position: absolute;
+
+    width: 1px;
+
+    height: 45px;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(200,255,220,.7)
+        );
+
+    animation:
+        rainFall linear infinite;
+
+}
+
+
+/* Different drops */
+
+.drop:nth-child(1) {
+    left: 5%;
+    animation-duration: 1.8s;
+    animation-delay: -.5s;
+}
+
+.drop:nth-child(2) {
+    left: 12%;
+    animation-duration: 2.4s;
+    animation-delay: -1s;
+}
+
+.drop:nth-child(3) {
+    left: 18%;
+    animation-duration: 1.9s;
+    animation-delay: -1.5s;
+}
+
+.drop:nth-child(4) {
+    left: 25%;
+    animation-duration: 2.7s;
+    animation-delay: -.2s;
+}
+
+.drop:nth-child(5) {
+    left: 32%;
+    animation-duration: 2.1s;
+    animation-delay: -1.2s;
+}
+
+.drop:nth-child(6) {
+    left: 40%;
+    animation-duration: 2.5s;
+    animation-delay: -.7s;
+}
+
+.drop:nth-child(7) {
+    left: 47%;
+    animation-duration: 1.7s;
+    animation-delay: -1.8s;
+}
+
+.drop:nth-child(8) {
+    left: 54%;
+    animation-duration: 2.3s;
+    animation-delay: -.4s;
+}
+
+.drop:nth-child(9) {
+    left: 61%;
+    animation-duration: 2.8s;
+    animation-delay: -1.1s;
+}
+
+.drop:nth-child(10) {
+    left: 68%;
+    animation-duration: 1.8s;
+    animation-delay: -.9s;
+}
+
+.drop:nth-child(11) {
+    left: 75%;
+    animation-duration: 2.6s;
+    animation-delay: -1.6s;
+}
+
+.drop:nth-child(12) {
+    left: 82%;
+    animation-duration: 2s;
+    animation-delay: -.3s;
+}
+
+.drop:nth-child(13) {
+    left: 89%;
+    animation-duration: 2.2s;
+    animation-delay: -1.4s;
+}
+
+.drop:nth-child(14) {
+    left: 95%;
+    animation-duration: 2.7s;
+    animation-delay: -.8s;
+}
+
+
+@keyframes rainFall {
+
+    0% {
+
+        transform:
+            translateY(-100px);
+
+    }
+
+    100% {
+
+        transform:
+            translateY(110vh);
+
+    }
+
+}
+
+
+/* =========================================================
+   MIST
+========================================================= */
+
+.mist {
+
+    position: fixed;
+
+    left: -10%;
+
+    bottom: 5%;
+
+    width: 120%;
+
+    height: 180px;
+
+    z-index: 3;
+
+    pointer-events: none;
+
+    background:
+
+        radial-gradient(
+            ellipse,
+            rgba(210,255,218,.07),
+            transparent 65%
+        );
+
+    filter:
+        blur(25px);
+
+    animation:
+        mistMove 16s ease-in-out infinite alternate;
+
+}
+
+
+@keyframes mistMove {
+
+    from {
+
+        transform:
+            translateX(-4%);
+
+        opacity: .35;
+
+    }
+
+    to {
+
+        transform:
+            translateX(4%);
+
+        opacity: .7;
+
+    }
+
+}
+
+
+/* =========================================================
+   FLOATING LEAVES
+========================================================= */
+
+.leaves {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 4;
+
+    overflow: hidden;
+
+}
+
+.leaf {
+
+    position: absolute;
+
+    font-size: 20px;
+
+    opacity: .22;
+
+    animation:
+        leafFloat 12s linear infinite;
+
+}
+
+.leaf:nth-child(1) {
+
+    left: 8%;
+    top: 10%;
+
+    animation-delay: -2s;
+
+}
+
+.leaf:nth-child(2) {
+
+    left: 22%;
+    top: 45%;
+
+    animation-delay: -7s;
+
+}
+
+.leaf:nth-child(3) {
+
+    left: 78%;
+    top: 25%;
+
+    animation-delay: -5s;
+
+}
+
+.leaf:nth-child(4) {
+
+    left: 90%;
+    top: 65%;
+
+    animation-delay: -10s;
+
+}
+
+
+@keyframes leafFloat {
+
+    0% {
+
+        transform:
+            translateY(100vh)
+            rotate(0deg);
+
+    }
+
+    100% {
+
+        transform:
+            translateY(-120vh)
+            rotate(360deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   NAVIGATION
 ========================================================= */
 
 nav {
+
     position: fixed;
+
     top: 0;
     left: 0;
     right: 0;
 
-    z-index: 100;
+    z-index: 50;
 
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
 
-    padding: 18px 7%;
+    padding:
+        18px 7%;
 
     background:
-        rgba(3, 17, 8, 0.72);
+        rgba(2,15,7,.70);
 
-    backdrop-filter: blur(18px);
+    backdrop-filter:
+        blur(18px);
 
     border-bottom:
-        1px solid rgba(255,255,255,.08);
+        1px solid
+        rgba(255,255,255,.08);
+
 }
+
 
 .logo {
-    font-size: 1.3rem;
-    font-weight: 900;
-    color: var(--green);
+
+    font-size:
+        1.3rem;
+
+    font-weight:
+        900;
+
+    color:
+        var(--green);
+
 }
+
 
 .logo span {
-    color: white;
+
+    color:
+        white;
+
 }
 
-nav a {
-    color: #dce9d9;
-    text-decoration: none;
-    margin-left: 25px;
-    font-size: .9rem;
-    font-weight: 700;
 
-    transition: .25s;
+.nav-links {
+
+    display:
+        flex;
+
+    gap:
+        25px;
+
 }
 
-nav a:hover {
-    color: var(--green);
+
+.nav-links a {
+
+    color:
+        #d9e8d8;
+
+    text-decoration:
+        none;
+
+    font-size:
+        .9rem;
+
+    font-weight:
+        700;
+
+    transition:
+        .25s;
+
+}
+
+
+.nav-links a:hover {
+
+    color:
+        var(--green);
+
 }
 
 
@@ -146,111 +537,196 @@ nav a:hover {
 ========================================================= */
 
 .hero {
-    min-height: 100vh;
 
-    display: flex;
-    align-items: center;
+    min-height:
+        100vh;
+
+    display:
+        flex;
+
+    align-items:
+        center;
 
     padding:
-        120px 7% 80px;
+        130px 7% 90px;
 
-    position: relative;
+    position:
+        relative;
+
 }
+
 
 .hero-content {
-    max-width: 850px;
+
+    max-width:
+        850px;
+
 }
 
-.badge {
-    display: inline-block;
 
-    padding: 9px 15px;
+.badge {
+
+    display:
+        inline-block;
+
+    padding:
+        9px 16px;
 
     border:
-        1px solid rgba(168,255,114,.25);
+        1px solid
+        rgba(168,255,114,.25);
 
     background:
         rgba(168,255,114,.07);
 
-    border-radius: 100px;
+    color:
+        var(--green);
 
-    color: var(--green);
+    border-radius:
+        100px;
 
-    font-size: .75rem;
-    font-weight: 900;
+    font-size:
+        .72rem;
 
-    letter-spacing: 1.5px;
+    font-weight:
+        900;
 
-    margin-bottom: 25px;
+    letter-spacing:
+        2px;
+
+    margin-bottom:
+        25px;
+
 }
+
 
 .hero h1 {
+
     font-size:
-        clamp(3rem, 9vw, 7rem);
+        clamp(3.5rem, 10vw, 8rem);
 
-    line-height: .92;
+    line-height:
+        .86;
 
-    letter-spacing: -5px;
+    letter-spacing:
+        -6px;
 
-    margin-bottom: 30px;
+    margin-bottom:
+        30px;
+
 }
+
 
 .hero h1 span {
-    color: var(--green);
+
+    color:
+        var(--green);
+
+    text-shadow:
+        0 0 35px
+        rgba(168,255,114,.2);
+
 }
+
 
 .hero p {
-    max-width: 650px;
 
-    color: var(--muted);
+    max-width:
+        650px;
+
+    color:
+        var(--muted);
 
     font-size:
-        clamp(1rem, 2vw, 1.25rem);
+        1.15rem;
 
-    line-height: 1.8;
+    line-height:
+        1.8;
 
-    margin-bottom: 35px;
+    margin-bottom:
+        35px;
+
 }
+
 
 .buttons {
-    display: flex;
-    gap: 14px;
-    flex-wrap: wrap;
+
+    display:
+        flex;
+
+    gap:
+        14px;
+
+    flex-wrap:
+        wrap;
+
 }
+
 
 .btn {
-    border: none;
-    cursor: pointer;
 
-    padding: 15px 24px;
+    display:
+        inline-block;
 
-    border-radius: 12px;
+    padding:
+        15px 24px;
 
-    font-weight: 900;
+    border:
+        none;
 
-    transition: .25s;
+    border-radius:
+        12px;
+
+    cursor:
+        pointer;
+
+    font-weight:
+        900;
+
+    text-decoration:
+        none;
+
+    transition:
+        .25s;
+
 }
+
 
 .btn:hover {
-    transform: translateY(-3px);
+
+    transform:
+        translateY(-4px);
+
 }
+
 
 .primary {
-    background: var(--green);
-    color: #06140a;
+
+    background:
+        var(--green);
+
+    color:
+        #06140a;
 
     box-shadow:
-        0 10px 35px rgba(168,255,114,.16);
+        0 10px 40px
+        rgba(168,255,114,.18);
+
 }
 
+
 .secondary {
-    color: white;
 
     background:
         rgba(255,255,255,.07);
 
+    color:
+        white;
+
     border:
-        1px solid rgba(255,255,255,.12);
+        1px solid
+        rgba(255,255,255,.12);
+
 }
 
 
@@ -259,118 +735,244 @@ nav a:hover {
 ========================================================= */
 
 section {
-    padding: 100px 7%;
+
+    padding:
+        110px 7%;
+
+    position:
+        relative;
+
 }
+
 
 .section-header {
-    max-width: 750px;
-    margin: 0 auto 55px;
-    text-align: center;
+
+    max-width:
+        750px;
+
+    margin:
+        0 auto 55px;
+
+    text-align:
+        center;
+
 }
+
 
 .label {
-    color: var(--green);
-    font-size: .75rem;
-    font-weight: 900;
-    letter-spacing: 2px;
-    text-transform: uppercase;
 
-    margin-bottom: 15px;
+    color:
+        var(--green);
+
+    font-size:
+        .72rem;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        2px;
+
+    margin-bottom:
+        14px;
+
 }
+
 
 .section-header h2 {
-    font-size:
-        clamp(2rem, 5vw, 4rem);
 
-    margin-bottom: 18px;
+    font-size:
+        clamp(2.2rem,5vw,4rem);
+
+    margin-bottom:
+        18px;
+
 }
 
+
 .section-header p {
-    color: var(--muted);
-    line-height: 1.8;
+
+    color:
+        var(--muted);
+
+    line-height:
+        1.8;
+
 }
 
 
 /* =========================================================
-   MONKEY INFO CARDS
+   VINE DECORATION
+========================================================= */
+
+.vine {
+
+    position:
+        absolute;
+
+    font-size:
+        5rem;
+
+    opacity:
+        .12;
+
+    pointer-events:
+        none;
+
+}
+
+
+.vine.left {
+
+    left:
+        -10px;
+
+    top:
+        30px;
+
+}
+
+
+.vine.right {
+
+    right:
+        -10px;
+
+    bottom:
+        30px;
+
+}
+
+
+/* =========================================================
+   SPECIES CARDS
 ========================================================= */
 
 .monkey-grid {
-    max-width: 1200px;
-    margin: auto;
 
-    display: grid;
+    max-width:
+        1200px;
+
+    margin:
+        auto;
+
+    display:
+        grid;
 
     grid-template-columns:
-        repeat(auto-fit, minmax(220px, 1fr));
+        repeat(auto-fit,minmax(220px,1fr));
 
-    gap: 18px;
+    gap:
+        18px;
+
 }
+
 
 .monkey-card {
-    padding: 28px;
 
-    min-height: 220px;
+    min-height:
+        230px;
+
+    padding:
+        28px;
 
     background:
-        rgba(7, 29, 14, .75);
+        linear-gradient(
+            145deg,
+            rgba(10,40,19,.85),
+            rgba(4,20,10,.75)
+        );
 
     border:
-        1px solid rgba(255,255,255,.09);
+        1px solid
+        rgba(255,255,255,.08);
 
-    border-radius: 22px;
+    border-radius:
+        22px;
 
-    transition: .3s;
+    transition:
+        .3s;
 
-    cursor: pointer;
+    overflow:
+        hidden;
 
-    position: relative;
+    position:
+        relative;
 
-    overflow: hidden;
 }
 
-.monkey-card::before {
-    content: "";
-
-    position: absolute;
-
-    width: 130px;
-    height: 130px;
-
-    right: -50px;
-    top: -50px;
-
-    background:
-        rgba(168,255,114,.08);
-
-    border-radius: 50%;
-}
 
 .monkey-card:hover {
+
     transform:
-        translateY(-8px);
+        translateY(-9px);
 
     border-color:
         rgba(168,255,114,.3);
 
     box-shadow:
-        0 20px 60px rgba(0,0,0,.25);
+        0 20px 60px
+        rgba(0,0,0,.3);
+
 }
+
+
+.monkey-card::after {
+
+    content:
+        "🍃";
+
+    position:
+        absolute;
+
+    right:
+        12px;
+
+    bottom:
+        8px;
+
+    font-size:
+        3rem;
+
+    opacity:
+        .08;
+
+}
+
 
 .monkey-emoji {
-    font-size: 3rem;
-    margin-bottom: 18px;
+
+    font-size:
+        3rem;
+
+    margin-bottom:
+        17px;
+
 }
+
 
 .monkey-card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
+
+    font-size:
+        1.2rem;
+
+    margin-bottom:
+        10px;
+
 }
 
+
 .monkey-card p {
-    color: var(--muted);
-    line-height: 1.6;
-    font-size: .9rem;
+
+    color:
+        var(--muted);
+
+    font-size:
+        .9rem;
+
+    line-height:
+        1.65;
+
 }
 
 
@@ -379,278 +981,400 @@ section {
 ========================================================= */
 
 .facts {
-    display: grid;
+
+    max-width:
+        1000px;
+
+    margin:
+        auto;
+
+    display:
+        grid;
 
     grid-template-columns:
-        repeat(auto-fit, minmax(200px, 1fr));
+        repeat(auto-fit,minmax(200px,1fr));
 
-    max-width: 1000px;
+    gap:
+        18px;
 
-    margin: auto;
-
-    gap: 18px;
 }
+
 
 .fact {
-    padding: 35px 25px;
 
-    text-align: center;
+    text-align:
+        center;
+
+    padding:
+        35px 25px;
 
     background:
-        rgba(8, 30, 15, .72);
+        rgba(6,28,13,.75);
 
     border:
-        1px solid rgba(255,255,255,.08);
+        1px solid
+        rgba(255,255,255,.08);
 
-    border-radius: 20px;
+    border-radius:
+        20px;
+
 }
+
 
 .fact strong {
-    display: block;
 
-    font-size: 2.5rem;
+    display:
+        block;
 
-    color: var(--green);
+    color:
+        var(--green);
 
-    margin-bottom: 8px;
+    font-size:
+        2.5rem;
+
+    margin-bottom:
+        8px;
+
 }
 
+
 .fact span {
-    color: var(--muted);
+
+    color:
+        var(--muted);
+
 }
 
 
 /* =========================================================
-   QUIZ
+   KNOWLEDGE QUIZ
 ========================================================= */
 
 .quiz-box {
-    max-width: 850px;
 
-    margin: auto;
+    max-width:
+        850px;
 
-    padding: 45px;
+    margin:
+        auto;
+
+    padding:
+        45px;
 
     background:
-        rgba(4,22,11,.82);
+        rgba(4,22,11,.84);
 
     backdrop-filter:
         blur(20px);
 
     border:
-        1px solid rgba(255,255,255,.1);
+        1px solid
+        rgba(255,255,255,.1);
 
-    border-radius: 28px;
+    border-radius:
+        28px;
 
     box-shadow:
-        0 30px 100px rgba(0,0,0,.3);
+        0 30px 100px
+        rgba(0,0,0,.3);
+
 }
 
+
 .quiz-progress {
-    height: 8px;
+
+    height:
+        8px;
 
     background:
         rgba(255,255,255,.07);
 
-    border-radius: 50px;
+    border-radius:
+        50px;
 
-    overflow: hidden;
+    overflow:
+        hidden;
 
-    margin-bottom: 35px;
+    margin-bottom:
+        35px;
+
 }
 
+
 .quiz-progress div {
-    width: 0%;
-    height: 100%;
+
+    width:
+        0%;
+
+    height:
+        100%;
 
     background:
         linear-gradient(
             90deg,
-            var(--green2),
+            var(--bright-green),
             var(--green)
         );
 
-    transition: .4s;
+    transition:
+        .4s;
+
 }
+
 
 .quiz-question {
-    font-size: 1.8rem;
-    margin-bottom: 25px;
+
+    font-size:
+        1.8rem;
+
+    line-height:
+        1.4;
+
+    margin-bottom:
+        25px;
+
 }
+
 
 .quiz-answers {
-    display: grid;
-    gap: 12px;
+
+    display:
+        grid;
+
+    gap:
+        12px;
+
 }
 
+
 .quiz-answer {
-    width: 100%;
 
-    text-align: left;
+    width:
+        100%;
 
-    padding: 17px;
+    padding:
+        17px;
+
+    text-align:
+        left;
+
+    color:
+        white;
 
     background:
         rgba(255,255,255,.045);
 
     border:
-        1px solid rgba(255,255,255,.1);
+        1px solid
+        rgba(255,255,255,.1);
 
-    color: white;
+    border-radius:
+        13px;
 
-    border-radius: 13px;
+    cursor:
+        pointer;
 
-    cursor: pointer;
+    font-weight:
+        700;
 
-    font-weight: 700;
+    transition:
+        .25s;
 
-    transition: .25s;
 }
 
+
 .quiz-answer:hover {
+
+    transform:
+        translateX(6px);
+
     background:
-        rgba(168,255,114,.09);
+        rgba(168,255,114,.08);
 
     border-color:
         rgba(168,255,114,.35);
 
-    transform:
-        translateX(6px);
-}
-
-.quiz-result {
-    text-align: center;
-}
-
-.quiz-result .emoji {
-    font-size: 6rem;
-    margin-bottom: 15px;
-}
-
-.quiz-result h3 {
-    color: var(--green);
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-}
-
-.quiz-result p {
-    color: var(--muted);
-    line-height: 1.8;
-    max-width: 600px;
-    margin: auto auto 25px;
 }
 
 
 /* =========================================================
-   PERSONALITY QUIZ SECTION
+   SPECIAL PERSONALITY SECTION
+   SECOND BACKGROUND IMAGE
 ========================================================= */
 
 .personality-section {
-    position: relative;
 
-    min-height: 800px;
+    min-height:
+        850px;
 
-    display: flex;
-    align-items: center;
+    display:
+        flex;
+
+    align-items:
+        center;
 
     background:
+
         linear-gradient(
             90deg,
-            rgba(3,18,9,.94),
-            rgba(3,18,9,.55),
-            rgba(3,18,9,.88)
+            rgba(2,18,8,.95),
+            rgba(2,18,8,.58),
+            rgba(2,18,8,.90)
         ),
 
         url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSl5-8uH0oLdqHOtUY6UumpRGmUIw99KpBdn92SdVRYYw&s=10")
+
         center / cover no-repeat;
+
 }
 
+
+/* =========================================================
+   PERSONALITY QUIZ
+========================================================= */
+
+.personality-wrapper {
+
+    width:
+        100%;
+
+}
+
+
 .personality-box {
-    max-width: 900px;
 
-    width: 100%;
+    max-width:
+        900px;
 
-    margin: auto;
+    margin:
+        auto;
 
-    padding: 45px;
+    padding:
+        45px;
 
     background:
-        rgba(4,22,11,.80);
+        rgba(3,20,9,.82);
 
     backdrop-filter:
         blur(22px);
 
     border:
-        1px solid rgba(255,255,255,.12);
+        1px solid
+        rgba(255,255,255,.12);
 
-    border-radius: 30px;
+    border-radius:
+        30px;
 
     box-shadow:
-        0 30px 100px rgba(0,0,0,.4);
+        0 30px 100px
+        rgba(0,0,0,.45);
+
 }
+
 
 .personality-start {
-    text-align: center;
 
-    padding: 30px 10px;
+    text-align:
+        center;
+
+    padding:
+        30px 10px;
+
 }
 
-.big-monkey {
-    font-size: 7rem;
 
-    margin-bottom: 20px;
+.big-monkey {
+
+    font-size:
+        7rem;
+
+    margin-bottom:
+        20px;
 
     animation:
         monkeyFloat 3s ease-in-out infinite;
+
 }
+
 
 .personality-start h3 {
-    font-size: 2rem;
-    margin-bottom: 15px;
+
+    font-size:
+        2rem;
+
+    margin-bottom:
+        15px;
+
 }
 
+
 .personality-start p {
-    max-width: 600px;
+
+    max-width:
+        600px;
 
     margin:
         0 auto 28px;
 
-    color: var(--muted);
+    color:
+        var(--muted);
 
-    line-height: 1.8;
+    line-height:
+        1.8;
+
 }
+
 
 .personality-top {
-    display: flex;
 
-    justify-content: space-between;
+    display:
+        flex;
 
-    color: var(--muted);
+    justify-content:
+        space-between;
 
-    font-size: .9rem;
+    margin-bottom:
+        15px;
 
-    font-weight: 800;
+    color:
+        var(--muted);
 
-    margin-bottom: 15px;
+    font-size:
+        .9rem;
+
+    font-weight:
+        800;
+
 }
 
+
 .personality-progress {
-    height: 8px;
+
+    height:
+        8px;
 
     background:
         rgba(255,255,255,.07);
 
-    border-radius: 50px;
+    border-radius:
+        50px;
 
-    overflow: hidden;
+    overflow:
+        hidden;
 
-    margin-bottom: 40px;
+    margin-bottom:
+        40px;
+
 }
 
-.personality-progress div {
-    width: 0%;
 
-    height: 100%;
+.personality-progress div {
+
+    width:
+        0%;
+
+    height:
+        100%;
 
     background:
         linear-gradient(
@@ -661,74 +1385,114 @@ section {
 
     transition:
         width .4s ease;
+
 }
 
+
 .personality-question {
+
     font-size:
         clamp(1.5rem,4vw,2.4rem);
 
-    line-height: 1.3;
+    line-height:
+        1.3;
 
-    margin-bottom: 25px;
+    margin-bottom:
+        25px;
+
 }
+
 
 .personality-answers {
-    display: grid;
 
-    gap: 13px;
+    display:
+        grid;
+
+    gap:
+        13px;
+
 }
 
+
 .personality-answer {
-    display: flex;
 
-    align-items: center;
+    display:
+        flex;
 
-    gap: 15px;
+    align-items:
+        center;
 
-    width: 100%;
+    gap:
+        15px;
 
-    padding: 18px;
+    width:
+        100%;
 
-    color: white;
+    padding:
+        18px;
 
-    text-align: left;
+    color:
+        white;
+
+    text-align:
+        left;
 
     background:
         rgba(255,255,255,.045);
 
     border:
-        1px solid rgba(255,255,255,.10);
+        1px solid
+        rgba(255,255,255,.10);
 
-    border-radius: 15px;
+    border-radius:
+        15px;
 
-    cursor: pointer;
+    cursor:
+        pointer;
 
-    font-size: 1rem;
+    font-size:
+        1rem;
 
-    font-weight: 700;
+    font-weight:
+        700;
 
-    transition: .25s;
+    transition:
+        .25s;
+
 }
+
 
 .personality-answer span {
-    width: 35px;
-    height: 35px;
 
-    min-width: 35px;
+    width:
+        35px;
 
-    display: grid;
+    height:
+        35px;
 
-    place-items: center;
+    min-width:
+        35px;
 
-    border-radius: 10px;
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border-radius:
+        10px;
+
+    color:
+        var(--green);
 
     background:
-        rgba(168,255,114,.10);
+        rgba(168,255,114,.1);
 
-    color: var(--green);
 }
 
+
 .personality-answer:hover {
+
     transform:
         translateX(7px);
 
@@ -737,93 +1501,142 @@ section {
 
     border-color:
         rgba(168,255,114,.35);
-}
 
-.personality-result {
-    text-align: center;
-
-    padding: 25px 10px;
-}
-
-.result-monkey {
-    font-size: 8rem;
-
-    margin-bottom: 15px;
-
-    animation:
-        monkeyFloat 3s infinite;
-}
-
-.result-small {
-    color: var(--green);
-
-    font-size: .75rem;
-
-    font-weight: 900;
-
-    letter-spacing: 2px;
-
-    margin-bottom: 10px;
-}
-
-#resultMonkeyName {
-    font-size:
-        clamp(2rem,6vw,4rem);
-
-    margin-bottom: 20px;
-}
-
-#resultDescription {
-    max-width: 650px;
-
-    margin:
-        0 auto 25px;
-
-    color: var(--muted);
-
-    font-size: 1.1rem;
-
-    line-height: 1.8;
-}
-
-.result-traits {
-    display: inline-block;
-
-    padding: 13px 20px;
-
-    margin-bottom: 30px;
-
-    border:
-        1px solid rgba(168,255,114,.20);
-
-    background:
-        rgba(168,255,114,.07);
-
-    border-radius: 100px;
-
-    color: #d8ffc0;
-
-    font-weight: 800;
 }
 
 
 /* =========================================================
-   ANIMATION
+   PERSONALITY RESULT
+========================================================= */
+
+.personality-result {
+
+    text-align:
+        center;
+
+    padding:
+        25px 10px;
+
+}
+
+
+.result-monkey {
+
+    font-size:
+        8rem;
+
+    margin-bottom:
+        15px;
+
+    animation:
+        monkeyFloat 3s infinite;
+
+}
+
+
+.result-small {
+
+    color:
+        var(--green);
+
+    font-size:
+        .75rem;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        2px;
+
+    margin-bottom:
+        10px;
+
+}
+
+
+#resultMonkeyName {
+
+    font-size:
+        clamp(2rem,6vw,4rem);
+
+    margin-bottom:
+        20px;
+
+}
+
+
+#resultDescription {
+
+    max-width:
+        650px;
+
+    margin:
+        0 auto 25px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        1.1rem;
+
+    line-height:
+        1.8;
+
+}
+
+
+.result-traits {
+
+    display:
+        inline-block;
+
+    padding:
+        13px 20px;
+
+    margin-bottom:
+        30px;
+
+    border:
+        1px solid
+        rgba(168,255,114,.2);
+
+    background:
+        rgba(168,255,114,.07);
+
+    border-radius:
+        100px;
+
+    color:
+        #d8ffc0;
+
+    font-weight:
+        800;
+
+}
+
+
+/* =========================================================
+   ANIMATIONS
 ========================================================= */
 
 @keyframes monkeyFloat {
 
     0%,100% {
+
         transform:
             translateY(0)
             rotate(-2deg);
+
     }
 
     50% {
+
         transform:
             translateY(-14px)
             rotate(2deg);
+
     }
+
 }
 
 
@@ -832,27 +1645,42 @@ section {
 ========================================================= */
 
 footer {
-    padding: 50px 7%;
 
-    text-align: center;
+    padding:
+        55px 7%;
+
+    text-align:
+        center;
 
     background:
-        rgba(1,10,5,.85);
+        rgba(1,10,5,.9);
 
     border-top:
-        1px solid rgba(255,255,255,.08);
+        1px solid
+        rgba(255,255,255,.08);
+
 }
+
 
 footer strong {
-    color: var(--green);
+
+    color:
+        var(--green);
+
 }
 
+
 footer p {
-    margin-top: 10px;
 
-    color: var(--muted);
+    color:
+        var(--muted);
 
-    font-size: .85rem;
+    margin-top:
+        10px;
+
+    font-size:
+        .85rem;
+
 }
 
 
@@ -860,52 +1688,122 @@ footer p {
    MOBILE
 ========================================================= */
 
-@media(max-width: 700px) {
+@media(max-width:700px) {
 
     nav {
-        padding: 15px 5%;
+
+        padding:
+            15px 5%;
+
     }
 
-    nav .links {
-        display: none;
+    .nav-links {
+
+        display:
+            none;
+
     }
 
     .hero {
+
         padding:
-            120px 6% 70px;
+            120px 6% 80px;
+
     }
 
     .hero h1 {
-        letter-spacing: -2px;
+
+        letter-spacing:
+            -3px;
+
     }
 
     section {
+
         padding:
-            75px 6%;
+            80px 6%;
+
     }
 
     .quiz-box,
     .personality-box {
-        padding: 25px 18px;
+
+        padding:
+            25px 18px;
+
     }
 
     .personality-top {
-        flex-direction: column;
-        gap: 6px;
+
+        flex-direction:
+            column;
+
+        gap:
+            6px;
+
     }
 
     .big-monkey,
     .result-monkey {
-        font-size: 5rem;
+
+        font-size:
+            5rem;
+
     }
 
 }
 
 </style>
+
 </head>
 
 
 <body>
+
+
+<!-- =====================================================
+     RAIN
+===================================================== -->
+
+<div class="rain">
+
+    <div class="drop"></div>
+    <div class="drop"></div>
+    <div class="drop"></div>
+    <div class="drop"></div>
+    <div class="drop"></div>
+    <div class="drop"></div>
+    <div class="drop"></div>
+    <div class="drop"></div>
+    <div class="drop"></div>
+    <div class="drop"></div>
+    <div class="drop"></div>
+    <div class="drop"></div>
+    <div class="drop"></div>
+    <div class="drop"></div>
+
+</div>
+
+
+<!-- =====================================================
+     MIST
+===================================================== -->
+
+<div class="mist"></div>
+
+
+<!-- =====================================================
+     FLOATING LEAVES
+===================================================== -->
+
+<div class="leaves">
+
+    <div class="leaf">🍃</div>
+    <div class="leaf">🌿</div>
+    <div class="leaf">🍃</div>
+    <div class="leaf">🌿</div>
+
+</div>
 
 
 <!-- =====================================================
@@ -915,25 +1813,36 @@ footer p {
 <nav>
 
     <div class="logo">
+
         🐒 MONKEY<span>WORLD</span>
+
     </div>
 
-    <div class="links">
+    <div class="nav-links">
 
-        <a href="#home">Home</a>
+        <a href="#home">
+            Home
+        </a>
 
-        <a href="#monkeys">Monkeys</a>
+        <a href="#monkeys">
+            Species
+        </a>
 
-        <a href="#facts">Facts</a>
+        <a href="#facts">
+            Facts
+        </a>
 
-        <a href="#quiz">Quiz</a>
+        <a href="#quiz">
+            Quiz
+        </a>
 
-        <a href="#personality">Personality</a>
+        <a href="#personality">
+            Personality
+        </a>
 
     </div>
 
 </nav>
-
 
 
 <!-- =====================================================
@@ -942,42 +1851,55 @@ footer p {
 
 <section
     class="hero"
-    id="home">
+    id="home"
+>
 
     <div class="hero-content">
 
         <div class="badge">
-            WELCOME TO MONKEY WORLD 🐒
+
+            🌿 WELCOME TO THE RAINFOREST
+
         </div>
 
+
         <h1>
+
             ENTER THE<br>
+
             <span>JUNGLE.</span>
+
         </h1>
 
+
         <p>
-            Discover amazing monkey species, learn bizarre
-            facts, test your knowledge and discover which
-            monkey matches your personality.
+
+            Explore the fascinating world of monkeys.
+            Learn about incredible species, discover
+            strange facts, test your knowledge and find
+            out which monkey matches your personality.
+
         </p>
+
 
         <div class="buttons">
 
             <a
                 href="#personality"
                 class="btn primary"
-                style="text-decoration:none">
+            >
 
-                🐒 Find Your Monkey
+                🐒 Find My Monkey
 
             </a>
+
 
             <a
                 href="#monkeys"
                 class="btn secondary"
-                style="text-decoration:none">
+            >
 
-                Explore Species
+                🌿 Explore Species
 
             </a>
 
@@ -988,26 +1910,32 @@ footer p {
 </section>
 
 
-
 <!-- =====================================================
-     MONKEY SPECIES
+     SPECIES
 ===================================================== -->
 
 <section id="monkeys">
 
+    <div class="vine left">
+        🌿
+    </div>
+
+
     <div class="section-header">
 
         <div class="label">
-            Species
+            THE JUNGLE
         </div>
 
         <h2>
-            Meet the Monkeys
+            Meet The Monkeys
         </h2>
 
         <p>
+
             From tiny tamarins to powerful mandrills,
-            the monkey world is ridiculously diverse.
+            the monkey world is incredibly diverse.
+
         </p>
 
     </div>
@@ -1027,8 +1955,10 @@ footer p {
             </h3>
 
             <p>
-                Highly intelligent and curious monkeys
-                famous for their problem-solving abilities.
+
+                Clever, curious monkeys famous for
+                their impressive problem-solving abilities.
+
             </p>
 
         </div>
@@ -1045,8 +1975,10 @@ footer p {
             </h3>
 
             <p>
-                Amazing climbers that use their long limbs
-                and powerful tails to move through forests.
+
+                Incredible climbers with long limbs
+                and powerful gripping tails.
+
             </p>
 
         </div>
@@ -1063,8 +1995,10 @@ footer p {
             </h3>
 
             <p>
-                Famous for incredibly loud calls that can
-                travel for miles through the rainforest.
+
+                Their enormous calls can travel
+                surprisingly far through the rainforest.
+
             </p>
 
         </div>
@@ -1081,8 +2015,10 @@ footer p {
             </h3>
 
             <p>
-                Small, energetic and social monkeys that
-                spend much of their lives in large groups.
+
+                Tiny, energetic and extremely social
+                monkeys that live in groups.
+
             </p>
 
         </div>
@@ -1099,8 +2035,10 @@ footer p {
             </h3>
 
             <p>
-                Famous for their enormous noses and love
-                of swampy forests and mangroves.
+
+                Famous for their enormous noses and
+                their love of swampy habitats.
+
             </p>
 
         </div>
@@ -1117,8 +2055,10 @@ footer p {
             </h3>
 
             <p>
-                Tiny Brazilian monkeys recognized by their
+
+                Small Brazilian monkeys with
                 spectacular golden-orange fur.
+
             </p>
 
         </div>
@@ -1135,8 +2075,10 @@ footer p {
             </h3>
 
             <p>
-                Social Ethiopian primates that spend much
-                of their time living in huge groups.
+
+                Social Ethiopian primates known
+                for living in large groups.
+
             </p>
 
         </div>
@@ -1153,8 +2095,10 @@ footer p {
             </h3>
 
             <p>
-                Also called snow monkeys, they're famous
-                for relaxing in hot springs during winter.
+
+                Also called snow monkeys, they're
+                famous for enjoying hot springs.
+
             </p>
 
         </div>
@@ -1171,8 +2115,10 @@ footer p {
             </h3>
 
             <p>
-                One of the world's most colorful mammals,
-                known for its bright blue and red face.
+
+                One of the world's most colorful
+                mammals, with a spectacular face.
+
             </p>
 
         </div>
@@ -1189,8 +2135,10 @@ footer p {
             </h3>
 
             <p>
-                Clever African monkeys with surprisingly
-                complex communication systems.
+
+                Clever African monkeys with
+                surprisingly complex communication.
+
             </p>
 
         </div>
@@ -1199,7 +2147,6 @@ footer p {
     </div>
 
 </section>
-
 
 
 <!-- =====================================================
@@ -1211,7 +2158,7 @@ footer p {
     <div class="section-header">
 
         <div class="label">
-            Did You Know?
+            JUNGLE KNOWLEDGE
         </div>
 
         <h2>
@@ -1219,7 +2166,10 @@ footer p {
         </h2>
 
         <p>
-            A few things that make monkeys absolutely fascinating.
+
+            Some facts about monkeys that might
+            surprise you.
+
         </p>
 
     </div>
@@ -1227,9 +2177,12 @@ footer p {
 
     <div class="facts">
 
+
         <div class="fact">
 
-            <strong>200+</strong>
+            <strong>
+                200+
+            </strong>
 
             <span>
                 Monkey species exist
@@ -1240,10 +2193,12 @@ footer p {
 
         <div class="fact">
 
-            <strong>50+</strong>
+            <strong>
+                🧠
+            </strong>
 
             <span>
-                Different countries have native monkeys
+                Many monkeys display impressive intelligence
             </span>
 
         </div>
@@ -1251,10 +2206,12 @@ footer p {
 
         <div class="fact">
 
-            <strong>30m</strong>
+            <strong>
+                📣
+            </strong>
 
             <span>
-                Some howler calls can be heard from very far away
+                Howler monkeys have incredibly powerful calls
             </span>
 
         </div>
@@ -1262,10 +2219,12 @@ footer p {
 
         <div class="fact">
 
-            <strong>IQ 🧠</strong>
+            <strong>
+                🌴
+            </strong>
 
             <span>
-                Many monkeys display impressive problem-solving
+                Monkeys live across many different habitats
             </span>
 
         </div>
@@ -1273,7 +2232,6 @@ footer p {
     </div>
 
 </section>
-
 
 
 <!-- =====================================================
@@ -1285,7 +2243,7 @@ footer p {
     <div class="section-header">
 
         <div class="label">
-            Test Yourself
+            TEST YOURSELF
         </div>
 
         <h2>
@@ -1293,8 +2251,10 @@ footer p {
         </h2>
 
         <p>
-            Think you know your monkeys? See how many
-            questions you can get right.
+
+            Think you know your monkeys?
+            Put your knowledge to the test.
+
         </p>
 
     </div>
@@ -1302,24 +2262,28 @@ footer p {
 
     <div class="quiz-box">
 
+
         <div id="knowledgeQuiz">
 
-            <div
-                id="knowledgeProgress"
-                class="quiz-progress">
+            <div class="quiz-progress">
 
-                <div></div>
+                <div id="knowledgeProgress">
+                </div>
 
             </div>
 
+
             <h3
                 id="knowledgeQuestion"
-                class="quiz-question">
+                class="quiz-question"
+            >
             </h3>
+
 
             <div
                 id="knowledgeAnswers"
-                class="quiz-answers">
+                class="quiz-answers"
+            >
             </div>
 
         </div>
@@ -1327,27 +2291,45 @@ footer p {
 
         <div
             id="knowledgeResult"
-            class="quiz-result"
-            style="display:none;">
+            style="display:none;text-align:center"
+        >
 
-            <div class="emoji">
+            <div
+                style="font-size:6rem;margin-bottom:15px"
+            >
                 🧠🐒
             </div>
 
-            <h3 id="knowledgeScore">
+            <h3
+                id="knowledgeScore"
+                style="
+                    color:#a8ff72;
+                    font-size:2.5rem;
+                    margin-bottom:15px;
+                "
+            >
             </h3>
 
-            <p>
-                Great work! Now discover which monkey
-                matches your personality below.
+            <p
+                style="
+                    color:#aab9aa;
+                    line-height:1.8;
+                    margin-bottom:25px;
+                "
+            >
+
+                Nice work! Now discover which monkey
+                matches your personality.
+
             </p>
+
 
             <a
                 href="#personality"
                 class="btn primary"
-                style="text-decoration:none">
+            >
 
-                Find My Monkey
+                🐒 Find My Monkey
 
             </a>
 
@@ -1358,21 +2340,23 @@ footer p {
 </section>
 
 
-
 <!-- =====================================================
-     PERSONALITY QUIZ
+     PERSONALITY SECTION
 ===================================================== -->
 
 <section
     id="personality"
-    class="personality-section">
+    class="personality-section"
+>
 
-    <div style="width:100%">
+
+    <div class="personality-wrapper">
+
 
         <div class="section-header">
 
             <div class="label">
-                Personality Test
+                PERSONALITY TEST
             </div>
 
             <h2>
@@ -1380,8 +2364,10 @@ footer p {
             </h2>
 
             <p>
-                Answer 10 questions and discover which
-                monkey species matches your personality.
+
+                Answer 10 questions and discover
+                which monkey species matches your personality.
+
             </p>
 
         </div>
@@ -1390,32 +2376,39 @@ footer p {
         <div class="personality-box">
 
 
-            <!-- START -->
+            <!-- START SCREEN -->
 
             <div
                 id="personalityStart"
-                class="personality-start">
+                class="personality-start"
+            >
 
                 <div class="big-monkey">
                     🐒
                 </div>
 
+
                 <h3>
                     Discover Your Monkey Personality
                 </h3>
 
+
                 <p>
+
                     Are you a clever Capuchin?
                     A fearless Mandrill?
                     A chaotic Squirrel Monkey?
                     Or something completely different?
+
                 </p>
+
 
                 <button
                     class="btn primary"
-                    onclick="startPersonalityQuiz()">
+                    onclick="startPersonalityQuiz()"
+                >
 
-                    🐒 Find My Monkey
+                    🐒 FIND MY MONKEY
 
                 </button>
 
@@ -1426,16 +2419,19 @@ footer p {
 
             <div
                 id="personalityQuiz"
-                style="display:none;">
+                style="display:none"
+            >
 
                 <div class="personality-top">
 
-                    <span id="personalityQuestionNumber">
+                    <span
+                        id="personalityQuestionNumber"
+                    >
                         Question 1 of 10
                     </span>
 
                     <span>
-                        🐒 Personality Test
+                        🌿 Jungle Personality Test
                     </span>
 
                 </div>
@@ -1444,7 +2440,8 @@ footer p {
                 <div class="personality-progress">
 
                     <div
-                        id="personalityProgress">
+                        id="personalityProgress"
+                    >
                     </div>
 
                 </div>
@@ -1452,13 +2449,15 @@ footer p {
 
                 <h3
                     id="personalityQuestion"
-                    class="personality-question">
+                    class="personality-question"
+                >
                 </h3>
 
 
                 <div
                     id="personalityAnswers"
-                    class="personality-answers">
+                    class="personality-answers"
+                >
                 </div>
 
             </div>
@@ -1469,40 +2468,50 @@ footer p {
             <div
                 id="personalityResult"
                 class="personality-result"
-                style="display:none;">
+                style="display:none"
+            >
 
                 <div
                     id="resultMonkeyEmoji"
-                    class="result-monkey">
-
+                    class="result-monkey"
+                >
                     🐒
-
                 </div>
+
 
                 <div class="result-small">
                     YOUR MONKEY PERSONALITY
                 </div>
 
+
                 <h3
-                    id="resultMonkeyName">
+                    id="resultMonkeyName"
+                >
                 </h3>
 
+
                 <p
-                    id="resultDescription">
+                    id="resultDescription"
+                >
                 </p>
+
 
                 <div
                     id="resultTraits"
-                    class="result-traits">
+                    class="result-traits"
+                >
                 </div>
+
 
                 <br>
 
+
                 <button
                     class="btn primary"
-                    onclick="retakePersonalityQuiz()">
+                    onclick="retakePersonalityQuiz()"
+                >
 
-                    🔄 Take It Again
+                    🔄 TAKE IT AGAIN
 
                 </button>
 
@@ -1513,7 +2522,6 @@ footer p {
     </div>
 
 </section>
-
 
 
 <!-- =====================================================
@@ -1527,14 +2535,16 @@ footer p {
     </strong>
 
     <p>
-        Built for monkey enthusiasts everywhere.
+
+        Explore. Learn. Discover your inner monkey. 🌿
+
     </p>
 
 </footer>
 
 
-
 <script>
+
 
 /* =========================================================
    KNOWLEDGE QUIZ
@@ -1543,138 +2553,211 @@ footer p {
 const knowledgeQuestions = [
 
     {
-        q: "Which monkey is famous for its extremely loud call?",
+
+        q:
+        "Which monkey is famous for its extremely loud call?",
+
         answers: [
+
             "Howler Monkey",
             "Capuchin",
             "Spider Monkey",
             "Squirrel Monkey"
+
         ],
+
         correct: 0
+
     },
 
+
     {
-        q: "Which monkey is famous for relaxing in hot springs?",
+
+        q:
+        "Which monkey is famous for relaxing in hot springs?",
+
         answers: [
+
             "Mandrill",
             "Japanese Macaque",
             "Vervet Monkey",
             "Gelada"
+
         ],
+
         correct: 1
+
     },
 
+
     {
-        q: "Which monkey has a famous large nose?",
+
+        q:
+        "Which monkey is famous for its large nose?",
+
         answers: [
+
             "Proboscis Monkey",
             "Capuchin",
             "Gelada",
             "Mandrill"
+
         ],
+
         correct: 0
+
     },
 
+
     {
-        q: "Which monkey is known for its colorful face?",
+
+        q:
+        "Which monkey is famous for its colorful face?",
+
         answers: [
+
             "Spider Monkey",
             "Mandrill",
             "Vervet Monkey",
             "Squirrel Monkey"
+
         ],
+
         correct: 1
+
     },
 
+
     {
-        q: "Which monkey is native to Ethiopia?",
+
+        q:
+        "Which monkey is native to Ethiopia?",
+
         answers: [
+
             "Gelada",
             "Capuchin",
             "Proboscis Monkey",
             "Japanese Macaque"
+
         ],
+
         correct: 0
+
     }
 
 ];
 
+
 let knowledgeIndex = 0;
+
 let knowledgeScore = 0;
+
 
 function loadKnowledgeQuestion() {
 
     const q =
-        knowledgeQuestions[knowledgeIndex];
+        knowledgeQuestions[
+            knowledgeIndex
+        ];
+
 
     document.getElementById(
         "knowledgeQuestion"
-    ).textContent = q.q;
+    ).textContent =
+        q.q;
 
-    document.querySelector(
-        "#knowledgeProgress div"
+
+    document.getElementById(
+        "knowledgeProgress"
     ).style.width =
         `${(knowledgeIndex / knowledgeQuestions.length) * 100}%`;
+
 
     const container =
         document.getElementById(
             "knowledgeAnswers"
         );
 
+
     container.innerHTML = "";
 
+
     q.answers.forEach(
-        (answer, index) => {
+        (answer,index) => {
 
             const button =
-                document.createElement("button");
+                document.createElement(
+                    "button"
+                );
+
 
             button.className =
                 "quiz-answer";
 
+
             button.textContent =
                 answer;
 
-            button.onclick = () => {
 
-                if (index === q.correct) {
-                    knowledgeScore++;
-                }
+            button.onclick =
+                () => {
 
-                knowledgeIndex++;
+                    if (
+                        index ===
+                        q.correct
+                    ) {
 
-                if (
-                    knowledgeIndex >=
-                    knowledgeQuestions.length
-                ) {
+                        knowledgeScore++;
 
-                    document.getElementById(
-                        "knowledgeQuiz"
-                    ).style.display = "none";
+                    }
 
-                    document.getElementById(
-                        "knowledgeResult"
-                    ).style.display = "block";
 
-                    document.getElementById(
-                        "knowledgeScore"
-                    ).textContent =
-                        `${knowledgeScore} / ${knowledgeQuestions.length} Correct! 🐒`;
+                    knowledgeIndex++;
 
-                } else {
 
-                    loadKnowledgeQuestion();
+                    if (
+                        knowledgeIndex >=
+                        knowledgeQuestions.length
+                    ) {
 
-                }
+                        document.getElementById(
+                            "knowledgeQuiz"
+                        ).style.display =
+                            "none";
 
-            };
 
-            container.appendChild(button);
+                        document.getElementById(
+                            "knowledgeResult"
+                        ).style.display =
+                            "block";
+
+
+                        document.getElementById(
+                            "knowledgeScore"
+                        ).textContent =
+                            `${knowledgeScore} / ${knowledgeQuestions.length} Correct! 🐒`;
+
+                    }
+
+                    else {
+
+                        loadKnowledgeQuestion();
+
+                    }
+
+                };
+
+
+            container.appendChild(
+                button
+            );
 
         }
     );
 
 }
+
 
 loadKnowledgeQuestion();
 
@@ -1686,292 +2769,621 @@ loadKnowledgeQuestion();
 
 const personalityQuestions = [
 
+
     {
+
         question:
         "You have a completely free day. What are you doing?",
 
         answers: [
-            ["Exploring somewhere I've never been", "capuchin"],
-            ["Hanging out with a huge group of friends", "gelada"],
-            ["Finding somewhere peaceful to relax", "macaque"],
-            ["Going on a wild adventure", "spider"]
+
+            [
+                "Exploring somewhere I've never been",
+                "capuchin"
+            ],
+
+            [
+                "Hanging out with a huge group of friends",
+                "gelada"
+            ],
+
+            [
+                "Finding somewhere peaceful to relax",
+                "macaque"
+            ],
+
+            [
+                "Going on a wild adventure",
+                "spider"
+            ]
+
         ]
+
     },
 
+
     {
+
         question:
         "Someone gives you a difficult puzzle. You...",
 
         answers: [
-            ["Immediately start experimenting with it", "capuchin"],
-            ["Ask everyone else what they think", "gelada"],
-            ["Quietly figure it out myself", "macaque"],
-            ["Try something completely unexpected", "lion"]
+
+            [
+                "Immediately start experimenting with it",
+                "capuchin"
+            ],
+
+            [
+                "Ask everyone else what they think",
+                "gelada"
+            ],
+
+            [
+                "Quietly figure it out myself",
+                "macaque"
+            ],
+
+            [
+                "Try something completely unexpected",
+                "lion"
+            ]
+
         ]
+
     },
 
+
     {
+
         question:
         "What's your biggest strength?",
 
         answers: [
-            ["I'm extremely social", "gelada"],
-            ["I'm clever and adaptable", "capuchin"],
-            ["I'm confident", "mandrill"],
-            ["I'm calm under pressure", "macaque"]
+
+            [
+                "I'm extremely social",
+                "gelada"
+            ],
+
+            [
+                "I'm clever and adaptable",
+                "capuchin"
+            ],
+
+            [
+                "I'm confident",
+                "mandrill"
+            ],
+
+            [
+                "I'm calm under pressure",
+                "macaque"
+            ]
+
         ]
+
     },
 
+
     {
+
         question:
         "Pick a place to live.",
 
         answers: [
-            ["A huge rainforest", "spider"],
-            ["A beautiful mountain landscape", "gelada"],
-            ["A tropical island", "proboscis"],
-            ["A forest full of trees to explore", "capuchin"]
+
+            [
+                "A huge rainforest",
+                "spider"
+            ],
+
+            [
+                "A beautiful mountain landscape",
+                "gelada"
+            ],
+
+            [
+                "A tropical island",
+                "proboscis"
+            ],
+
+            [
+                "A forest full of trees to explore",
+                "capuchin"
+            ]
+
         ]
+
     },
 
+
     {
+
         question:
         "Your friend is upset. What do you do?",
 
         answers: [
-            ["Make them laugh", "squirrel"],
-            ["Stay beside them and listen", "macaque"],
-            ["Get everyone together to help", "gelada"],
-            ["Give them space but check on them later", "vervet"]
+
+            [
+                "Make them laugh",
+                "squirrel"
+            ],
+
+            [
+                "Stay beside them and listen",
+                "macaque"
+            ],
+
+            [
+                "Get everyone together to help",
+                "gelada"
+            ],
+
+            [
+                "Give them space but check on them later",
+                "vervet"
+            ]
+
         ]
+
     },
 
+
     {
+
         question:
         "Which word describes you best?",
 
         answers: [
-            ["Curious", "capuchin"],
-            ["Dramatic", "howler"],
-            ["Fearless", "mandrill"],
-            ["Playful", "squirrel"]
+
+            [
+                "Curious",
+                "capuchin"
+            ],
+
+            [
+                "Dramatic",
+                "howler"
+            ],
+
+            [
+                "Fearless",
+                "mandrill"
+            ],
+
+            [
+                "Playful",
+                "squirrel"
+            ]
+
         ]
+
     },
 
+
     {
+
         question:
         "At a party, you're probably...",
 
         answers: [
-            ["The loudest person there", "howler"],
-            ["Making everyone laugh", "squirrel"],
-            ["Talking to absolutely everyone", "gelada"],
-            ["Watching everything from the side", "vervet"]
+
+            [
+                "The loudest person there",
+                "howler"
+            ],
+
+            [
+                "Making everyone laugh",
+                "squirrel"
+            ],
+
+            [
+                "Talking to absolutely everyone",
+                "gelada"
+            ],
+
+            [
+                "Watching everything from the side",
+                "vervet"
+            ]
+
         ]
+
     },
 
+
     {
+
         question:
         "What's your ideal way to solve a problem?",
 
         answers: [
-            ["Use creativity", "capuchin"],
-            ["Work with other people", "gelada"],
-            ["Use confidence and determination", "mandrill"],
-            ["Try something completely different", "lion"]
+
+            [
+                "Use creativity",
+                "capuchin"
+            ],
+
+            [
+                "Work with other people",
+                "gelada"
+            ],
+
+            [
+                "Use confidence and determination",
+                "mandrill"
+            ],
+
+            [
+                "Try something completely different",
+                "lion"
+            ]
+
         ]
+
     },
 
+
     {
+
         question:
         "Choose a vibe.",
 
         answers: [
-            ["Chaotic genius 🧠", "capuchin"],
-            ["Elegant and mysterious ✨", "lion"],
-            ["Wild and energetic ⚡", "squirrel"],
-            ["Chill and observant 🌿", "macaque"]
+
+            [
+                "Chaotic genius 🧠",
+                "capuchin"
+            ],
+
+            [
+                "Elegant and mysterious ✨",
+                "lion"
+            ],
+
+            [
+                "Wild and energetic ⚡",
+                "squirrel"
+            ],
+
+            [
+                "Chill and observant 🌿",
+                "macaque"
+            ]
+
         ]
+
     },
 
+
     {
+
         question:
         "If your friends had to describe you, they'd say...",
 
         answers: [
-            ["The clever one", "capuchin"],
-            ["The funny one", "squirrel"],
-            ["The leader", "mandrill"],
-            ["The adventurous one", "spider"]
+
+            [
+                "The clever one",
+                "capuchin"
+            ],
+
+            [
+                "The funny one",
+                "squirrel"
+            ],
+
+            [
+                "The leader",
+                "mandrill"
+            ],
+
+            [
+                "The adventurous one",
+                "spider"
+            ]
+
         ]
+
     }
 
 ];
 
 
+
 /* =========================================================
-   MONKEY RESULTS
+   RESULTS
 ========================================================= */
 
 const monkeyResults = {
 
+
     capuchin: {
-        name: "Capuchin",
-        emoji: "🐒",
-        color: "#a8ff72",
+
+        name:
+            "Capuchin",
+
+        emoji:
+            "🐒",
+
+        color:
+            "#a8ff72",
+
         description:
-        "You're curious, clever and incredibly adaptable. You love figuring things out and you're probably the person who touches every button just to see what happens.",
+            "You're curious, clever and incredibly adaptable. You love figuring things out and you're probably the person who touches every button just to see what happens.",
+
         traits:
-        "🧠 Clever • 🔎 Curious • ⚡ Energetic"
+            "🧠 Clever • 🔎 Curious • ⚡ Energetic"
+
     },
+
 
     spider: {
-        name: "Spider Monkey",
-        emoji: "🕷️",
-        color: "#65d8ff",
+
+        name:
+            "Spider Monkey",
+
+        emoji:
+            "🕷️",
+
+        color:
+            "#65d8ff",
+
         description:
-        "You're adventurous, flexible and love exploring. You aren't afraid of taking the unconventional route to get where you want to go.",
+            "You're adventurous, flexible and love exploring. You aren't afraid of taking the unconventional route to get where you want to go.",
+
         traits:
-        "🌳 Adventurous • 🤸 Flexible • 🌎 Explorer"
+            "🌳 Adventurous • 🤸 Flexible • 🌎 Explorer"
+
     },
+
 
     howler: {
-        name: "Howler Monkey",
-        emoji: "📣",
-        color: "#ff8a65",
+
+        name:
+            "Howler Monkey",
+
+        emoji:
+            "📣",
+
+        color:
+            "#ff8a65",
+
         description:
-        "You have a BIG personality. You're expressive, confident and definitely not afraid to make yourself heard.",
+            "You have a BIG personality. You're expressive, confident and definitely not afraid to make yourself heard.",
+
         traits:
-        "📣 Loud • 😎 Confident • 🔥 Expressive"
+            "📣 Loud • 😎 Confident • 🔥 Expressive"
+
     },
+
 
     squirrel: {
-        name: "Squirrel Monkey",
-        emoji: "🐵",
-        color: "#ffd166",
+
+        name:
+            "Squirrel Monkey",
+
+        emoji:
+            "🐵",
+
+        color:
+            "#ffd166",
+
         description:
-        "You're playful, energetic and always ready for fun. You bring energy into almost every room you enter.",
+            "You're playful, energetic and always ready for fun. You bring energy into almost every room you enter.",
+
         traits:
-        "😂 Funny • ⚡ Energetic • 🎉 Playful"
+            "😂 Funny • ⚡ Energetic • 🎉 Playful"
+
     },
+
 
     proboscis: {
-        name: "Proboscis Monkey",
-        emoji: "🌴",
-        color: "#ff9f43",
+
+        name:
+            "Proboscis Monkey",
+
+        emoji:
+            "🌴",
+
+        color:
+            "#ff9f43",
+
         description:
-        "You're unique and comfortable being yourself. You don't need to follow everyone else — your individuality is your superpower.",
+            "You're unique and comfortable being yourself. You don't need to follow everyone else — your individuality is your superpower.",
+
         traits:
-        "🌟 Unique • 🌿 Relaxed • 😌 Independent"
+            "🌟 Unique • 🌿 Relaxed • 😌 Independent"
+
     },
+
 
     lion: {
-        name: "Golden Lion Tamarin",
-        emoji: "👑",
-        color: "#ffb347",
+
+        name:
+            "Golden Lion Tamarin",
+
+        emoji:
+            "👑",
+
+        color:
+            "#ffb347",
+
         description:
-        "You're charismatic, confident and impossible to overlook. You have a natural presence that makes people notice you.",
+            "You're charismatic, confident and impossible to overlook. You have a natural presence that makes people notice you.",
+
         traits:
-        "👑 Charismatic • ✨ Stylish • 💪 Confident"
+            "👑 Charismatic • ✨ Stylish • 💪 Confident"
+
     },
+
 
     gelada: {
-        name: "Gelada",
-        emoji: "🏔️",
-        color: "#c084fc",
+
+        name:
+            "Gelada",
+
+        emoji:
+            "🏔️",
+
+        color:
+            "#c084fc",
+
         description:
-        "You're extremely social and value your friendships. You thrive when you're surrounded by people you trust.",
+            "You're extremely social and value your friendships. You thrive when you're surrounded by people you trust.",
+
         traits:
-        "👥 Social • ❤️ Loyal • 🤝 Cooperative"
+            "👥 Social • ❤️ Loyal • 🤝 Cooperative"
+
     },
+
 
     macaque: {
-        name: "Japanese Macaque",
-        emoji: "♨️",
-        color: "#ff7b9c",
+
+        name:
+            "Japanese Macaque",
+
+        emoji:
+            "♨️",
+
+        color:
+            "#ff7b9c",
+
         description:
-        "You're calm, observant and surprisingly adaptable. You know when to relax and when it's time to take action.",
+            "You're calm, observant and surprisingly adaptable. You know when to relax and when it's time to take action.",
+
         traits:
-        "🧘 Calm • 👀 Observant • 🌿 Adaptable"
+            "🧘 Calm • 👀 Observant • 🌿 Adaptable"
+
     },
+
 
     mandrill: {
-        name: "Mandrill",
-        emoji: "🦁",
-        color: "#ff4d6d",
+
+        name:
+            "Mandrill",
+
+        emoji:
+            "🦁",
+
+        color:
+            "#ff4d6d",
+
         description:
-        "You're bold, confident and naturally stand out from the crowd. When you want something, you go after it.",
+            "You're bold, confident and naturally stand out from the crowd. When you want something, you go after it.",
+
         traits:
-        "🔥 Bold • 👑 Leader • 💥 Fearless"
+            "🔥 Bold • 👑 Leader • 💥 Fearless"
+
     },
 
+
     vervet: {
-        name: "Vervet Monkey",
-        emoji: "🌿",
-        color: "#74c69d",
+
+        name:
+            "Vervet Monkey",
+
+        emoji:
+            "🌿",
+
+        color:
+            "#74c69d",
+
         description:
-        "You're observant, thoughtful and good at reading the room. You notice things that other people sometimes miss.",
+            "You're observant, thoughtful and good at reading the room. You notice things that other people sometimes miss.",
+
         traits:
-        "👀 Observant • 🧠 Thoughtful • 🌿 Calm"
+            "👀 Observant • 🧠 Thoughtful • 🌿 Calm"
+
     }
 
 };
 
 
+
 /* =========================================================
-   PERSONALITY QUIZ VARIABLES
+   PERSONALITY SCORE
 ========================================================= */
 
 let personalityQuestion = 0;
 
+
 let personalityScores = {
 
     capuchin: 0,
+
     spider: 0,
+
     howler: 0,
+
     squirrel: 0,
+
     proboscis: 0,
+
     lion: 0,
+
     gelada: 0,
+
     macaque: 0,
+
     mandrill: 0,
+
     vervet: 0
 
 };
 
 
+
 /* =========================================================
-   START PERSONALITY QUIZ
+   START
 ========================================================= */
 
 function startPersonalityQuiz() {
 
     personalityQuestion = 0;
 
-    Object.keys(personalityScores).forEach(
+
+    Object.keys(
+        personalityScores
+    ).forEach(
         monkey => {
-            personalityScores[monkey] = 0;
+
+            personalityScores[
+                monkey
+            ] = 0;
+
         }
     );
 
+
     document.getElementById(
         "personalityStart"
-    ).style.display = "none";
+    ).style.display =
+        "none";
+
 
     document.getElementById(
         "personalityQuiz"
-    ).style.display = "block";
+    ).style.display =
+        "block";
+
 
     document.getElementById(
         "personalityResult"
-    ).style.display = "none";
+    ).style.display =
+        "none";
+
 
     loadPersonalityQuestion();
+
 }
 
 
+
 /* =========================================================
-   LOAD PERSONALITY QUESTION
+   LOAD QUESTION
 ========================================================= */
 
 function loadPersonalityQuestion() {
@@ -1981,131 +3393,183 @@ function loadPersonalityQuestion() {
             personalityQuestion
         ];
 
+
     document.getElementById(
         "personalityQuestionNumber"
     ).textContent =
         `Question ${personalityQuestion + 1} of 10`;
+
 
     document.getElementById(
         "personalityProgress"
     ).style.width =
         `${(personalityQuestion / 10) * 100}%`;
 
+
     document.getElementById(
         "personalityQuestion"
     ).textContent =
         question.question;
+
 
     const container =
         document.getElementById(
             "personalityAnswers"
         );
 
+
     container.innerHTML = "";
 
+
     question.answers.forEach(
-        (answer, index) => {
+        (answer,index) => {
+
 
             const button =
-                document.createElement("button");
+                document.createElement(
+                    "button"
+                );
+
 
             button.className =
                 "personality-answer";
 
+
             button.innerHTML =
-                `<span>${String.fromCharCode(65 + index)}</span>
-                ${answer[0]}`;
 
-            button.onclick = () => {
+                `<span>
+                    ${String.fromCharCode(65 + index)}
+                 </span>
+                 ${answer[0]}`;
 
-                personalityScores[
-                    answer[1]
-                ]++;
 
-                personalityQuestion++;
+            button.onclick =
+                () => {
 
-                if (
-                    personalityQuestion >=
-                    personalityQuestions.length
-                ) {
 
-                    showPersonalityResult();
+                    personalityScores[
+                        answer[1]
+                    ]++;
 
-                } else {
 
-                    loadPersonalityQuestion();
+                    personalityQuestion++;
 
-                }
 
-            };
+                    if (
+                        personalityQuestion >=
+                        personalityQuestions.length
+                    ) {
 
-            container.appendChild(button);
+                        showPersonalityResult();
+
+                    }
+
+                    else {
+
+                        loadPersonalityQuestion();
+
+                    }
+
+                };
+
+
+            container.appendChild(
+                button
+            );
 
         }
     );
+
 }
 
 
+
 /* =========================================================
-   SHOW PERSONALITY RESULT
+   RESULT
 ========================================================= */
 
 function showPersonalityResult() {
+
 
     let winner =
         Object.keys(
             personalityScores
         )[0];
 
+
     Object.keys(
         personalityScores
-    ).forEach(monkey => {
+    ).forEach(
+        monkey => {
 
-        if (
-            personalityScores[monkey] >
-            personalityScores[winner]
-        ) {
+            if (
 
-            winner = monkey;
+                personalityScores[
+                    monkey
+                ] >
+
+                personalityScores[
+                    winner
+                ]
+
+            ) {
+
+                winner =
+                    monkey;
+
+            }
 
         }
+    );
 
-    });
 
     const result =
-        monkeyResults[winner];
+        monkeyResults[
+            winner
+        ];
+
 
     document.getElementById(
         "personalityQuiz"
-    ).style.display = "none";
+    ).style.display =
+        "none";
+
 
     document.getElementById(
         "personalityResult"
-    ).style.display = "block";
+    ).style.display =
+        "block";
+
 
     document.getElementById(
         "personalityProgress"
-    ).style.width = "100%";
+    ).style.width =
+        "100%";
+
 
     document.getElementById(
         "resultMonkeyEmoji"
     ).textContent =
         result.emoji;
 
+
     document.getElementById(
         "resultMonkeyName"
     ).textContent =
         `You are a ${result.name}!`;
+
 
     document.getElementById(
         "resultDescription"
     ).textContent =
         result.description;
 
+
     document.getElementById(
         "resultTraits"
     ).textContent =
         result.traits;
+
 
     document.getElementById(
         "resultMonkeyName"
@@ -2115,25 +3579,33 @@ function showPersonalityResult() {
 }
 
 
+
 /* =========================================================
-   RETAKE QUIZ
+   RETAKE
 ========================================================= */
 
 function retakePersonalityQuiz() {
 
     document.getElementById(
         "personalityResult"
-    ).style.display = "none";
+    ).style.display =
+        "none";
+
 
     document.getElementById(
         "personalityQuiz"
-    ).style.display = "block";
+    ).style.display =
+        "block";
+
 
     startPersonalityQuiz();
 
 }
 
+
 </script>
 
+
 </body>
+
 </html>
