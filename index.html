@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -6,12 +7,12 @@
 <meta charset="UTF-8">
 
 <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+
 >
 
 <title>Monkey World 🐒</title>
-
 
 <style>
 
@@ -158,8 +159,6 @@ body::after {
 }
 
 
-/* Individual rain drops */
-
 .drop {
 
     position: absolute;
@@ -179,8 +178,6 @@ body::after {
 
 }
 
-
-/* Different drops */
 
 .drop:nth-child(1) {
     left: 5%;
@@ -364,6 +361,7 @@ body::after {
 
 }
 
+
 .leaf {
 
     position: absolute;
@@ -376,6 +374,7 @@ body::after {
         leafFloat 12s linear infinite;
 
 }
+
 
 .leaf:nth-child(1) {
 
@@ -1198,8 +1197,7 @@ section {
 
 
 /* =========================================================
-   SPECIAL PERSONALITY SECTION
-   SECOND BACKGROUND IMAGE
+   PERSONALITY SECTION
 ========================================================= */
 
 .personality-section {
@@ -1228,10 +1226,6 @@ section {
 
 }
 
-
-/* =========================================================
-   PERSONALITY QUIZ
-========================================================= */
 
 .personality-wrapper {
 
@@ -1757,9 +1751,7 @@ footer p {
 
 </head>
 
-
 <body>
-
 
 <!-- =====================================================
      RAIN
@@ -1767,23 +1759,24 @@ footer p {
 
 <div class="rain">
 
-    <div class="drop"></div>
-    <div class="drop"></div>
-    <div class="drop"></div>
-    <div class="drop"></div>
-    <div class="drop"></div>
-    <div class="drop"></div>
-    <div class="drop"></div>
-    <div class="drop"></div>
-    <div class="drop"></div>
-    <div class="drop"></div>
-    <div class="drop"></div>
-    <div class="drop"></div>
-    <div class="drop"></div>
-    <div class="drop"></div>
+```
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+```
 
 </div>
-
 
 <!-- =====================================================
      MIST
@@ -1791,20 +1784,20 @@ footer p {
 
 <div class="mist"></div>
 
-
 <!-- =====================================================
      FLOATING LEAVES
 ===================================================== -->
 
 <div class="leaves">
 
-    <div class="leaf">🍃</div>
-    <div class="leaf">🌿</div>
-    <div class="leaf">🍃</div>
-    <div class="leaf">🌿</div>
+```
+<div class="leaf">🍃</div>
+<div class="leaf">🌿</div>
+<div class="leaf">🍃</div>
+<div class="leaf">🌿</div>
+```
 
 </div>
-
 
 <!-- =====================================================
      NAVIGATION
@@ -1812,38 +1805,44 @@ footer p {
 
 <nav>
 
-    <div class="logo">
+```
+<div class="logo">
 
-        🐒 MONKEY<span>WORLD</span>
+    🐒 MONKEY<span>WORLD</span>
 
-    </div>
+</div>
 
-    <div class="nav-links">
 
-        <a href="#home">
-            Home
-        </a>
+<div class="nav-links">
 
-        <a href="#monkeys">
-            Species
-        </a>
+    <a href="#home">
+        Home
+    </a>
 
-        <a href="#facts">
-            Facts
-        </a>
+    <a href="#monkeys">
+        Species
+    </a>
 
-        <a href="#quiz">
-            Quiz
-        </a>
+    <a href="great-apes.html">
+        Great Apes
+    </a>
 
-        <a href="#personality">
-            Personality
-        </a>
+    <a href="#facts">
+        Facts
+    </a>
 
-    </div>
+    <a href="#quiz">
+        Quiz
+    </a>
+
+    <a href="#personality">
+        Personality
+    </a>
+
+</div>
+```
 
 </nav>
-
 
 <!-- =====================================================
      HERO
@@ -1854,61 +1853,72 @@ footer p {
     id="home"
 >
 
-    <div class="hero-content">
+```
+<div class="hero-content">
 
-        <div class="badge">
+    <div class="badge">
 
-            🌿 WELCOME TO THE RAINFOREST
-
-        </div>
-
-
-        <h1>
-
-            ENTER THE<br>
-
-            <span>JUNGLE.</span>
-
-        </h1>
-
-
-        <p>
-
-            Explore the fascinating world of monkeys.
-            Learn about incredible species, discover
-            strange facts, test your knowledge and find
-            out which monkey matches your personality.
-
-        </p>
-
-
-        <div class="buttons">
-
-            <a
-                href="#personality"
-                class="btn primary"
-            >
-
-                🐒 Find My Monkey
-
-            </a>
-
-
-            <a
-                href="#monkeys"
-                class="btn secondary"
-            >
-
-                🌿 Explore Species
-
-            </a>
-
-        </div>
+        🌿 WELCOME TO THE RAINFOREST
 
     </div>
 
-</section>
 
+    <h1>
+
+        ENTER THE<br>
+
+        <span>JUNGLE.</span>
+
+    </h1>
+
+
+    <p>
+
+        Explore the fascinating world of monkeys.
+        Learn about incredible species, discover
+        strange facts, test your knowledge and find
+        out which monkey matches your personality.
+
+    </p>
+
+
+    <div class="buttons">
+
+        <a
+            href="#personality"
+            class="btn primary"
+        >
+
+            🐒 Find My Monkey
+
+        </a>
+
+
+        <a
+            href="#monkeys"
+            class="btn secondary"
+        >
+
+            🌿 Explore Species
+
+        </a>
+
+
+        <a
+            href="great-apes.html"
+            class="btn secondary"
+        >
+
+            🦍 Explore Great Apes
+
+        </a>
+
+    </div>
+
+</div>
+```
+
+</section>
 
 <!-- =====================================================
      SPECIES
@@ -1916,238 +1926,239 @@ footer p {
 
 <section id="monkeys">
 
-    <div class="vine left">
-        🌿
+```
+<div class="vine left">
+    🌿
+</div>
+
+
+<div class="section-header">
+
+    <div class="label">
+        THE JUNGLE
     </div>
 
+    <h2>
+        Meet The Monkeys
+    </h2>
 
-    <div class="section-header">
+    <p>
 
-        <div class="label">
-            THE JUNGLE
+        From tiny tamarins to powerful mandrills,
+        the monkey world is incredibly diverse.
+
+    </p>
+
+</div>
+
+
+<div class="monkey-grid">
+
+
+    <div class="monkey-card">
+
+        <div class="monkey-emoji">
+            🐒
         </div>
 
-        <h2>
-            Meet The Monkeys
-        </h2>
+        <h3>
+            Capuchin
+        </h3>
 
         <p>
 
-            From tiny tamarins to powerful mandrills,
-            the monkey world is incredibly diverse.
+            Clever, curious monkeys famous for
+            their impressive problem-solving abilities.
 
         </p>
 
     </div>
 
 
-    <div class="monkey-grid">
+    <div class="monkey-card">
 
-
-        <div class="monkey-card">
-
-            <div class="monkey-emoji">
-                🐒
-            </div>
-
-            <h3>
-                Capuchin
-            </h3>
-
-            <p>
-
-                Clever, curious monkeys famous for
-                their impressive problem-solving abilities.
-
-            </p>
-
+        <div class="monkey-emoji">
+            🕷️
         </div>
 
+        <h3>
+            Spider Monkey
+        </h3>
 
-        <div class="monkey-card">
+        <p>
 
-            <div class="monkey-emoji">
-                🕷️
-            </div>
+            Incredible climbers with long limbs
+            and powerful gripping tails.
 
-            <h3>
-                Spider Monkey
-            </h3>
-
-            <p>
-
-                Incredible climbers with long limbs
-                and powerful gripping tails.
-
-            </p>
-
-        </div>
-
-
-        <div class="monkey-card">
-
-            <div class="monkey-emoji">
-                📣
-            </div>
-
-            <h3>
-                Howler Monkey
-            </h3>
-
-            <p>
-
-                Their enormous calls can travel
-                surprisingly far through the rainforest.
-
-            </p>
-
-        </div>
-
-
-        <div class="monkey-card">
-
-            <div class="monkey-emoji">
-                🐵
-            </div>
-
-            <h3>
-                Squirrel Monkey
-            </h3>
-
-            <p>
-
-                Tiny, energetic and extremely social
-                monkeys that live in groups.
-
-            </p>
-
-        </div>
-
-
-        <div class="monkey-card">
-
-            <div class="monkey-emoji">
-                🌴
-            </div>
-
-            <h3>
-                Proboscis Monkey
-            </h3>
-
-            <p>
-
-                Famous for their enormous noses and
-                their love of swampy habitats.
-
-            </p>
-
-        </div>
-
-
-        <div class="monkey-card">
-
-            <div class="monkey-emoji">
-                👑
-            </div>
-
-            <h3>
-                Golden Lion Tamarin
-            </h3>
-
-            <p>
-
-                Small Brazilian monkeys with
-                spectacular golden-orange fur.
-
-            </p>
-
-        </div>
-
-
-        <div class="monkey-card">
-
-            <div class="monkey-emoji">
-                🏔️
-            </div>
-
-            <h3>
-                Gelada
-            </h3>
-
-            <p>
-
-                Social Ethiopian primates known
-                for living in large groups.
-
-            </p>
-
-        </div>
-
-
-        <div class="monkey-card">
-
-            <div class="monkey-emoji">
-                ♨️
-            </div>
-
-            <h3>
-                Japanese Macaque
-            </h3>
-
-            <p>
-
-                Also called snow monkeys, they're
-                famous for enjoying hot springs.
-
-            </p>
-
-        </div>
-
-
-        <div class="monkey-card">
-
-            <div class="monkey-emoji">
-                🦁
-            </div>
-
-            <h3>
-                Mandrill
-            </h3>
-
-            <p>
-
-                One of the world's most colorful
-                mammals, with a spectacular face.
-
-            </p>
-
-        </div>
-
-
-        <div class="monkey-card">
-
-            <div class="monkey-emoji">
-                🌿
-            </div>
-
-            <h3>
-                Vervet Monkey
-            </h3>
-
-            <p>
-
-                Clever African monkeys with
-                surprisingly complex communication.
-
-            </p>
-
-        </div>
-
+        </p>
 
     </div>
 
-</section>
 
+    <div class="monkey-card">
+
+        <div class="monkey-emoji">
+            📣
+        </div>
+
+        <h3>
+            Howler Monkey
+        </h3>
+
+        <p>
+
+            Their enormous calls can travel
+            surprisingly far through the rainforest.
+
+        </p>
+
+    </div>
+
+
+    <div class="monkey-card">
+
+        <div class="monkey-emoji">
+            🐵
+        </div>
+
+        <h3>
+            Squirrel Monkey
+        </h3>
+
+        <p>
+
+            Tiny, energetic and extremely social
+            monkeys that live in groups.
+
+        </p>
+
+    </div>
+
+
+    <div class="monkey-card">
+
+        <div class="monkey-emoji">
+            🌴
+        </div>
+
+        <h3>
+            Proboscis Monkey
+        </h3>
+
+        <p>
+
+            Famous for their enormous noses and
+            their love of swampy habitats.
+
+        </p>
+
+    </div>
+
+
+    <div class="monkey-card">
+
+        <div class="monkey-emoji">
+            👑
+        </div>
+
+        <h3>
+            Golden Lion Tamarin
+        </h3>
+
+        <p>
+
+            Small Brazilian monkeys with
+            spectacular golden-orange fur.
+
+        </p>
+
+    </div>
+
+
+    <div class="monkey-card">
+
+        <div class="monkey-emoji">
+            🏔️
+        </div>
+
+        <h3>
+            Gelada
+        </h3>
+
+        <p>
+
+            Social Ethiopian primates known
+            for living in large groups.
+
+        </p>
+
+    </div>
+
+
+    <div class="monkey-card">
+
+        <div class="monkey-emoji">
+            ♨️
+        </div>
+
+        <h3>
+            Japanese Macaque
+        </h3>
+
+        <p>
+
+            Also called snow monkeys, they're
+            famous for enjoying hot springs.
+
+        </p>
+
+    </div>
+
+
+    <div class="monkey-card">
+
+        <div class="monkey-emoji">
+            🦁
+        </div>
+
+        <h3>
+            Mandrill
+        </h3>
+
+        <p>
+
+            One of the world's most colorful
+            mammals, with a spectacular face.
+
+        </p>
+
+    </div>
+
+
+    <div class="monkey-card">
+
+        <div class="monkey-emoji">
+            🌿
+        </div>
+
+        <h3>
+            Vervet Monkey
+        </h3>
+
+        <p>
+
+            Clever African monkeys with
+            surprisingly complex communication.
+
+        </p>
+
+    </div>
+
+
+</div>
+```
+
+</section>
 
 <!-- =====================================================
      FACTS
@@ -2155,84 +2166,85 @@ footer p {
 
 <section id="facts">
 
-    <div class="section-header">
+```
+<div class="section-header">
 
-        <div class="label">
-            JUNGLE KNOWLEDGE
-        </div>
+    <div class="label">
+        JUNGLE KNOWLEDGE
+    </div>
 
-        <h2>
-            Monkey Facts
-        </h2>
+    <h2>
+        Monkey Facts
+    </h2>
 
-        <p>
+    <p>
 
-            Some facts about monkeys that might
-            surprise you.
+        Some facts about monkeys that might
+        surprise you.
 
-        </p>
+    </p>
+
+</div>
+
+
+<div class="facts">
+
+
+    <div class="fact">
+
+        <strong>
+            200+
+        </strong>
+
+        <span>
+            Monkey species exist
+        </span>
 
     </div>
 
 
-    <div class="facts">
+    <div class="fact">
 
+        <strong>
+            🧠
+        </strong>
 
-        <div class="fact">
-
-            <strong>
-                200+
-            </strong>
-
-            <span>
-                Monkey species exist
-            </span>
-
-        </div>
-
-
-        <div class="fact">
-
-            <strong>
-                🧠
-            </strong>
-
-            <span>
-                Many monkeys display impressive intelligence
-            </span>
-
-        </div>
-
-
-        <div class="fact">
-
-            <strong>
-                📣
-            </strong>
-
-            <span>
-                Howler monkeys have incredibly powerful calls
-            </span>
-
-        </div>
-
-
-        <div class="fact">
-
-            <strong>
-                🌴
-            </strong>
-
-            <span>
-                Monkeys live across many different habitats
-            </span>
-
-        </div>
+        <span>
+            Many monkeys display impressive intelligence
+        </span>
 
     </div>
+
+
+    <div class="fact">
+
+        <strong>
+            📣
+        </strong>
+
+        <span>
+            Howler monkeys have incredibly powerful calls
+        </span>
+
+    </div>
+
+
+    <div class="fact">
+
+        <strong>
+            🌴
+        </strong>
+
+        <span>
+            Monkeys live across many different habitats
+        </span>
+
+    </div>
+
+</div>
+```
 
 </section>
-
 
 <!-- =====================================================
      KNOWLEDGE QUIZ
@@ -2240,105 +2252,106 @@ footer p {
 
 <section id="quiz">
 
-    <div class="section-header">
+```
+<div class="section-header">
 
-        <div class="label">
-            TEST YOURSELF
-        </div>
-
-        <h2>
-            Monkey Knowledge Quiz
-        </h2>
-
-        <p>
-
-            Think you know your monkeys?
-            Put your knowledge to the test.
-
-        </p>
-
+    <div class="label">
+        TEST YOURSELF
     </div>
 
+    <h2>
+        Monkey Knowledge Quiz
+    </h2>
 
-    <div class="quiz-box">
+    <p>
 
+        Think you know your monkeys?
+        Put your knowledge to the test.
 
-        <div id="knowledgeQuiz">
+    </p>
 
-            <div class="quiz-progress">
-
-                <div id="knowledgeProgress">
-                </div>
-
-            </div>
-
-
-            <h3
-                id="knowledgeQuestion"
-                class="quiz-question"
-            >
-            </h3>
+</div>
 
 
-            <div
-                id="knowledgeAnswers"
-                class="quiz-answers"
-            >
+<div class="quiz-box">
+
+
+    <div id="knowledgeQuiz">
+
+        <div class="quiz-progress">
+
+            <div id="knowledgeProgress">
             </div>
 
         </div>
+
+
+        <h3
+            id="knowledgeQuestion"
+            class="quiz-question"
+        >
+        </h3>
 
 
         <div
-            id="knowledgeResult"
-            style="display:none;text-align:center"
+            id="knowledgeAnswers"
+            class="quiz-answers"
         >
-
-            <div
-                style="font-size:6rem;margin-bottom:15px"
-            >
-                🧠🐒
-            </div>
-
-            <h3
-                id="knowledgeScore"
-                style="
-                    color:#a8ff72;
-                    font-size:2.5rem;
-                    margin-bottom:15px;
-                "
-            >
-            </h3>
-
-            <p
-                style="
-                    color:#aab9aa;
-                    line-height:1.8;
-                    margin-bottom:25px;
-                "
-            >
-
-                Nice work! Now discover which monkey
-                matches your personality.
-
-            </p>
-
-
-            <a
-                href="#personality"
-                class="btn primary"
-            >
-
-                🐒 Find My Monkey
-
-            </a>
-
         </div>
 
     </div>
 
-</section>
 
+    <div
+        id="knowledgeResult"
+        style="display:none;text-align:center"
+    >
+
+        <div
+            style="font-size:6rem;margin-bottom:15px"
+        >
+            🧠🐒
+        </div>
+
+        <h3
+            id="knowledgeScore"
+            style="
+                color:#a8ff72;
+                font-size:2.5rem;
+                margin-bottom:15px;
+            "
+        >
+        </h3>
+
+        <p
+            style="
+                color:#aab9aa;
+                line-height:1.8;
+                margin-bottom:25px;
+            "
+        >
+
+            Nice work! Now discover which monkey
+            matches your personality.
+
+        </p>
+
+
+        <a
+            href="#personality"
+            class="btn primary"
+        >
+
+            🐒 Find My Monkey
+
+        </a>
+
+    </div>
+
+</div>
+```
+
+</section>
 
 <!-- =====================================================
      PERSONALITY SECTION
@@ -2349,180 +2362,180 @@ footer p {
     class="personality-section"
 >
 
+```
+<div class="personality-wrapper">
 
-    <div class="personality-wrapper">
+
+    <div class="section-header">
+
+        <div class="label">
+            PERSONALITY TEST
+        </div>
+
+        <h2>
+            Which Monkey Are You?
+        </h2>
+
+        <p>
+
+            Answer 10 questions and discover
+            which monkey species matches your personality.
+
+        </p>
+
+    </div>
 
 
-        <div class="section-header">
+    <div class="personality-box">
 
-            <div class="label">
-                PERSONALITY TEST
+
+        <!-- START SCREEN -->
+
+        <div
+            id="personalityStart"
+            class="personality-start"
+        >
+
+            <div class="big-monkey">
+                🐒
             </div>
 
-            <h2>
-                Which Monkey Are You?
-            </h2>
+
+            <h3>
+                Discover Your Monkey Personality
+            </h3>
+
 
             <p>
 
-                Answer 10 questions and discover
-                which monkey species matches your personality.
+                Are you a clever Capuchin?
+                A fearless Mandrill?
+                A chaotic Squirrel Monkey?
+                Or something completely different?
 
             </p>
+
+
+            <button
+                class="btn primary"
+                onclick="startPersonalityQuiz()"
+            >
+
+                🐒 FIND MY MONKEY
+
+            </button>
 
         </div>
 
 
-        <div class="personality-box">
+        <!-- QUESTIONS -->
 
+        <div
+            id="personalityQuiz"
+            style="display:none"
+        >
 
-            <!-- START SCREEN -->
+            <div class="personality-top">
 
-            <div
-                id="personalityStart"
-                class="personality-start"
-            >
-
-                <div class="big-monkey">
-                    🐒
-                </div>
-
-
-                <h3>
-                    Discover Your Monkey Personality
-                </h3>
-
-
-                <p>
-
-                    Are you a clever Capuchin?
-                    A fearless Mandrill?
-                    A chaotic Squirrel Monkey?
-                    Or something completely different?
-
-                </p>
-
-
-                <button
-                    class="btn primary"
-                    onclick="startPersonalityQuiz()"
+                <span
+                    id="personalityQuestionNumber"
                 >
+                    Question 1 of 10
+                </span>
 
-                    🐒 FIND MY MONKEY
-
-                </button>
+                <span>
+                    🌿 Jungle Personality Test
+                </span>
 
             </div>
 
 
-            <!-- QUESTIONS -->
-
-            <div
-                id="personalityQuiz"
-                style="display:none"
-            >
-
-                <div class="personality-top">
-
-                    <span
-                        id="personalityQuestionNumber"
-                    >
-                        Question 1 of 10
-                    </span>
-
-                    <span>
-                        🌿 Jungle Personality Test
-                    </span>
-
-                </div>
-
-
-                <div class="personality-progress">
-
-                    <div
-                        id="personalityProgress"
-                    >
-                    </div>
-
-                </div>
-
-
-                <h3
-                    id="personalityQuestion"
-                    class="personality-question"
-                >
-                </h3>
-
+            <div class="personality-progress">
 
                 <div
-                    id="personalityAnswers"
-                    class="personality-answers"
+                    id="personalityProgress"
                 >
                 </div>
 
             </div>
 
 
-            <!-- RESULT -->
+            <h3
+                id="personalityQuestion"
+                class="personality-question"
+            >
+            </h3>
+
 
             <div
-                id="personalityResult"
-                class="personality-result"
-                style="display:none"
+                id="personalityAnswers"
+                class="personality-answers"
+            >
+            </div>
+
+        </div>
+
+
+        <!-- RESULT -->
+
+        <div
+            id="personalityResult"
+            class="personality-result"
+            style="display:none"
+        >
+
+            <div
+                id="resultMonkeyEmoji"
+                class="result-monkey"
+            >
+                🐒
+            </div>
+
+
+            <div class="result-small">
+                YOUR MONKEY PERSONALITY
+            </div>
+
+
+            <h3
+                id="resultMonkeyName"
+            >
+            </h3>
+
+
+            <p
+                id="resultDescription"
+            >
+            </p>
+
+
+            <div
+                id="resultTraits"
+                class="result-traits"
+            >
+            </div>
+
+
+            <br>
+
+
+            <button
+                class="btn primary"
+                onclick="retakePersonalityQuiz()"
             >
 
-                <div
-                    id="resultMonkeyEmoji"
-                    class="result-monkey"
-                >
-                    🐒
-                </div>
+                🔄 TAKE IT AGAIN
 
-
-                <div class="result-small">
-                    YOUR MONKEY PERSONALITY
-                </div>
-
-
-                <h3
-                    id="resultMonkeyName"
-                >
-                </h3>
-
-
-                <p
-                    id="resultDescription"
-                >
-                </p>
-
-
-                <div
-                    id="resultTraits"
-                    class="result-traits"
-                >
-                </div>
-
-
-                <br>
-
-
-                <button
-                    class="btn primary"
-                    onclick="retakePersonalityQuiz()"
-                >
-
-                    🔄 TAKE IT AGAIN
-
-                </button>
-
-            </div>
+            </button>
 
         </div>
 
     </div>
 
-</section>
+</div>
+```
 
+</section>
 
 <!-- =====================================================
      FOOTER
@@ -2530,18 +2543,19 @@ footer p {
 
 <footer>
 
-    <strong>
-        🐒 MONKEYWORLD
-    </strong>
+```
+<strong>
+    🐒 MONKEYWORLD
+</strong>
 
-    <p>
+<p>
 
-        Explore. Learn. Discover your inner monkey. 🌿
+    Explore. Learn. Discover your inner monkey. 🌿
 
-    </p>
+</p>
+```
 
 </footer>
-
 
 <script>
 
@@ -3604,7 +3618,6 @@ function retakePersonalityQuiz() {
 
 
 </script>
-
 
 </body>
 
