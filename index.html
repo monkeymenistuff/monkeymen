@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
@@ -7,12 +6,12 @@
 <meta charset="UTF-8">
 
 <meta
-name="viewport"
-content="width=device-width, initial-scale=1.0"
-
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
 >
 
 <title>Monkey World 🐒</title>
+
 
 <style>
 
@@ -267,17 +266,13 @@ body::after {
 @keyframes rainFall {
 
     0% {
-
         transform:
             translateY(-100px);
-
     }
 
     100% {
-
         transform:
             translateY(110vh);
-
     }
 
 }
@@ -976,6 +971,29 @@ section {
 
 
 /* =========================================================
+   GREAT APES BUTTON
+========================================================= */
+
+.great-apes-link {
+
+    text-align:
+        center;
+
+    margin-top:
+        45px;
+
+}
+
+
+.great-apes-link .btn {
+
+    font-size:
+        1rem;
+
+}
+
+
+/* =========================================================
    FACTS
 ========================================================= */
 
@@ -1197,199 +1215,24 @@ section {
 
 
 /* =========================================================
-   PERSONALITY SECTION
+   QUIZ RESULT
 ========================================================= */
 
-.personality-section {
-
-    min-height:
-        850px;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    background:
-
-        linear-gradient(
-            90deg,
-            rgba(2,18,8,.95),
-            rgba(2,18,8,.58),
-            rgba(2,18,8,.90)
-        ),
-
-        url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSl5-8uH0oLdqHOtUY6UumpRGmUIw99KpBdn92SdVRYYw&s=10")
-
-        center / cover no-repeat;
-
-}
-
-
-.personality-wrapper {
-
-    width:
-        100%;
-
-}
-
-
-.personality-box {
-
-    max-width:
-        900px;
-
-    margin:
-        auto;
-
-    padding:
-        45px;
-
-    background:
-        rgba(3,20,9,.82);
-
-    backdrop-filter:
-        blur(22px);
-
-    border:
-        1px solid
-        rgba(255,255,255,.12);
-
-    border-radius:
-        30px;
-
-    box-shadow:
-        0 30px 100px
-        rgba(0,0,0,.45);
-
-}
-
-
-.personality-start {
+#knowledgeResult {
 
     text-align:
         center;
 
-    padding:
-        30px 10px;
-
 }
 
 
-.big-monkey {
-
-    font-size:
-        7rem;
-
-    margin-bottom:
-        20px;
-
-    animation:
-        monkeyFloat 3s ease-in-out infinite;
-
-}
-
-
-.personality-start h3 {
-
-    font-size:
-        2rem;
-
-    margin-bottom:
-        15px;
-
-}
-
-
-.personality-start p {
-
-    max-width:
-        600px;
-
-    margin:
-        0 auto 28px;
+#knowledgeResult p {
 
     color:
         var(--muted);
 
     line-height:
         1.8;
-
-}
-
-
-.personality-top {
-
-    display:
-        flex;
-
-    justify-content:
-        space-between;
-
-    margin-bottom:
-        15px;
-
-    color:
-        var(--muted);
-
-    font-size:
-        .9rem;
-
-    font-weight:
-        800;
-
-}
-
-
-.personality-progress {
-
-    height:
-        8px;
-
-    background:
-        rgba(255,255,255,.07);
-
-    border-radius:
-        50px;
-
-    overflow:
-        hidden;
-
-    margin-bottom:
-        40px;
-
-}
-
-
-.personality-progress div {
-
-    width:
-        0%;
-
-    height:
-        100%;
-
-    background:
-        linear-gradient(
-            90deg,
-            #52db62,
-            #baff70
-        );
-
-    transition:
-        width .4s ease;
-
-}
-
-
-.personality-question {
-
-    font-size:
-        clamp(1.5rem,4vw,2.4rem);
-
-    line-height:
-        1.3;
 
     margin-bottom:
         25px;
@@ -1397,150 +1240,88 @@ section {
 }
 
 
-.personality-answers {
+/* =========================================================
+   PAGE LINKS
+========================================================= */
+
+.page-links {
+
+    max-width:
+        1000px;
+
+    margin:
+        30px auto 0;
 
     display:
         grid;
 
+    grid-template-columns:
+        repeat(auto-fit,minmax(250px,1fr));
+
     gap:
-        13px;
+        18px;
 
 }
 
 
-.personality-answer {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    gap:
-        15px;
-
-    width:
-        100%;
+.page-link-card {
 
     padding:
-        18px;
+        30px;
+
+    text-decoration:
+        none;
 
     color:
         white;
 
-    text-align:
-        left;
-
     background:
-        rgba(255,255,255,.045);
+        linear-gradient(
+            145deg,
+            rgba(10,40,19,.9),
+            rgba(4,20,10,.8)
+        );
 
     border:
         1px solid
-        rgba(255,255,255,.10);
+        rgba(255,255,255,.08);
 
     border-radius:
-        15px;
-
-    cursor:
-        pointer;
-
-    font-size:
-        1rem;
-
-    font-weight:
-        700;
+        22px;
 
     transition:
-        .25s;
+        .3s;
 
 }
 
 
-.personality-answer span {
-
-    width:
-        35px;
-
-    height:
-        35px;
-
-    min-width:
-        35px;
-
-    display:
-        grid;
-
-    place-items:
-        center;
-
-    border-radius:
-        10px;
-
-    color:
-        var(--green);
-
-    background:
-        rgba(168,255,114,.1);
-
-}
-
-
-.personality-answer:hover {
+.page-link-card:hover {
 
     transform:
-        translateX(7px);
-
-    background:
-        rgba(168,255,114,.08);
+        translateY(-8px);
 
     border-color:
         rgba(168,255,114,.35);
 
-}
-
-
-/* =========================================================
-   PERSONALITY RESULT
-========================================================= */
-
-.personality-result {
-
-    text-align:
-        center;
-
-    padding:
-        25px 10px;
+    box-shadow:
+        0 20px 60px
+        rgba(0,0,0,.3);
 
 }
 
 
-.result-monkey {
+.page-link-icon {
 
     font-size:
-        8rem;
+        3rem;
 
     margin-bottom:
         15px;
 
-    animation:
-        monkeyFloat 3s infinite;
-
 }
 
 
-.result-small {
-
-    color:
-        var(--green);
-
-    font-size:
-        .75rem;
-
-    font-weight:
-        900;
-
-    letter-spacing:
-        2px;
+.page-link-card h3 {
 
     margin-bottom:
         10px;
@@ -1548,88 +1329,16 @@ section {
 }
 
 
-#resultMonkeyName {
-
-    font-size:
-        clamp(2rem,6vw,4rem);
-
-    margin-bottom:
-        20px;
-
-}
-
-
-#resultDescription {
-
-    max-width:
-        650px;
-
-    margin:
-        0 auto 25px;
+.page-link-card p {
 
     color:
         var(--muted);
 
-    font-size:
-        1.1rem;
-
     line-height:
-        1.8;
+        1.6;
 
-}
-
-
-.result-traits {
-
-    display:
-        inline-block;
-
-    padding:
-        13px 20px;
-
-    margin-bottom:
-        30px;
-
-    border:
-        1px solid
-        rgba(168,255,114,.2);
-
-    background:
-        rgba(168,255,114,.07);
-
-    border-radius:
-        100px;
-
-    color:
-        #d8ffc0;
-
-    font-weight:
-        800;
-
-}
-
-
-/* =========================================================
-   ANIMATIONS
-========================================================= */
-
-@keyframes monkeyFloat {
-
-    0%,100% {
-
-        transform:
-            translateY(0)
-            rotate(-2deg);
-
-    }
-
-    50% {
-
-        transform:
-            translateY(-14px)
-            rotate(2deg);
-
-    }
+    font-size:
+        .9rem;
 
 }
 
@@ -1719,29 +1428,10 @@ footer p {
 
     }
 
-    .quiz-box,
-    .personality-box {
+    .quiz-box {
 
         padding:
             25px 18px;
-
-    }
-
-    .personality-top {
-
-        flex-direction:
-            column;
-
-        gap:
-            6px;
-
-    }
-
-    .big-monkey,
-    .result-monkey {
-
-        font-size:
-            5rem;
 
     }
 
@@ -1751,7 +1441,9 @@ footer p {
 
 </head>
 
+
 <body>
+
 
 <!-- =====================================================
      RAIN
@@ -1759,24 +1451,23 @@ footer p {
 
 <div class="rain">
 
-```
-<div class="drop"></div>
-<div class="drop"></div>
-<div class="drop"></div>
-<div class="drop"></div>
-<div class="drop"></div>
-<div class="drop"></div>
-<div class="drop"></div>
-<div class="drop"></div>
-<div class="drop"></div>
-<div class="drop"></div>
-<div class="drop"></div>
-<div class="drop"></div>
-<div class="drop"></div>
-<div class="drop"></div>
-```
+    <div class="drop"></div>
+    <div class="drop"></div>
+    <div class="drop"></div>
+    <div class="drop"></div>
+    <div class="drop"></div>
+    <div class="drop"></div>
+    <div class="drop"></div>
+    <div class="drop"></div>
+    <div class="drop"></div>
+    <div class="drop"></div>
+    <div class="drop"></div>
+    <div class="drop"></div>
+    <div class="drop"></div>
+    <div class="drop"></div>
 
 </div>
+
 
 <!-- =====================================================
      MIST
@@ -1784,20 +1475,20 @@ footer p {
 
 <div class="mist"></div>
 
+
 <!-- =====================================================
      FLOATING LEAVES
 ===================================================== -->
 
 <div class="leaves">
 
-```
-<div class="leaf">🍃</div>
-<div class="leaf">🌿</div>
-<div class="leaf">🍃</div>
-<div class="leaf">🌿</div>
-```
+    <div class="leaf">🍃</div>
+    <div class="leaf">🌿</div>
+    <div class="leaf">🍃</div>
+    <div class="leaf">🌿</div>
 
 </div>
+
 
 <!-- =====================================================
      NAVIGATION
@@ -1805,44 +1496,43 @@ footer p {
 
 <nav>
 
-```
-<div class="logo">
+    <div class="logo">
 
-    🐒 MONKEY<span>WORLD</span>
+        🐒 MONKEY<span>WORLD</span>
 
-</div>
+    </div>
 
 
-<div class="nav-links">
+    <div class="nav-links">
 
-    <a href="#home">
-        Home
-    </a>
+        <a href="index.html">
+            Home
+        </a>
 
-    <a href="#monkeys">
-        Species
-    </a>
+        <a href="#monkeys">
+            Species
+        </a>
 
-    <a href="great-apes.html">
-        Great Apes
-    </a>
+        <a href="#facts">
+            Facts
+        </a>
 
-    <a href="#facts">
-        Facts
-    </a>
+        <a href="#quiz">
+            Quiz
+        </a>
 
-    <a href="#quiz">
-        Quiz
-    </a>
+        <a href="great-apes.html">
+            Great Apes
+        </a>
 
-    <a href="#personality">
-        Personality
-    </a>
+        <a href="personality.html">
+            Personality
+        </a>
 
-</div>
-```
+    </div>
 
 </nav>
+
 
 <!-- =====================================================
      HERO
@@ -1853,72 +1543,61 @@ footer p {
     id="home"
 >
 
-```
-<div class="hero-content">
+    <div class="hero-content">
 
-    <div class="badge">
+        <div class="badge">
 
-        🌿 WELCOME TO THE RAINFOREST
+            🌿 WELCOME TO THE RAINFOREST
 
-    </div>
-
-
-    <h1>
-
-        ENTER THE<br>
-
-        <span>JUNGLE.</span>
-
-    </h1>
+        </div>
 
 
-    <p>
+        <h1>
 
-        Explore the fascinating world of monkeys.
-        Learn about incredible species, discover
-        strange facts, test your knowledge and find
-        out which monkey matches your personality.
+            ENTER THE<br>
 
-    </p>
+            <span>JUNGLE.</span>
 
-
-    <div class="buttons">
-
-        <a
-            href="#personality"
-            class="btn primary"
-        >
-
-            🐒 Find My Monkey
-
-        </a>
+        </h1>
 
 
-        <a
-            href="#monkeys"
-            class="btn secondary"
-        >
+        <p>
 
-            🌿 Explore Species
+            Explore the fascinating world of monkeys.
+            Learn about incredible species, discover
+            strange facts, test your knowledge and
+            discover your inner monkey.
 
-        </a>
+        </p>
 
 
-        <a
-            href="great-apes.html"
-            class="btn secondary"
-        >
+        <div class="buttons">
 
-            🦍 Explore Great Apes
+            <a
+                href="personality.html"
+                class="btn primary"
+            >
 
-        </a>
+                🐒 Find My Monkey
+
+            </a>
+
+
+            <a
+                href="#monkeys"
+                class="btn secondary"
+            >
+
+                🌿 Explore Species
+
+            </a>
+
+        </div>
 
     </div>
-
-</div>
-```
 
 </section>
+
 
 <!-- =====================================================
      SPECIES
@@ -1926,239 +1605,254 @@ footer p {
 
 <section id="monkeys">
 
-```
-<div class="vine left">
-    🌿
-</div>
-
-
-<div class="section-header">
-
-    <div class="label">
-        THE JUNGLE
+    <div class="vine left">
+        🌿
     </div>
 
-    <h2>
-        Meet The Monkeys
-    </h2>
 
-    <p>
+    <div class="section-header">
 
-        From tiny tamarins to powerful mandrills,
-        the monkey world is incredibly diverse.
-
-    </p>
-
-</div>
-
-
-<div class="monkey-grid">
-
-
-    <div class="monkey-card">
-
-        <div class="monkey-emoji">
-            🐒
+        <div class="label">
+            THE JUNGLE
         </div>
 
-        <h3>
-            Capuchin
-        </h3>
+        <h2>
+            Meet The Monkeys
+        </h2>
 
         <p>
 
-            Clever, curious monkeys famous for
-            their impressive problem-solving abilities.
+            From tiny tamarins to powerful mandrills,
+            the monkey world is incredibly diverse.
 
         </p>
 
     </div>
 
 
-    <div class="monkey-card">
+    <div class="monkey-grid">
 
-        <div class="monkey-emoji">
-            🕷️
+
+        <div class="monkey-card">
+
+            <div class="monkey-emoji">
+                🐒
+            </div>
+
+            <h3>
+                Capuchin
+            </h3>
+
+            <p>
+
+                Clever, curious monkeys famous for
+                their impressive problem-solving abilities.
+
+            </p>
+
         </div>
 
-        <h3>
-            Spider Monkey
-        </h3>
 
-        <p>
+        <div class="monkey-card">
 
-            Incredible climbers with long limbs
-            and powerful gripping tails.
+            <div class="monkey-emoji">
+                🕷️
+            </div>
 
-        </p>
+            <h3>
+                Spider Monkey
+            </h3>
+
+            <p>
+
+                Incredible climbers with long limbs
+                and powerful gripping tails.
+
+            </p>
+
+        </div>
+
+
+        <div class="monkey-card">
+
+            <div class="monkey-emoji">
+                📣
+            </div>
+
+            <h3>
+                Howler Monkey
+            </h3>
+
+            <p>
+
+                Their enormous calls can travel
+                surprisingly far through the rainforest.
+
+            </p>
+
+        </div>
+
+
+        <div class="monkey-card">
+
+            <div class="monkey-emoji">
+                🐵
+            </div>
+
+            <h3>
+                Squirrel Monkey
+            </h3>
+
+            <p>
+
+                Tiny, energetic and extremely social
+                monkeys that live in groups.
+
+            </p>
+
+        </div>
+
+
+        <div class="monkey-card">
+
+            <div class="monkey-emoji">
+                🌴
+            </div>
+
+            <h3>
+                Proboscis Monkey
+            </h3>
+
+            <p>
+
+                Famous for their enormous noses and
+                their love of swampy habitats.
+
+            </p>
+
+        </div>
+
+
+        <div class="monkey-card">
+
+            <div class="monkey-emoji">
+                👑
+            </div>
+
+            <h3>
+                Golden Lion Tamarin
+            </h3>
+
+            <p>
+
+                Small Brazilian monkeys with
+                spectacular golden-orange fur.
+
+            </p>
+
+        </div>
+
+
+        <div class="monkey-card">
+
+            <div class="monkey-emoji">
+                🏔️
+            </div>
+
+            <h3>
+                Gelada
+            </h3>
+
+            <p>
+
+                Social Ethiopian primates known
+                for living in large groups.
+
+            </p>
+
+        </div>
+
+
+        <div class="monkey-card">
+
+            <div class="monkey-emoji">
+                ♨️
+            </div>
+
+            <h3>
+                Japanese Macaque
+            </h3>
+
+            <p>
+
+                Also called snow monkeys, they're
+                famous for enjoying hot springs.
+
+            </p>
+
+        </div>
+
+
+        <div class="monkey-card">
+
+            <div class="monkey-emoji">
+                🦁
+            </div>
+
+            <h3>
+                Mandrill
+            </h3>
+
+            <p>
+
+                One of the world's most colorful
+                mammals, with a spectacular face.
+
+            </p>
+
+        </div>
+
+
+        <div class="monkey-card">
+
+            <div class="monkey-emoji">
+                🌿
+            </div>
+
+            <h3>
+                Vervet Monkey
+            </h3>
+
+            <p>
+
+                Clever African monkeys with
+                surprisingly complex communication.
+
+            </p>
+
+        </div>
+
 
     </div>
 
 
-    <div class="monkey-card">
+    <!-- GREAT APES LINK -->
 
-        <div class="monkey-emoji">
-            📣
-        </div>
+    <div class="great-apes-link">
 
-        <h3>
-            Howler Monkey
-        </h3>
+        <a
+            href="great-apes.html"
+            class="btn primary"
+        >
 
-        <p>
+            🦍 Explore The Great Apes
 
-            Their enormous calls can travel
-            surprisingly far through the rainforest.
-
-        </p>
+        </a>
 
     </div>
-
-
-    <div class="monkey-card">
-
-        <div class="monkey-emoji">
-            🐵
-        </div>
-
-        <h3>
-            Squirrel Monkey
-        </h3>
-
-        <p>
-
-            Tiny, energetic and extremely social
-            monkeys that live in groups.
-
-        </p>
-
-    </div>
-
-
-    <div class="monkey-card">
-
-        <div class="monkey-emoji">
-            🌴
-        </div>
-
-        <h3>
-            Proboscis Monkey
-        </h3>
-
-        <p>
-
-            Famous for their enormous noses and
-            their love of swampy habitats.
-
-        </p>
-
-    </div>
-
-
-    <div class="monkey-card">
-
-        <div class="monkey-emoji">
-            👑
-        </div>
-
-        <h3>
-            Golden Lion Tamarin
-        </h3>
-
-        <p>
-
-            Small Brazilian monkeys with
-            spectacular golden-orange fur.
-
-        </p>
-
-    </div>
-
-
-    <div class="monkey-card">
-
-        <div class="monkey-emoji">
-            🏔️
-        </div>
-
-        <h3>
-            Gelada
-        </h3>
-
-        <p>
-
-            Social Ethiopian primates known
-            for living in large groups.
-
-        </p>
-
-    </div>
-
-
-    <div class="monkey-card">
-
-        <div class="monkey-emoji">
-            ♨️
-        </div>
-
-        <h3>
-            Japanese Macaque
-        </h3>
-
-        <p>
-
-            Also called snow monkeys, they're
-            famous for enjoying hot springs.
-
-        </p>
-
-    </div>
-
-
-    <div class="monkey-card">
-
-        <div class="monkey-emoji">
-            🦁
-        </div>
-
-        <h3>
-            Mandrill
-        </h3>
-
-        <p>
-
-            One of the world's most colorful
-            mammals, with a spectacular face.
-
-        </p>
-
-    </div>
-
-
-    <div class="monkey-card">
-
-        <div class="monkey-emoji">
-            🌿
-        </div>
-
-        <h3>
-            Vervet Monkey
-        </h3>
-
-        <p>
-
-            Clever African monkeys with
-            surprisingly complex communication.
-
-        </p>
-
-    </div>
-
-
-</div>
-```
 
 </section>
+
 
 <!-- =====================================================
      FACTS
@@ -2166,85 +1860,84 @@ footer p {
 
 <section id="facts">
 
-```
-<div class="section-header">
+    <div class="section-header">
 
-    <div class="label">
-        JUNGLE KNOWLEDGE
-    </div>
+        <div class="label">
+            JUNGLE KNOWLEDGE
+        </div>
 
-    <h2>
-        Monkey Facts
-    </h2>
+        <h2>
+            Monkey Facts
+        </h2>
 
-    <p>
+        <p>
 
-        Some facts about monkeys that might
-        surprise you.
+            Some facts about monkeys that might
+            surprise you.
 
-    </p>
-
-</div>
-
-
-<div class="facts">
-
-
-    <div class="fact">
-
-        <strong>
-            200+
-        </strong>
-
-        <span>
-            Monkey species exist
-        </span>
+        </p>
 
     </div>
 
 
-    <div class="fact">
+    <div class="facts">
 
-        <strong>
-            🧠
-        </strong>
 
-        <span>
-            Many monkeys display impressive intelligence
-        </span>
+        <div class="fact">
+
+            <strong>
+                200+
+            </strong>
+
+            <span>
+                Monkey species exist
+            </span>
+
+        </div>
+
+
+        <div class="fact">
+
+            <strong>
+                🧠
+            </strong>
+
+            <span>
+                Many monkeys display impressive intelligence
+            </span>
+
+        </div>
+
+
+        <div class="fact">
+
+            <strong>
+                📣
+            </strong>
+
+            <span>
+                Howler monkeys have incredibly powerful calls
+            </span>
+
+        </div>
+
+
+        <div class="fact">
+
+            <strong>
+                🌴
+            </strong>
+
+            <span>
+                Monkeys live across many different habitats
+            </span>
+
+        </div>
 
     </div>
-
-
-    <div class="fact">
-
-        <strong>
-            📣
-        </strong>
-
-        <span>
-            Howler monkeys have incredibly powerful calls
-        </span>
-
-    </div>
-
-
-    <div class="fact">
-
-        <strong>
-            🌴
-        </strong>
-
-        <span>
-            Monkeys live across many different habitats
-        </span>
-
-    </div>
-
-</div>
-```
 
 </section>
+
 
 <!-- =====================================================
      KNOWLEDGE QUIZ
@@ -2252,290 +1945,184 @@ footer p {
 
 <section id="quiz">
 
-```
-<div class="section-header">
-
-    <div class="label">
-        TEST YOURSELF
-    </div>
-
-    <h2>
-        Monkey Knowledge Quiz
-    </h2>
-
-    <p>
-
-        Think you know your monkeys?
-        Put your knowledge to the test.
-
-    </p>
-
-</div>
-
-
-<div class="quiz-box">
-
-
-    <div id="knowledgeQuiz">
-
-        <div class="quiz-progress">
-
-            <div id="knowledgeProgress">
-            </div>
-
-        </div>
-
-
-        <h3
-            id="knowledgeQuestion"
-            class="quiz-question"
-        >
-        </h3>
-
-
-        <div
-            id="knowledgeAnswers"
-            class="quiz-answers"
-        >
-        </div>
-
-    </div>
-
-
-    <div
-        id="knowledgeResult"
-        style="display:none;text-align:center"
-    >
-
-        <div
-            style="font-size:6rem;margin-bottom:15px"
-        >
-            🧠🐒
-        </div>
-
-        <h3
-            id="knowledgeScore"
-            style="
-                color:#a8ff72;
-                font-size:2.5rem;
-                margin-bottom:15px;
-            "
-        >
-        </h3>
-
-        <p
-            style="
-                color:#aab9aa;
-                line-height:1.8;
-                margin-bottom:25px;
-            "
-        >
-
-            Nice work! Now discover which monkey
-            matches your personality.
-
-        </p>
-
-
-        <a
-            href="#personality"
-            class="btn primary"
-        >
-
-            🐒 Find My Monkey
-
-        </a>
-
-    </div>
-
-</div>
-```
-
-</section>
-
-<!-- =====================================================
-     PERSONALITY SECTION
-===================================================== -->
-
-<section
-    id="personality"
-    class="personality-section"
->
-
-```
-<div class="personality-wrapper">
-
-
     <div class="section-header">
 
         <div class="label">
-            PERSONALITY TEST
+            TEST YOURSELF
         </div>
 
         <h2>
-            Which Monkey Are You?
+            Monkey Knowledge Quiz
         </h2>
 
         <p>
 
-            Answer 10 questions and discover
-            which monkey species matches your personality.
+            Think you know your monkeys?
+            Put your knowledge to the test.
 
         </p>
 
     </div>
 
 
-    <div class="personality-box">
+    <div class="quiz-box">
 
 
-        <!-- START SCREEN -->
+        <div id="knowledgeQuiz">
 
-        <div
-            id="personalityStart"
-            class="personality-start"
-        >
+            <div class="quiz-progress">
 
-            <div class="big-monkey">
-                🐒
-            </div>
-
-
-            <h3>
-                Discover Your Monkey Personality
-            </h3>
-
-
-            <p>
-
-                Are you a clever Capuchin?
-                A fearless Mandrill?
-                A chaotic Squirrel Monkey?
-                Or something completely different?
-
-            </p>
-
-
-            <button
-                class="btn primary"
-                onclick="startPersonalityQuiz()"
-            >
-
-                🐒 FIND MY MONKEY
-
-            </button>
-
-        </div>
-
-
-        <!-- QUESTIONS -->
-
-        <div
-            id="personalityQuiz"
-            style="display:none"
-        >
-
-            <div class="personality-top">
-
-                <span
-                    id="personalityQuestionNumber"
-                >
-                    Question 1 of 10
-                </span>
-
-                <span>
-                    🌿 Jungle Personality Test
-                </span>
-
-            </div>
-
-
-            <div class="personality-progress">
-
-                <div
-                    id="personalityProgress"
-                >
+                <div id="knowledgeProgress">
                 </div>
 
             </div>
 
 
             <h3
-                id="personalityQuestion"
-                class="personality-question"
+                id="knowledgeQuestion"
+                class="quiz-question"
             >
             </h3>
 
 
             <div
-                id="personalityAnswers"
-                class="personality-answers"
+                id="knowledgeAnswers"
+                class="quiz-answers"
             >
             </div>
 
         </div>
 
 
-        <!-- RESULT -->
-
         <div
-            id="personalityResult"
-            class="personality-result"
+            id="knowledgeResult"
             style="display:none"
         >
 
             <div
-                id="resultMonkeyEmoji"
-                class="result-monkey"
+                style="
+                    font-size:6rem;
+                    margin-bottom:15px;
+                "
             >
-                🐒
-            </div>
-
-
-            <div class="result-small">
-                YOUR MONKEY PERSONALITY
+                🧠🐒
             </div>
 
 
             <h3
-                id="resultMonkeyName"
+                id="knowledgeScore"
+                style="
+                    color:#a8ff72;
+                    font-size:2.5rem;
+                    margin-bottom:15px;
+                "
             >
             </h3>
 
 
-            <p
-                id="resultDescription"
-            >
+            <p>
+
+                Nice work! Now discover which monkey
+                matches your personality.
+
             </p>
 
 
-            <div
-                id="resultTraits"
-                class="result-traits"
-            >
-            </div>
-
-
-            <br>
-
-
-            <button
+            <a
+                href="personality.html"
                 class="btn primary"
-                onclick="retakePersonalityQuiz()"
             >
 
-                🔄 TAKE IT AGAIN
+                🐒 Find My Monkey
 
-            </button>
+            </a>
 
         </div>
 
     </div>
 
-</div>
-```
+</section>
+
+
+<!-- =====================================================
+     EXPLORE MORE
+===================================================== -->
+
+<section>
+
+    <div class="section-header">
+
+        <div class="label">
+            KEEP EXPLORING
+        </div>
+
+        <h2>
+            More Of The Jungle
+        </h2>
+
+        <p>
+
+            Ready to go deeper? Explore the great apes
+            or discover which monkey matches your personality.
+
+        </p>
+
+    </div>
+
+
+    <div class="page-links">
+
+
+        <a
+            href="great-apes.html"
+            class="page-link-card"
+        >
+
+            <div class="page-link-icon">
+                🦍
+            </div>
+
+            <h3>
+                Great Apes
+            </h3>
+
+            <p>
+
+                Meet gorillas, chimpanzees, bonobos,
+                orangutans and humans.
+
+            </p>
+
+        </a>
+
+
+        <a
+            href="personality.html"
+            class="page-link-card"
+        >
+
+            <div class="page-link-icon">
+                🐒
+            </div>
+
+            <h3>
+                Personality Test
+            </h3>
+
+            <p>
+
+                Answer the questions and discover
+                which monkey matches your personality.
+
+            </p>
+
+        </a>
+
+
+    </div>
 
 </section>
+
 
 <!-- =====================================================
      FOOTER
@@ -2543,19 +2130,18 @@ footer p {
 
 <footer>
 
-```
-<strong>
-    🐒 MONKEYWORLD
-</strong>
+    <strong>
+        🐒 MONKEYWORLD
+    </strong>
 
-<p>
+    <p>
 
-    Explore. Learn. Discover your inner monkey. 🌿
+        Explore. Learn. Discover your inner monkey. 🌿
 
-</p>
-```
+    </p>
 
 </footer>
+
 
 <script>
 
@@ -2668,6 +2254,10 @@ let knowledgeIndex = 0;
 let knowledgeScore = 0;
 
 
+/* =========================================================
+   LOAD KNOWLEDGE QUESTION
+========================================================= */
+
 function loadKnowledgeQuestion() {
 
     const q =
@@ -2748,6 +2338,12 @@ function loadKnowledgeQuestion() {
 
 
                         document.getElementById(
+                            "knowledgeProgress"
+                        ).style.width =
+                            "100%";
+
+
+                        document.getElementById(
                             "knowledgeScore"
                         ).textContent =
                             `${knowledgeScore} / ${knowledgeQuestions.length} Correct! 🐒`;
@@ -2773,851 +2369,15 @@ function loadKnowledgeQuestion() {
 }
 
 
+/* =========================================================
+   START QUIZ
+========================================================= */
+
 loadKnowledgeQuestion();
 
 
-
-/* =========================================================
-   PERSONALITY QUESTIONS
-========================================================= */
-
-const personalityQuestions = [
-
-
-    {
-
-        question:
-        "You have a completely free day. What are you doing?",
-
-        answers: [
-
-            [
-                "Exploring somewhere I've never been",
-                "capuchin"
-            ],
-
-            [
-                "Hanging out with a huge group of friends",
-                "gelada"
-            ],
-
-            [
-                "Finding somewhere peaceful to relax",
-                "macaque"
-            ],
-
-            [
-                "Going on a wild adventure",
-                "spider"
-            ]
-
-        ]
-
-    },
-
-
-    {
-
-        question:
-        "Someone gives you a difficult puzzle. You...",
-
-        answers: [
-
-            [
-                "Immediately start experimenting with it",
-                "capuchin"
-            ],
-
-            [
-                "Ask everyone else what they think",
-                "gelada"
-            ],
-
-            [
-                "Quietly figure it out myself",
-                "macaque"
-            ],
-
-            [
-                "Try something completely unexpected",
-                "lion"
-            ]
-
-        ]
-
-    },
-
-
-    {
-
-        question:
-        "What's your biggest strength?",
-
-        answers: [
-
-            [
-                "I'm extremely social",
-                "gelada"
-            ],
-
-            [
-                "I'm clever and adaptable",
-                "capuchin"
-            ],
-
-            [
-                "I'm confident",
-                "mandrill"
-            ],
-
-            [
-                "I'm calm under pressure",
-                "macaque"
-            ]
-
-        ]
-
-    },
-
-
-    {
-
-        question:
-        "Pick a place to live.",
-
-        answers: [
-
-            [
-                "A huge rainforest",
-                "spider"
-            ],
-
-            [
-                "A beautiful mountain landscape",
-                "gelada"
-            ],
-
-            [
-                "A tropical island",
-                "proboscis"
-            ],
-
-            [
-                "A forest full of trees to explore",
-                "capuchin"
-            ]
-
-        ]
-
-    },
-
-
-    {
-
-        question:
-        "Your friend is upset. What do you do?",
-
-        answers: [
-
-            [
-                "Make them laugh",
-                "squirrel"
-            ],
-
-            [
-                "Stay beside them and listen",
-                "macaque"
-            ],
-
-            [
-                "Get everyone together to help",
-                "gelada"
-            ],
-
-            [
-                "Give them space but check on them later",
-                "vervet"
-            ]
-
-        ]
-
-    },
-
-
-    {
-
-        question:
-        "Which word describes you best?",
-
-        answers: [
-
-            [
-                "Curious",
-                "capuchin"
-            ],
-
-            [
-                "Dramatic",
-                "howler"
-            ],
-
-            [
-                "Fearless",
-                "mandrill"
-            ],
-
-            [
-                "Playful",
-                "squirrel"
-            ]
-
-        ]
-
-    },
-
-
-    {
-
-        question:
-        "At a party, you're probably...",
-
-        answers: [
-
-            [
-                "The loudest person there",
-                "howler"
-            ],
-
-            [
-                "Making everyone laugh",
-                "squirrel"
-            ],
-
-            [
-                "Talking to absolutely everyone",
-                "gelada"
-            ],
-
-            [
-                "Watching everything from the side",
-                "vervet"
-            ]
-
-        ]
-
-    },
-
-
-    {
-
-        question:
-        "What's your ideal way to solve a problem?",
-
-        answers: [
-
-            [
-                "Use creativity",
-                "capuchin"
-            ],
-
-            [
-                "Work with other people",
-                "gelada"
-            ],
-
-            [
-                "Use confidence and determination",
-                "mandrill"
-            ],
-
-            [
-                "Try something completely different",
-                "lion"
-            ]
-
-        ]
-
-    },
-
-
-    {
-
-        question:
-        "Choose a vibe.",
-
-        answers: [
-
-            [
-                "Chaotic genius 🧠",
-                "capuchin"
-            ],
-
-            [
-                "Elegant and mysterious ✨",
-                "lion"
-            ],
-
-            [
-                "Wild and energetic ⚡",
-                "squirrel"
-            ],
-
-            [
-                "Chill and observant 🌿",
-                "macaque"
-            ]
-
-        ]
-
-    },
-
-
-    {
-
-        question:
-        "If your friends had to describe you, they'd say...",
-
-        answers: [
-
-            [
-                "The clever one",
-                "capuchin"
-            ],
-
-            [
-                "The funny one",
-                "squirrel"
-            ],
-
-            [
-                "The leader",
-                "mandrill"
-            ],
-
-            [
-                "The adventurous one",
-                "spider"
-            ]
-
-        ]
-
-    }
-
-];
-
-
-
-/* =========================================================
-   RESULTS
-========================================================= */
-
-const monkeyResults = {
-
-
-    capuchin: {
-
-        name:
-            "Capuchin",
-
-        emoji:
-            "🐒",
-
-        color:
-            "#a8ff72",
-
-        description:
-            "You're curious, clever and incredibly adaptable. You love figuring things out and you're probably the person who touches every button just to see what happens.",
-
-        traits:
-            "🧠 Clever • 🔎 Curious • ⚡ Energetic"
-
-    },
-
-
-    spider: {
-
-        name:
-            "Spider Monkey",
-
-        emoji:
-            "🕷️",
-
-        color:
-            "#65d8ff",
-
-        description:
-            "You're adventurous, flexible and love exploring. You aren't afraid of taking the unconventional route to get where you want to go.",
-
-        traits:
-            "🌳 Adventurous • 🤸 Flexible • 🌎 Explorer"
-
-    },
-
-
-    howler: {
-
-        name:
-            "Howler Monkey",
-
-        emoji:
-            "📣",
-
-        color:
-            "#ff8a65",
-
-        description:
-            "You have a BIG personality. You're expressive, confident and definitely not afraid to make yourself heard.",
-
-        traits:
-            "📣 Loud • 😎 Confident • 🔥 Expressive"
-
-    },
-
-
-    squirrel: {
-
-        name:
-            "Squirrel Monkey",
-
-        emoji:
-            "🐵",
-
-        color:
-            "#ffd166",
-
-        description:
-            "You're playful, energetic and always ready for fun. You bring energy into almost every room you enter.",
-
-        traits:
-            "😂 Funny • ⚡ Energetic • 🎉 Playful"
-
-    },
-
-
-    proboscis: {
-
-        name:
-            "Proboscis Monkey",
-
-        emoji:
-            "🌴",
-
-        color:
-            "#ff9f43",
-
-        description:
-            "You're unique and comfortable being yourself. You don't need to follow everyone else — your individuality is your superpower.",
-
-        traits:
-            "🌟 Unique • 🌿 Relaxed • 😌 Independent"
-
-    },
-
-
-    lion: {
-
-        name:
-            "Golden Lion Tamarin",
-
-        emoji:
-            "👑",
-
-        color:
-            "#ffb347",
-
-        description:
-            "You're charismatic, confident and impossible to overlook. You have a natural presence that makes people notice you.",
-
-        traits:
-            "👑 Charismatic • ✨ Stylish • 💪 Confident"
-
-    },
-
-
-    gelada: {
-
-        name:
-            "Gelada",
-
-        emoji:
-            "🏔️",
-
-        color:
-            "#c084fc",
-
-        description:
-            "You're extremely social and value your friendships. You thrive when you're surrounded by people you trust.",
-
-        traits:
-            "👥 Social • ❤️ Loyal • 🤝 Cooperative"
-
-    },
-
-
-    macaque: {
-
-        name:
-            "Japanese Macaque",
-
-        emoji:
-            "♨️",
-
-        color:
-            "#ff7b9c",
-
-        description:
-            "You're calm, observant and surprisingly adaptable. You know when to relax and when it's time to take action.",
-
-        traits:
-            "🧘 Calm • 👀 Observant • 🌿 Adaptable"
-
-    },
-
-
-    mandrill: {
-
-        name:
-            "Mandrill",
-
-        emoji:
-            "🦁",
-
-        color:
-            "#ff4d6d",
-
-        description:
-            "You're bold, confident and naturally stand out from the crowd. When you want something, you go after it.",
-
-        traits:
-            "🔥 Bold • 👑 Leader • 💥 Fearless"
-
-    },
-
-
-    vervet: {
-
-        name:
-            "Vervet Monkey",
-
-        emoji:
-            "🌿",
-
-        color:
-            "#74c69d",
-
-        description:
-            "You're observant, thoughtful and good at reading the room. You notice things that other people sometimes miss.",
-
-        traits:
-            "👀 Observant • 🧠 Thoughtful • 🌿 Calm"
-
-    }
-
-};
-
-
-
-/* =========================================================
-   PERSONALITY SCORE
-========================================================= */
-
-let personalityQuestion = 0;
-
-
-let personalityScores = {
-
-    capuchin: 0,
-
-    spider: 0,
-
-    howler: 0,
-
-    squirrel: 0,
-
-    proboscis: 0,
-
-    lion: 0,
-
-    gelada: 0,
-
-    macaque: 0,
-
-    mandrill: 0,
-
-    vervet: 0
-
-};
-
-
-
-/* =========================================================
-   START
-========================================================= */
-
-function startPersonalityQuiz() {
-
-    personalityQuestion = 0;
-
-
-    Object.keys(
-        personalityScores
-    ).forEach(
-        monkey => {
-
-            personalityScores[
-                monkey
-            ] = 0;
-
-        }
-    );
-
-
-    document.getElementById(
-        "personalityStart"
-    ).style.display =
-        "none";
-
-
-    document.getElementById(
-        "personalityQuiz"
-    ).style.display =
-        "block";
-
-
-    document.getElementById(
-        "personalityResult"
-    ).style.display =
-        "none";
-
-
-    loadPersonalityQuestion();
-
-}
-
-
-
-/* =========================================================
-   LOAD QUESTION
-========================================================= */
-
-function loadPersonalityQuestion() {
-
-    const question =
-        personalityQuestions[
-            personalityQuestion
-        ];
-
-
-    document.getElementById(
-        "personalityQuestionNumber"
-    ).textContent =
-        `Question ${personalityQuestion + 1} of 10`;
-
-
-    document.getElementById(
-        "personalityProgress"
-    ).style.width =
-        `${(personalityQuestion / 10) * 100}%`;
-
-
-    document.getElementById(
-        "personalityQuestion"
-    ).textContent =
-        question.question;
-
-
-    const container =
-        document.getElementById(
-            "personalityAnswers"
-        );
-
-
-    container.innerHTML = "";
-
-
-    question.answers.forEach(
-        (answer,index) => {
-
-
-            const button =
-                document.createElement(
-                    "button"
-                );
-
-
-            button.className =
-                "personality-answer";
-
-
-            button.innerHTML =
-
-                `<span>
-                    ${String.fromCharCode(65 + index)}
-                 </span>
-                 ${answer[0]}`;
-
-
-            button.onclick =
-                () => {
-
-
-                    personalityScores[
-                        answer[1]
-                    ]++;
-
-
-                    personalityQuestion++;
-
-
-                    if (
-                        personalityQuestion >=
-                        personalityQuestions.length
-                    ) {
-
-                        showPersonalityResult();
-
-                    }
-
-                    else {
-
-                        loadPersonalityQuestion();
-
-                    }
-
-                };
-
-
-            container.appendChild(
-                button
-            );
-
-        }
-    );
-
-}
-
-
-
-/* =========================================================
-   RESULT
-========================================================= */
-
-function showPersonalityResult() {
-
-
-    let winner =
-        Object.keys(
-            personalityScores
-        )[0];
-
-
-    Object.keys(
-        personalityScores
-    ).forEach(
-        monkey => {
-
-            if (
-
-                personalityScores[
-                    monkey
-                ] >
-
-                personalityScores[
-                    winner
-                ]
-
-            ) {
-
-                winner =
-                    monkey;
-
-            }
-
-        }
-    );
-
-
-    const result =
-        monkeyResults[
-            winner
-        ];
-
-
-    document.getElementById(
-        "personalityQuiz"
-    ).style.display =
-        "none";
-
-
-    document.getElementById(
-        "personalityResult"
-    ).style.display =
-        "block";
-
-
-    document.getElementById(
-        "personalityProgress"
-    ).style.width =
-        "100%";
-
-
-    document.getElementById(
-        "resultMonkeyEmoji"
-    ).textContent =
-        result.emoji;
-
-
-    document.getElementById(
-        "resultMonkeyName"
-    ).textContent =
-        `You are a ${result.name}!`;
-
-
-    document.getElementById(
-        "resultDescription"
-    ).textContent =
-        result.description;
-
-
-    document.getElementById(
-        "resultTraits"
-    ).textContent =
-        result.traits;
-
-
-    document.getElementById(
-        "resultMonkeyName"
-    ).style.color =
-        result.color;
-
-}
-
-
-
-/* =========================================================
-   RETAKE
-========================================================= */
-
-function retakePersonalityQuiz() {
-
-    document.getElementById(
-        "personalityResult"
-    ).style.display =
-        "none";
-
-
-    document.getElementById(
-        "personalityQuiz"
-    ).style.display =
-        "block";
-
-
-    startPersonalityQuiz();
-
-}
-
-
 </script>
+
 
 </body>
 
