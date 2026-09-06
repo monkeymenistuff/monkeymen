@@ -1,0 +1,2768 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Monkey Personality 🐒</title>
+
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: white;
+
+    background:
+        #031008;
+
+    overflow-x: hidden;
+
+}
+
+
+/* =========================================================
+   COLORS
+========================================================= */
+
+:root {
+
+    --green:
+        #a8ff72;
+
+    --bright-green:
+        #62e66e;
+
+    --dark-green:
+        #031008;
+
+    --forest:
+        #082414;
+
+    --card:
+        rgba(7, 30, 15, .82);
+
+    --muted:
+        #aab9aa;
+
+    --white:
+        #f4fff2;
+
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -10;
+
+    background:
+
+        linear-gradient(
+            rgba(1, 12, 5, .78),
+            rgba(1, 15, 7, .94)
+        ),
+
+        url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLh-zhEqgezfM8iIm1yztPEFNOGt_TVvC4gwh9gMxJuQ&s=10")
+
+        center / cover no-repeat;
+
+}
+
+
+body::after {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -9;
+
+    pointer-events: none;
+
+    background:
+
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(98,230,110,.12),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 85% 70%,
+            rgba(168,255,114,.08),
+            transparent 30%
+        );
+
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 50;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding:
+        18px 7%;
+
+    background:
+        rgba(2,15,7,.72);
+
+    backdrop-filter:
+        blur(18px);
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.08);
+
+}
+
+
+.logo {
+
+    font-size:
+        1.3rem;
+
+    font-weight:
+        900;
+
+    color:
+        var(--green);
+
+}
+
+
+.logo span {
+
+    color:
+        white;
+
+}
+
+
+.nav-links {
+
+    display:
+        flex;
+
+    gap:
+        25px;
+
+}
+
+
+.nav-links a {
+
+    color:
+        #d9e8d8;
+
+    text-decoration:
+        none;
+
+    font-size:
+        .9rem;
+
+    font-weight:
+        700;
+
+    transition:
+        .25s;
+
+}
+
+
+.nav-links a:hover {
+
+    color:
+        var(--green);
+
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+main {
+
+    padding:
+        140px 6% 100px;
+
+    min-height:
+        100vh;
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.section-header {
+
+    max-width:
+        750px;
+
+    margin:
+        0 auto 50px;
+
+    text-align:
+        center;
+
+}
+
+
+.label {
+
+    color:
+        var(--green);
+
+    font-size:
+        .72rem;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        2px;
+
+    margin-bottom:
+        14px;
+
+}
+
+
+.section-header h1 {
+
+    font-size:
+        clamp(2.8rem, 7vw, 5rem);
+
+    margin-bottom:
+        18px;
+
+}
+
+
+.section-header p {
+
+    color:
+        var(--muted);
+
+    line-height:
+        1.8;
+
+}
+
+
+/* =========================================================
+   MAIN BOX
+========================================================= */
+
+.personality-box {
+
+    max-width:
+        900px;
+
+    margin:
+        auto;
+
+    padding:
+        45px;
+
+    background:
+        rgba(3,20,9,.86);
+
+    backdrop-filter:
+        blur(22px);
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+    border-radius:
+        30px;
+
+    box-shadow:
+        0 30px 100px
+        rgba(0,0,0,.45);
+
+}
+
+
+/* =========================================================
+   NAME SCREEN
+========================================================= */
+
+.personality-start {
+
+    text-align:
+        center;
+
+    padding:
+        20px 10px;
+
+}
+
+
+.big-monkey {
+
+    font-size:
+        7rem;
+
+    margin-bottom:
+        20px;
+
+    animation:
+        monkeyFloat 3s ease-in-out infinite;
+
+}
+
+
+.personality-start h2 {
+
+    font-size:
+        2rem;
+
+    margin-bottom:
+        15px;
+
+}
+
+
+.personality-start p {
+
+    max-width:
+        600px;
+
+    margin:
+        0 auto 28px;
+
+    color:
+        var(--muted);
+
+    line-height:
+        1.8;
+
+}
+
+
+/* =========================================================
+   NAME INPUT
+========================================================= */
+
+.name-input {
+
+    width:
+        100%;
+
+    max-width:
+        500px;
+
+    display:
+        block;
+
+    margin:
+        0 auto 15px;
+
+    padding:
+        17px 20px;
+
+    color:
+        white;
+
+    background:
+        rgba(255,255,255,.06);
+
+    border:
+        1px solid
+        rgba(255,255,255,.14);
+
+    border-radius:
+        13px;
+
+    outline:
+        none;
+
+    font-size:
+        1rem;
+
+    text-align:
+        center;
+
+    transition:
+        .25s;
+
+}
+
+
+.name-input:focus {
+
+    border-color:
+        rgba(168,255,114,.5);
+
+    box-shadow:
+        0 0 25px
+        rgba(168,255,114,.08);
+
+}
+
+
+.name-input::placeholder {
+
+    color:
+        #809080;
+
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.btn {
+
+    display:
+        inline-block;
+
+    padding:
+        15px 24px;
+
+    border:
+        none;
+
+    border-radius:
+        12px;
+
+    cursor:
+        pointer;
+
+    font-weight:
+        900;
+
+    text-decoration:
+        none;
+
+    transition:
+        .25s;
+
+}
+
+
+.btn:hover {
+
+    transform:
+        translateY(-4px);
+
+}
+
+
+.primary {
+
+    background:
+        var(--green);
+
+    color:
+        #06140a;
+
+    box-shadow:
+        0 10px 40px
+        rgba(168,255,114,.18);
+
+}
+
+
+.secondary {
+
+    background:
+        rgba(255,255,255,.07);
+
+    color:
+        white;
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.name-error {
+
+    color:
+        #ff7b7b;
+
+    font-size:
+        .85rem;
+
+    margin-bottom:
+        15px;
+
+    min-height:
+        18px;
+
+}
+
+
+/* =========================================================
+   QUESTION HEADER
+========================================================= */
+
+.personality-top {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    margin-bottom:
+        15px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        .9rem;
+
+    font-weight:
+        800;
+
+}
+
+
+.personality-progress {
+
+    height:
+        8px;
+
+    background:
+        rgba(255,255,255,.07);
+
+    border-radius:
+        50px;
+
+    overflow:
+        hidden;
+
+    margin-bottom:
+        40px;
+
+}
+
+
+.personality-progress div {
+
+    width:
+        0%;
+
+    height:
+        100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #52db62,
+            #baff70
+        );
+
+    transition:
+        width .4s ease;
+
+}
+
+
+/* =========================================================
+   QUESTION
+========================================================= */
+
+.personality-question {
+
+    font-size:
+        clamp(1.5rem,4vw,2.4rem);
+
+    line-height:
+        1.3;
+
+    margin-bottom:
+        25px;
+
+}
+
+
+/* =========================================================
+   ANSWERS
+========================================================= */
+
+.personality-answers {
+
+    display:
+        grid;
+
+    gap:
+        13px;
+
+}
+
+
+.personality-answer {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        15px;
+
+    width:
+        100%;
+
+    padding:
+        18px;
+
+    color:
+        white;
+
+    text-align:
+        left;
+
+    background:
+        rgba(255,255,255,.045);
+
+    border:
+        1px solid
+        rgba(255,255,255,.10);
+
+    border-radius:
+        15px;
+
+    cursor:
+        pointer;
+
+    font-size:
+        1rem;
+
+    font-weight:
+        700;
+
+    transition:
+        .25s;
+
+}
+
+
+.personality-answer span {
+
+    width:
+        35px;
+
+    height:
+        35px;
+
+    min-width:
+        35px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border-radius:
+        10px;
+
+    color:
+        var(--green);
+
+    background:
+        rgba(168,255,114,.1);
+
+}
+
+
+.personality-answer:hover {
+
+    transform:
+        translateX(7px);
+
+    background:
+        rgba(168,255,114,.08);
+
+    border-color:
+        rgba(168,255,114,.35);
+
+}
+
+
+/* =========================================================
+   RESULT
+========================================================= */
+
+.personality-result {
+
+    text-align:
+        center;
+
+    padding:
+        25px 10px;
+
+}
+
+
+.result-monkey {
+
+    font-size:
+        8rem;
+
+    margin-bottom:
+        15px;
+
+    animation:
+        monkeyFloat 3s infinite;
+
+}
+
+
+.result-small {
+
+    color:
+        var(--green);
+
+    font-size:
+        .75rem;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        2px;
+
+    margin-bottom:
+        10px;
+
+}
+
+
+#resultMonkeyName {
+
+    font-size:
+        clamp(2rem,6vw,4rem);
+
+    margin-bottom:
+        20px;
+
+}
+
+
+#resultDescription {
+
+    max-width:
+        650px;
+
+    margin:
+        0 auto 25px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        1.1rem;
+
+    line-height:
+        1.8;
+
+}
+
+
+.result-traits {
+
+    display:
+        inline-block;
+
+    padding:
+        13px 20px;
+
+    margin-bottom:
+        30px;
+
+    border:
+        1px solid
+        rgba(168,255,114,.2);
+
+    background:
+        rgba(168,255,114,.07);
+
+    border-radius:
+        100px;
+
+    color:
+        #d8ffc0;
+
+    font-weight:
+        800;
+
+}
+
+
+/* =========================================================
+   RESULTS TABLE SECTION
+========================================================= */
+
+.results-section {
+
+    max-width:
+        1000px;
+
+    margin:
+        70px auto 0;
+
+}
+
+
+.results-header {
+
+    text-align:
+        center;
+
+    margin-bottom:
+        25px;
+
+}
+
+
+.results-header h2 {
+
+    font-size:
+        clamp(2rem,5vw,3rem);
+
+    margin-bottom:
+        10px;
+
+}
+
+
+.results-header p {
+
+    color:
+        var(--muted);
+
+    line-height:
+        1.7;
+
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.results-card {
+
+    background:
+        rgba(3,20,9,.86);
+
+    backdrop-filter:
+        blur(20px);
+
+    border:
+        1px solid
+        rgba(255,255,255,.10);
+
+    border-radius:
+        22px;
+
+    overflow:
+        hidden;
+
+    box-shadow:
+        0 20px 70px
+        rgba(0,0,0,.3);
+
+}
+
+
+.results-table {
+
+    width:
+        100%;
+
+    border-collapse:
+        collapse;
+
+}
+
+
+.results-table th {
+
+    padding:
+        18px 20px;
+
+    text-align:
+        left;
+
+    background:
+        rgba(168,255,114,.07);
+
+    color:
+        var(--green);
+
+    font-size:
+        .8rem;
+
+    letter-spacing:
+        1px;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.results-table td {
+
+    padding:
+        17px 20px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.07);
+
+    color:
+        #e5eee4;
+
+}
+
+
+.results-table tr:hover td {
+
+    background:
+        rgba(168,255,114,.035);
+
+}
+
+
+.monkey-result-cell {
+
+    font-weight:
+        800;
+
+}
+
+
+.empty-results {
+
+    text-align:
+        center;
+
+    padding:
+        35px;
+
+    color:
+        var(--muted);
+
+}
+
+
+/* =========================================================
+   CLEAR BUTTON
+========================================================= */
+
+.results-controls {
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    margin-top:
+        18px;
+
+}
+
+
+.clear-btn {
+
+    background:
+        rgba(255,80,80,.08);
+
+    border:
+        1px solid
+        rgba(255,100,100,.18);
+
+    color:
+        #ff9999;
+
+    padding:
+        10px 17px;
+
+    border-radius:
+        10px;
+
+    cursor:
+        pointer;
+
+    font-weight:
+        800;
+
+    transition:
+        .25s;
+
+}
+
+
+.clear-btn:hover {
+
+    background:
+        rgba(255,80,80,.15);
+
+}
+
+
+/* =========================================================
+   ANIMATION
+========================================================= */
+
+@keyframes monkeyFloat {
+
+    0%,100% {
+
+        transform:
+            translateY(0)
+            rotate(-2deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-14px)
+            rotate(2deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    padding:
+        55px 7%;
+
+    text-align:
+        center;
+
+    background:
+        rgba(1,10,5,.9);
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.08);
+
+}
+
+
+footer strong {
+
+    color:
+        var(--green);
+
+}
+
+
+footer p {
+
+    color:
+        var(--muted);
+
+    margin-top:
+        10px;
+
+    font-size:
+        .85rem;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:700px) {
+
+    nav {
+
+        padding:
+            15px 5%;
+
+    }
+
+    .nav-links {
+
+        display:
+            none;
+
+    }
+
+    main {
+
+        padding:
+            120px 5% 70px;
+
+    }
+
+    .personality-box {
+
+        padding:
+            25px 18px;
+
+    }
+
+    .personality-top {
+
+        flex-direction:
+            column;
+
+        gap:
+            6px;
+
+    }
+
+    .big-monkey,
+    .result-monkey {
+
+        font-size:
+            5rem;
+
+    }
+
+    .results-table th,
+    .results-table td {
+
+        padding:
+            14px 10px;
+
+        font-size:
+            .85rem;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav>
+
+    <div class="logo">
+
+        🐒 MONKEY<span>WORLD</span>
+
+    </div>
+
+
+    <div class="nav-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="great-apes.html">
+            Great Apes
+        </a>
+
+        <a href="quiz.html">
+            Quiz
+        </a>
+
+        <a href="personality.html">
+            Personality
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main>
+
+
+    <div class="section-header">
+
+        <div class="label">
+            PERSONALITY TEST
+        </div>
+
+        <h1>
+            Which Monkey Are You?
+        </h1>
+
+        <p>
+
+            Enter your name, answer 10 questions and
+            discover which monkey species matches your
+            personality.
+
+        </p>
+
+    </div>
+
+
+
+    <!-- =================================================
+         PERSONALITY BOX
+    ================================================= -->
+
+    <div class="personality-box">
+
+
+        <!-- NAME SCREEN -->
+
+        <div
+            id="personalityStart"
+            class="personality-start"
+        >
+
+            <div class="big-monkey">
+                🐒
+            </div>
+
+
+            <h2>
+                Discover Your Monkey Personality
+            </h2>
+
+
+            <p>
+
+                First, enter your name so your result
+                can appear in the MonkeyWorld results board.
+
+            </p>
+
+
+            <input
+                type="text"
+                id="playerName"
+                class="name-input"
+                placeholder="Enter your name..."
+                maxlength="30"
+                autocomplete="off"
+            >
+
+
+            <div
+                id="nameError"
+                class="name-error"
+            >
+            </div>
+
+
+            <button
+                class="btn primary"
+                onclick="startPersonalityQuiz()"
+            >
+
+                🐒 START TEST
+
+            </button>
+
+        </div>
+
+
+
+        <!-- =================================================
+             QUESTIONS
+        ================================================= -->
+
+        <div
+            id="personalityQuiz"
+            style="display:none"
+        >
+
+            <div class="personality-top">
+
+                <span
+                    id="personalityQuestionNumber"
+                >
+                    Question 1 of 10
+                </span>
+
+                <span>
+                    🌿 Jungle Personality Test
+                </span>
+
+            </div>
+
+
+            <div class="personality-progress">
+
+                <div
+                    id="personalityProgress"
+                >
+                </div>
+
+            </div>
+
+
+            <h3
+                id="personalityQuestion"
+                class="personality-question"
+            >
+            </h3>
+
+
+            <div
+                id="personalityAnswers"
+                class="personality-answers"
+            >
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             RESULT
+        ================================================= -->
+
+        <div
+            id="personalityResult"
+            class="personality-result"
+            style="display:none"
+        >
+
+            <div
+                id="resultMonkeyEmoji"
+                class="result-monkey"
+            >
+                🐒
+            </div>
+
+
+            <div class="result-small">
+                YOUR MONKEY PERSONALITY
+            </div>
+
+
+            <h3
+                id="resultMonkeyName"
+            >
+            </h3>
+
+
+            <p
+                id="resultDescription"
+            >
+            </p>
+
+
+            <div
+                id="resultTraits"
+                class="result-traits"
+            >
+            </div>
+
+
+            <br>
+
+
+            <button
+                class="btn primary"
+                onclick="retakePersonalityQuiz()"
+            >
+
+                🔄 TAKE IT AGAIN
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         RESULTS BOARD
+    ================================================= -->
+
+    <section class="results-section">
+
+        <div class="results-header">
+
+            <div class="label">
+                MONKEYWORLD RESULTS
+            </div>
+
+            <h2>
+                Latest Monkey Results
+            </h2>
+
+            <p>
+
+                See the latest monkey personality result
+                from everyone who has taken the test.
+
+                Each name only keeps their most recent result.
+
+            </p>
+
+        </div>
+
+
+        <div class="results-card">
+
+            <table class="results-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Name
+                        </th>
+
+                        <th>
+                            Monkey
+                        </th>
+
+                        <th>
+                            Result
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="resultsTableBody">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <div class="results-controls">
+
+            <button
+                class="clear-btn"
+                onclick="clearResults()"
+            >
+
+                🗑️ Clear Results
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <strong>
+        🐒 MONKEYWORLD
+    </strong>
+
+    <p>
+
+        Explore. Learn. Discover your inner monkey. 🌿
+
+    </p>
+
+</footer>
+
+
+
+<script>
+
+
+/* =========================================================
+   PERSONALITY QUESTIONS
+========================================================= */
+
+const personalityQuestions = [
+
+    {
+        question:
+        "You have a completely free day. What are you doing?",
+
+        answers: [
+
+            [
+                "Exploring somewhere I've never been",
+                "capuchin"
+            ],
+
+            [
+                "Hanging out with a huge group of friends",
+                "gelada"
+            ],
+
+            [
+                "Finding somewhere peaceful to relax",
+                "macaque"
+            ],
+
+            [
+                "Going on a wild adventure",
+                "spider"
+            ]
+
+        ]
+
+    },
+
+
+    {
+        question:
+        "Someone gives you a difficult puzzle. You...",
+
+        answers: [
+
+            [
+                "Immediately start experimenting with it",
+                "capuchin"
+            ],
+
+            [
+                "Ask everyone else what they think",
+                "gelada"
+            ],
+
+            [
+                "Quietly figure it out myself",
+                "macaque"
+            ],
+
+            [
+                "Try something completely unexpected",
+                "lion"
+            ]
+
+        ]
+
+    },
+
+
+    {
+        question:
+        "What's your biggest strength?",
+
+        answers: [
+
+            [
+                "I'm extremely social",
+                "gelada"
+            ],
+
+            [
+                "I'm clever and adaptable",
+                "capuchin"
+            ],
+
+            [
+                "I'm confident",
+                "mandrill"
+            ],
+
+            [
+                "I'm calm under pressure",
+                "macaque"
+            ]
+
+        ]
+
+    },
+
+
+    {
+        question:
+        "Pick a place to live.",
+
+        answers: [
+
+            [
+                "A huge rainforest",
+                "spider"
+            ],
+
+            [
+                "A beautiful mountain landscape",
+                "gelada"
+            ],
+
+            [
+                "A tropical island",
+                "proboscis"
+            ],
+
+            [
+                "A forest full of trees to explore",
+                "capuchin"
+            ]
+
+        ]
+
+    },
+
+
+    {
+        question:
+        "Your friend is upset. What do you do?",
+
+        answers: [
+
+            [
+                "Make them laugh",
+                "squirrel"
+            ],
+
+            [
+                "Stay beside them and listen",
+                "macaque"
+            ],
+
+            [
+                "Get everyone together to help",
+                "gelada"
+            ],
+
+            [
+                "Give them space but check on them later",
+                "vervet"
+            ]
+
+        ]
+
+    },
+
+
+    {
+        question:
+        "Which word describes you best?",
+
+        answers: [
+
+            [
+                "Curious",
+                "capuchin"
+            ],
+
+            [
+                "Dramatic",
+                "howler"
+            ],
+
+            [
+                "Fearless",
+                "mandrill"
+            ],
+
+            [
+                "Playful",
+                "squirrel"
+            ]
+
+        ]
+
+    },
+
+
+    {
+        question:
+        "At a party, you're probably...",
+
+        answers: [
+
+            [
+                "The loudest person there",
+                "howler"
+            ],
+
+            [
+                "Making everyone laugh",
+                "squirrel"
+            ],
+
+            [
+                "Talking to absolutely everyone",
+                "gelada"
+            ],
+
+            [
+                "Watching everything from the side",
+                "vervet"
+            ]
+
+        ]
+
+    },
+
+
+    {
+        question:
+        "What's your ideal way to solve a problem?",
+
+        answers: [
+
+            [
+                "Use creativity",
+                "capuchin"
+            ],
+
+            [
+                "Work with other people",
+                "gelada"
+            ],
+
+            [
+                "Use confidence and determination",
+                "mandrill"
+            ],
+
+            [
+                "Try something completely different",
+                "lion"
+            ]
+
+        ]
+
+    },
+
+
+    {
+        question:
+        "Choose a vibe.",
+
+        answers: [
+
+            [
+                "Chaotic genius 🧠",
+                "capuchin"
+            ],
+
+            [
+                "Elegant and mysterious ✨",
+                "lion"
+            ],
+
+            [
+                "Wild and energetic ⚡",
+                "squirrel"
+            ],
+
+            [
+                "Chill and observant 🌿",
+                "macaque"
+            ]
+
+        ]
+
+    },
+
+
+    {
+        question:
+        "If your friends had to describe you, they'd say...",
+
+        answers: [
+
+            [
+                "The clever one",
+                "capuchin"
+            ],
+
+            [
+                "The funny one",
+                "squirrel"
+            ],
+
+            [
+                "The leader",
+                "mandrill"
+            ],
+
+            [
+                "The adventurous one",
+                "spider"
+            ]
+
+        ]
+
+    }
+
+];
+
+
+
+/* =========================================================
+   MONKEY RESULTS
+========================================================= */
+
+const monkeyResults = {
+
+    capuchin: {
+
+        name:
+            "Capuchin",
+
+        emoji:
+            "🐒",
+
+        color:
+            "#a8ff72",
+
+        description:
+            "You're curious, clever and incredibly adaptable. You love figuring things out and you're probably the person who touches every button just to see what happens.",
+
+        traits:
+            "🧠 Clever • 🔎 Curious • ⚡ Energetic"
+
+    },
+
+
+    spider: {
+
+        name:
+            "Spider Monkey",
+
+        emoji:
+            "🕷️",
+
+        color:
+            "#65d8ff",
+
+        description:
+            "You're adventurous, flexible and love exploring. You aren't afraid of taking the unconventional route to get where you want to go.",
+
+        traits:
+            "🌳 Adventurous • 🤸 Flexible • 🌎 Explorer"
+
+    },
+
+
+    howler: {
+
+        name:
+            "Howler Monkey",
+
+        emoji:
+            "📣",
+
+        color:
+            "#ff8a65",
+
+        description:
+            "You have a BIG personality. You're expressive, confident and definitely not afraid to make yourself heard.",
+
+        traits:
+            "📣 Loud • 😎 Confident • 🔥 Expressive"
+
+    },
+
+
+    squirrel: {
+
+        name:
+            "Squirrel Monkey",
+
+        emoji:
+            "🐵",
+
+        color:
+            "#ffd166",
+
+        description:
+            "You're playful, energetic and always ready for fun. You bring energy into almost every room you enter.",
+
+        traits:
+            "😂 Funny • ⚡ Energetic • 🎉 Playful"
+
+    },
+
+
+    proboscis: {
+
+        name:
+            "Proboscis Monkey",
+
+        emoji:
+            "🌴",
+
+        color:
+            "#ff9f43",
+
+        description:
+            "You're unique and comfortable being yourself. You don't need to follow everyone else — your individuality is your superpower.",
+
+        traits:
+            "🌟 Unique • 🌿 Relaxed • 😌 Independent"
+
+    },
+
+
+    lion: {
+
+        name:
+            "Golden Lion Tamarin",
+
+        emoji:
+            "👑",
+
+        color:
+            "#ffb347",
+
+        description:
+            "You're charismatic, confident and impossible to overlook. You have a natural presence that makes people notice you.",
+
+        traits:
+            "👑 Charismatic • ✨ Stylish • 💪 Confident"
+
+    },
+
+
+    gelada: {
+
+        name:
+            "Gelada",
+
+        emoji:
+            "🏔️",
+
+        color:
+            "#c084fc",
+
+        description:
+            "You're extremely social and value your friendships. You thrive when you're surrounded by people you trust.",
+
+        traits:
+            "👥 Social • ❤️ Loyal • 🤝 Cooperative"
+
+    },
+
+
+    macaque: {
+
+        name:
+            "Japanese Macaque",
+
+        emoji:
+            "♨️",
+
+        color:
+            "#ff7b9c",
+
+        description:
+            "You're calm, observant and surprisingly adaptable. You know when to relax and when it's time to take action.",
+
+        traits:
+            "🧘 Calm • 👀 Observant • 🌿 Adaptable"
+
+    },
+
+
+    mandrill: {
+
+        name:
+            "Mandrill",
+
+        emoji:
+            "🦁",
+
+        color:
+            "#ff4d6d",
+
+        description:
+            "You're bold, confident and naturally stand out from the crowd. When you want something, you go after it.",
+
+        traits:
+            "🔥 Bold • 👑 Leader • 💥 Fearless"
+
+    },
+
+
+    vervet: {
+
+        name:
+            "Vervet Monkey",
+
+        emoji:
+            "🌿",
+
+        color:
+            "#74c69d",
+
+        description:
+            "You're observant, thoughtful and good at reading the room. You notice things that other people sometimes miss.",
+
+        traits:
+            "👀 Observant • 🧠 Thoughtful • 🌿 Calm"
+
+    }
+
+};
+
+
+
+/* =========================================================
+   SCORE SYSTEM
+========================================================= */
+
+let personalityQuestion = 0;
+
+let playerName = "";
+
+
+let personalityScores = {
+
+    capuchin: 0,
+
+    spider: 0,
+
+    howler: 0,
+
+    squirrel: 0,
+
+    proboscis: 0,
+
+    lion: 0,
+
+    gelada: 0,
+
+    macaque: 0,
+
+    mandrill: 0,
+
+    vervet: 0
+
+};
+
+
+
+/* =========================================================
+   START QUIZ
+========================================================= */
+
+function startPersonalityQuiz() {
+
+    const input =
+        document.getElementById("playerName");
+
+    const error =
+        document.getElementById("nameError");
+
+
+    const name =
+        input.value.trim();
+
+
+    if (!name) {
+
+        error.textContent =
+            "Please enter your name first! 🐒";
+
+        input.focus();
+
+        return;
+
+    }
+
+
+    if (name.length < 2) {
+
+        error.textContent =
+            "Your name needs to be at least 2 characters.";
+
+        input.focus();
+
+        return;
+
+    }
+
+
+    error.textContent =
+        "";
+
+
+    playerName =
+        name;
+
+
+    personalityQuestion =
+        0;
+
+
+    Object.keys(
+        personalityScores
+    ).forEach(
+        monkey => {
+
+            personalityScores[
+                monkey
+            ] = 0;
+
+        }
+    );
+
+
+    document.getElementById(
+        "personalityStart"
+    ).style.display =
+        "none";
+
+
+    document.getElementById(
+        "personalityQuiz"
+    ).style.display =
+        "block";
+
+
+    document.getElementById(
+        "personalityResult"
+    ).style.display =
+        "none";
+
+
+    loadPersonalityQuestion();
+
+}
+
+
+
+/* =========================================================
+   LOAD QUESTION
+========================================================= */
+
+function loadPersonalityQuestion() {
+
+    const question =
+        personalityQuestions[
+            personalityQuestion
+        ];
+
+
+    document.getElementById(
+        "personalityQuestionNumber"
+    ).textContent =
+        `Question ${personalityQuestion + 1} of ${personalityQuestions.length}`;
+
+
+    document.getElementById(
+        "personalityProgress"
+    ).style.width =
+        `${(personalityQuestion / personalityQuestions.length) * 100}%`;
+
+
+    document.getElementById(
+        "personalityQuestion"
+    ).textContent =
+        question.question;
+
+
+    const container =
+        document.getElementById(
+            "personalityAnswers"
+        );
+
+
+    container.innerHTML =
+        "";
+
+
+    question.answers.forEach(
+        (answer,index) => {
+
+            const button =
+                document.createElement(
+                    "button"
+                );
+
+
+            button.className =
+                "personality-answer";
+
+
+            button.innerHTML =
+
+                `<span>
+                    ${String.fromCharCode(65 + index)}
+                 </span>
+                 ${answer[0]}`;
+
+
+            button.onclick =
+                () => {
+
+                    personalityScores[
+                        answer[1]
+                    ]++;
+
+
+                    personalityQuestion++;
+
+
+                    if (
+                        personalityQuestion >=
+                        personalityQuestions.length
+                    ) {
+
+                        showPersonalityResult();
+
+                    }
+
+                    else {
+
+                        loadPersonalityQuestion();
+
+                    }
+
+                };
+
+
+            container.appendChild(
+                button
+            );
+
+        }
+    );
+
+}
+
+
+
+/* =========================================================
+   SHOW RESULT
+========================================================= */
+
+function showPersonalityResult() {
+
+    let winner =
+        Object.keys(
+            personalityScores
+        )[0];
+
+
+    Object.keys(
+        personalityScores
+    ).forEach(
+        monkey => {
+
+            if (
+
+                personalityScores[
+                    monkey
+                ] >
+
+                personalityScores[
+                    winner
+                ]
+
+            ) {
+
+                winner =
+                    monkey;
+
+            }
+
+        }
+    );
+
+
+    const result =
+        monkeyResults[
+            winner
+        ];
+
+
+    document.getElementById(
+        "personalityQuiz"
+    ).style.display =
+        "none";
+
+
+    document.getElementById(
+        "personalityResult"
+    ).style.display =
+        "block";
+
+
+    document.getElementById(
+        "personalityProgress"
+    ).style.width =
+        "100%";
+
+
+    document.getElementById(
+        "resultMonkeyEmoji"
+    ).textContent =
+        result.emoji;
+
+
+    document.getElementById(
+        "resultMonkeyName"
+    ).textContent =
+        `${playerName}, you are a ${result.name}!`;
+
+
+    document.getElementById(
+        "resultDescription"
+    ).textContent =
+        result.description;
+
+
+    document.getElementById(
+        "resultTraits"
+    ).textContent =
+        result.traits;
+
+
+    document.getElementById(
+        "resultMonkeyName"
+    ).style.color =
+        result.color;
+
+
+    /* SAVE RESULT */
+
+    saveLatestResult(
+        playerName,
+        winner
+    );
+
+
+    /* UPDATE TABLE */
+
+    displayResults();
+
+}
+
+
+
+/* =========================================================
+   SAVE LATEST RESULT
+========================================================= */
+
+function saveLatestResult(
+    name,
+    monkeyKey
+) {
+
+    let results =
+        getResults();
+
+
+    const normalisedName =
+        name.trim().toLowerCase();
+
+
+    /*
+       Remove this person's previous result.
+       This means each person only appears once.
+    */
+
+    results =
+        results.filter(
+            result =>
+
+                result.nameKey !==
+                normalisedName
+
+        );
+
+
+    results.push({
+
+        name:
+            name.trim(),
+
+        nameKey:
+            normalisedName,
+
+        monkey:
+            monkeyKey,
+
+        time:
+            Date.now()
+
+    });
+
+
+    localStorage.setItem(
+        "monkeyWorldResults",
+        JSON.stringify(results)
+    );
+
+}
+
+
+
+/* =========================================================
+   GET RESULTS
+========================================================= */
+
+function getResults() {
+
+    try {
+
+        const saved =
+            localStorage.getItem(
+                "monkeyWorldResults"
+            );
+
+
+        if (!saved) {
+
+            return [];
+
+        }
+
+
+        const results =
+            JSON.parse(saved);
+
+
+        if (!Array.isArray(results)) {
+
+            return [];
+
+        }
+
+
+        return results;
+
+    }
+
+    catch(error) {
+
+        console.error(
+            "Could not load results:",
+            error
+        );
+
+        return [];
+
+    }
+
+}
+
+
+
+/* =========================================================
+   DISPLAY RESULTS
+========================================================= */
+
+function displayResults() {
+
+    const tableBody =
+        document.getElementById(
+            "resultsTableBody"
+        );
+
+
+    const results =
+        getResults();
+
+
+    tableBody.innerHTML =
+        "";
+
+
+    if (
+        results.length === 0
+    ) {
+
+        const row =
+            document.createElement(
+                "tr"
+            );
+
+
+        row.innerHTML =
+
+            `<td
+                colspan="3"
+                class="empty-results"
+            >
+                No results yet. Be the first to discover
+                your monkey! 🐒
+            </td>`;
+
+
+        tableBody.appendChild(
+            row
+        );
+
+
+        return;
+
+    }
+
+
+    /*
+       Sort newest results first.
+    */
+
+    results.sort(
+        (a,b) =>
+            b.time - a.time
+    );
+
+
+    results.forEach(
+        result => {
+
+            const monkey =
+                monkeyResults[
+                    result.monkey
+                ];
+
+
+            const row =
+                document.createElement(
+                    "tr"
+                );
+
+
+            row.innerHTML =
+
+                `<td>
+                    ${escapeHTML(result.name)}
+                 </td>
+
+                 <td
+                    class="monkey-result-cell"
+                    style="color:${monkey.color}"
+                 >
+                    ${monkey.emoji}
+                    ${monkey.name}
+                 </td>
+
+                 <td>
+                    ${monkey.traits}
+                 </td>`;
+
+
+            tableBody.appendChild(
+                row
+            );
+
+        }
+    );
+
+}
+
+
+
+/* =========================================================
+   ESCAPE HTML
+========================================================= */
+
+function escapeHTML(
+    text
+) {
+
+    const div =
+        document.createElement(
+            "div"
+        );
+
+
+    div.textContent =
+        text;
+
+
+    return div.innerHTML;
+
+}
+
+
+
+/* =========================================================
+   RETAKE QUIZ
+========================================================= */
+
+function retakePersonalityQuiz() {
+
+    document.getElementById(
+        "personalityResult"
+    ).style.display =
+        "none";
+
+
+    document.getElementById(
+        "personalityStart"
+    ).style.display =
+        "block";
+
+
+    document.getElementById(
+        "playerName"
+    ).value =
+        playerName;
+
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: "smooth"
+
+    });
+
+}
+
+
+
+/* =========================================================
+   CLEAR RESULTS
+========================================================= */
+
+function clearResults() {
+
+    const confirmed =
+        confirm(
+            "Are you sure you want to delete all MonkeyWorld results?"
+        );
+
+
+    if (!confirmed) {
+
+        return;
+
+    }
+
+
+    localStorage.removeItem(
+        "monkeyWorldResults"
+    );
+
+
+    displayResults();
+
+}
+
+
+
+/* =========================================================
+   ENTER KEY FOR NAME
+========================================================= */
+
+document.getElementById(
+    "playerName"
+).addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key ===
+            "Enter"
+        ) {
+
+            startPersonalityQuiz();
+
+        }
+
+    }
+);
+
+
+
+/* =========================================================
+   LOAD SAVED RESULTS WHEN PAGE OPENS
+========================================================= */
+
+displayResults();
+
+</script>
+
+
+</body>
+
+</html>
+```
