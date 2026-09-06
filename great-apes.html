@@ -12,7 +12,7 @@ content="width=device-width, initial-scale=1.0"
 
 >
 
-<title>Great Apes 🦍 | Monkey World</title>
+<title>Great Apes 🦍 | MonkeyWorld</title>
 
 <style>
 
@@ -39,8 +39,7 @@ body {
 
     color: white;
 
-    background:
-        #031008;
+    background: #031008;
 
     overflow-x: hidden;
 
@@ -53,26 +52,13 @@ body {
 
 :root {
 
-    --green:
-        #a8ff72;
-
-    --bright-green:
-        #62e66e;
-
-    --dark-green:
-        #031008;
-
-    --forest:
-        #082414;
-
-    --card:
-        rgba(7, 30, 15, .78);
-
-    --muted:
-        #aab9aa;
-
-    --white:
-        #f4fff2;
+    --green: #a8ff72;
+    --bright-green: #62e66e;
+    --dark-green: #031008;
+    --forest: #082414;
+    --card: rgba(7, 30, 15, .82);
+    --muted: #aab9aa;
+    --white: #f4fff2;
 
 }
 
@@ -94,7 +80,7 @@ body::before {
     background:
 
         linear-gradient(
-            rgba(1, 12, 5, .72),
+            rgba(1, 12, 5, .76),
             rgba(1, 15, 7, .93)
         ),
 
@@ -104,6 +90,10 @@ body::before {
 
 }
 
+
+/* =========================================================
+   ATMOSPHERIC GLOW
+========================================================= */
 
 body::after {
 
@@ -121,7 +111,7 @@ body::after {
 
         radial-gradient(
             circle at 15% 20%,
-            rgba(98,230,110,.13),
+            rgba(98,230,110,.12),
             transparent 28%
         ),
 
@@ -148,7 +138,7 @@ body::after {
 
     pointer-events: none;
 
-    opacity: .13;
+    opacity: .15;
 
     overflow: hidden;
 
@@ -173,7 +163,6 @@ body::after {
 
 }
 
-
 .drop:nth-child(1) {
     left: 5%;
     animation-duration: 1.8s;
@@ -187,65 +176,76 @@ body::after {
 }
 
 .drop:nth-child(3) {
-    left: 19%;
+    left: 18%;
     animation-duration: 1.9s;
     animation-delay: -1.5s;
 }
 
 .drop:nth-child(4) {
-    left: 27%;
+    left: 25%;
     animation-duration: 2.7s;
     animation-delay: -.2s;
 }
 
 .drop:nth-child(5) {
-    left: 35%;
+    left: 32%;
     animation-duration: 2.1s;
     animation-delay: -1.2s;
 }
 
 .drop:nth-child(6) {
-    left: 43%;
+    left: 40%;
     animation-duration: 2.5s;
     animation-delay: -.7s;
 }
 
 .drop:nth-child(7) {
-    left: 51%;
+    left: 47%;
     animation-duration: 1.7s;
     animation-delay: -1.8s;
 }
 
 .drop:nth-child(8) {
-    left: 59%;
+    left: 54%;
     animation-duration: 2.3s;
     animation-delay: -.4s;
 }
 
 .drop:nth-child(9) {
-    left: 67%;
+    left: 61%;
     animation-duration: 2.8s;
     animation-delay: -1.1s;
 }
 
 .drop:nth-child(10) {
-    left: 75%;
+    left: 68%;
     animation-duration: 1.8s;
     animation-delay: -.9s;
 }
 
 .drop:nth-child(11) {
-    left: 83%;
+    left: 75%;
     animation-duration: 2.6s;
     animation-delay: -1.6s;
 }
 
 .drop:nth-child(12) {
-    left: 91%;
+    left: 82%;
     animation-duration: 2s;
     animation-delay: -.3s;
 }
 
+.drop:nth-child(13) {
+    left: 89%;
+    animation-duration: 2.2s;
+    animation-delay: -1.4s;
+}
+
+.drop:nth-child(14) {
+    left: 95%;
+    animation-duration: 2.7s;
+    animation-delay: -.8s;
+}
 
 @keyframes rainFall {
 
@@ -255,83 +255,6 @@ body::after {
 
     100% {
         transform: translateY(110vh);
-    }
-
-}
-
-
-/* =========================================================
-   FLOATING LEAVES
-========================================================= */
-
-.leaves {
-
-    position: fixed;
-
-    inset: 0;
-
-    pointer-events: none;
-
-    z-index: 4;
-
-    overflow: hidden;
-
-}
-
-.leaf {
-
-    position: absolute;
-
-    font-size: 22px;
-
-    opacity: .20;
-
-    animation:
-        leafFloat 14s linear infinite;
-
-}
-
-.leaf:nth-child(1) {
-    left: 8%;
-    top: 10%;
-    animation-delay: -2s;
-}
-
-.leaf:nth-child(2) {
-    left: 25%;
-    top: 50%;
-    animation-delay: -7s;
-}
-
-.leaf:nth-child(3) {
-    left: 78%;
-    top: 20%;
-    animation-delay: -5s;
-}
-
-.leaf:nth-child(4) {
-    left: 91%;
-    top: 70%;
-    animation-delay: -10s;
-}
-
-
-@keyframes leafFloat {
-
-    0% {
-
-        transform:
-            translateY(100vh)
-            rotate(0deg);
-
-    }
-
-    100% {
-
-        transform:
-            translateY(-120vh)
-            rotate(360deg);
-
     }
 
 }
@@ -357,11 +280,10 @@ nav {
 
     align-items: center;
 
-    padding:
-        18px 7%;
+    padding: 18px 7%;
 
     background:
-        rgba(2,15,7,.72);
+        rgba(2,15,7,.78);
 
     backdrop-filter:
         blur(18px);
@@ -375,69 +297,49 @@ nav {
 
 .logo {
 
-    font-size:
-        1.3rem;
+    font-size: 1.3rem;
 
-    font-weight:
-        900;
+    font-weight: 900;
 
-    color:
-        var(--green);
+    color: var(--green);
 
 }
 
 
 .logo span {
 
-    color:
-        white;
+    color: white;
 
 }
 
 
 .nav-links {
 
-    display:
-        flex;
+    display: flex;
 
-    gap:
-        25px;
+    gap: 25px;
 
 }
 
 
 .nav-links a {
 
-    color:
-        #d9e8d8;
+    color: #d9e8d8;
 
-    text-decoration:
-        none;
+    text-decoration: none;
 
-    font-size:
-        .9rem;
+    font-size: .9rem;
 
-    font-weight:
-        700;
+    font-weight: 700;
 
-    transition:
-        .25s;
+    transition: .25s;
 
 }
 
 
 .nav-links a:hover {
 
-    color:
-        var(--green);
-
-}
-
-
-.nav-links .active {
-
-    color:
-        var(--green);
+    color: var(--green);
 
 }
 
@@ -448,45 +350,33 @@ nav {
 
 .hero {
 
-    min-height:
-        92vh;
+    min-height: 72vh;
 
-    display:
-        flex;
+    display: flex;
 
-    align-items:
-        center;
+    align-items: center;
 
-    justify-content:
-        center;
+    justify-content: center;
 
-    text-align:
-        center;
+    text-align: center;
 
-    padding:
-        140px 7% 90px;
-
-    position:
-        relative;
+    padding: 140px 7% 80px;
 
 }
 
 
 .hero-content {
 
-    max-width:
-        900px;
+    max-width: 900px;
 
 }
 
 
 .badge {
 
-    display:
-        inline-block;
+    display: inline-block;
 
-    padding:
-        9px 16px;
+    padding: 9px 16px;
 
     border:
         1px solid
@@ -495,23 +385,17 @@ nav {
     background:
         rgba(168,255,114,.07);
 
-    color:
-        var(--green);
+    color: var(--green);
 
-    border-radius:
-        100px;
+    border-radius: 100px;
 
-    font-size:
-        .72rem;
+    font-size: .72rem;
 
-    font-weight:
-        900;
+    font-weight: 900;
 
-    letter-spacing:
-        2px;
+    letter-spacing: 2px;
 
-    margin-bottom:
-        25px;
+    margin-bottom: 25px;
 
 }
 
@@ -519,24 +403,20 @@ nav {
 .hero h1 {
 
     font-size:
-        clamp(3.3rem, 9vw, 7rem);
+        clamp(3.5rem, 9vw, 7rem);
 
-    line-height:
-        .9;
+    line-height: .9;
 
-    letter-spacing:
-        -5px;
+    letter-spacing: -5px;
 
-    margin-bottom:
-        30px;
+    margin-bottom: 28px;
 
 }
 
 
 .hero h1 span {
 
-    color:
-        var(--green);
+    color: var(--green);
 
     text-shadow:
         0 0 35px
@@ -547,69 +427,54 @@ nav {
 
 .hero p {
 
-    max-width:
-        720px;
+    max-width: 700px;
 
-    margin:
-        auto;
+    margin: auto;
 
-    color:
-        var(--muted);
+    color: var(--muted);
 
-    font-size:
-        1.15rem;
+    font-size: 1.1rem;
 
-    line-height:
-        1.8;
+    line-height: 1.8;
 
 }
 
 
 /* =========================================================
-   GENERAL SECTIONS
+   SECTIONS
 ========================================================= */
 
 section {
 
-    padding:
-        110px 7%;
+    padding: 100px 7%;
 
-    position:
-        relative;
+    position: relative;
 
 }
 
 
 .section-header {
 
-    max-width:
-        750px;
+    max-width: 750px;
 
-    margin:
-        0 auto 55px;
+    margin: 0 auto 55px;
 
-    text-align:
-        center;
+    text-align: center;
 
 }
 
 
 .label {
 
-    color:
-        var(--green);
+    color: var(--green);
 
-    font-size:
-        .72rem;
+    font-size: .72rem;
 
-    font-weight:
-        900;
+    font-weight: 900;
 
-    letter-spacing:
-        2px;
+    letter-spacing: 2px;
 
-    margin-bottom:
-        14px;
+    margin-bottom: 14px;
 
 }
 
@@ -619,19 +484,151 @@ section {
     font-size:
         clamp(2.2rem,5vw,4rem);
 
-    margin-bottom:
-        18px;
+    margin-bottom: 18px;
 
 }
 
 
 .section-header p {
 
-    color:
-        var(--muted);
+    color: var(--muted);
 
-    line-height:
-        1.8;
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   GREAT APE INTRO
+========================================================= */
+
+.intro-section {
+
+    padding-top: 50px;
+
+}
+
+
+.intro-grid {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1.1fr .9fr;
+
+    gap: 45px;
+
+    align-items: center;
+
+}
+
+
+.intro-text {
+
+    background:
+        rgba(4,22,11,.82);
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    border-radius: 25px;
+
+    padding: 40px;
+
+    box-shadow:
+        0 25px 80px
+        rgba(0,0,0,.25);
+
+}
+
+
+.intro-text h3 {
+
+    font-size: 2rem;
+
+    margin-bottom: 18px;
+
+    color: var(--green);
+
+}
+
+
+.intro-text p {
+
+    color: var(--muted);
+
+    line-height: 1.85;
+
+    margin-bottom: 15px;
+
+}
+
+
+.bonobo-frame {
+
+    padding: 12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #baff70,
+            #4fae58,
+            #183d20
+        );
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 25px 70px
+        rgba(0,0,0,.45),
+
+        0 0 40px
+        rgba(168,255,114,.08);
+
+}
+
+
+.bonobo-frame-inner {
+
+    padding: 8px;
+
+    background:
+        #06150a;
+
+    border-radius: 17px;
+
+}
+
+
+.bonobo-frame img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 430px;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+
+}
+
+
+.bonobo-caption {
+
+    text-align: center;
+
+    color: #d8ffc0;
+
+    font-weight: 800;
+
+    padding: 15px 5px 8px;
 
 }
 
@@ -642,63 +639,40 @@ section {
 
 .ape-grid {
 
-    max-width:
-        1200px;
+    max-width: 1200px;
 
-    margin:
-        auto;
+    margin: auto;
 
-    display:
-        grid;
+    display: grid;
 
     grid-template-columns:
-        repeat(auto-fit,minmax(240px,1fr));
+        repeat(auto-fit,minmax(250px,1fr));
 
-    gap:
-        20px;
+    gap: 20px;
 
 }
 
 
 .ape-card {
 
-    position:
-        relative;
+    padding: 30px;
 
-    min-height:
-        370px;
-
-    padding:
-        32px;
-
-    display:
-        flex;
-
-    flex-direction:
-        column;
-
-    justify-content:
-        flex-end;
+    min-height: 300px;
 
     background:
         linear-gradient(
             145deg,
-            rgba(10,40,19,.90),
-            rgba(3,18,9,.88)
+            rgba(10,40,19,.88),
+            rgba(4,20,10,.78)
         );
 
     border:
         1px solid
         rgba(255,255,255,.08);
 
-    border-radius:
-        24px;
+    border-radius: 22px;
 
-    overflow:
-        hidden;
-
-    transition:
-        .35s;
+    transition: .3s;
 
 }
 
@@ -706,343 +680,118 @@ section {
 .ape-card:hover {
 
     transform:
-        translateY(-10px);
+        translateY(-8px);
 
     border-color:
-        rgba(168,255,114,.35);
+        rgba(168,255,114,.3);
 
     box-shadow:
-        0 25px 70px
-        rgba(0,0,0,.4);
-
-}
-
-
-.ape-card::before {
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    inset:
-        0;
-
-    background:
-        radial-gradient(
-            circle at 50% 20%,
-            rgba(168,255,114,.12),
-            transparent 45%
-        );
-
-    pointer-events:
-        none;
+        0 20px 60px
+        rgba(0,0,0,.35);
 
 }
 
 
 .ape-icon {
 
-    position:
-        absolute;
+    font-size: 3.2rem;
 
-    top:
-        25px;
-
-    right:
-        25px;
-
-    font-size:
-        5rem;
-
-    transition:
-        .35s;
-
-}
-
-
-.ape-card:hover .ape-icon {
-
-    transform:
-        scale(1.12)
-        rotate(4deg);
-
-}
-
-
-.ape-number {
-
-    position:
-        absolute;
-
-    top:
-        25px;
-
-    left:
-        27px;
-
-    color:
-        rgba(255,255,255,.18);
-
-    font-size:
-        .75rem;
-
-    font-weight:
-        900;
-
-    letter-spacing:
-        2px;
+    margin-bottom: 18px;
 
 }
 
 
 .ape-card h3 {
 
-    font-size:
-        1.7rem;
+    font-size: 1.4rem;
 
-    margin-bottom:
-        12px;
+    margin-bottom: 10px;
+
+}
+
+
+.ape-card .scientific {
+
+    color: var(--green);
+
+    font-size: .8rem;
+
+    font-weight: 800;
+
+    margin-bottom: 15px;
 
 }
 
 
 .ape-card p {
 
-    color:
-        var(--muted);
+    color: var(--muted);
 
-    line-height:
-        1.7;
+    line-height: 1.7;
 
-    font-size:
-        .92rem;
-
-    margin-bottom:
-        18px;
-
-}
-
-
-.ape-tag {
-
-    display:
-        inline-block;
-
-    align-self:
-        flex-start;
-
-    padding:
-        7px 11px;
-
-    border-radius:
-        100px;
-
-    color:
-        var(--green);
-
-    background:
-        rgba(168,255,114,.08);
-
-    border:
-        1px solid
-        rgba(168,255,114,.16);
-
-    font-size:
-        .72rem;
-
-    font-weight:
-        800;
+    font-size: .92rem;
 
 }
 
 
 /* =========================================================
-   COMPARISON
+   DIFFERENCE SECTION
 ========================================================= */
 
-.comparison-section {
+.difference {
 
     background:
-        rgba(1,10,5,.38);
+        rgba(1,12,6,.45);
 
 }
 
 
-.comparison {
+.difference-grid {
 
-    max-width:
-        1050px;
+    max-width: 1050px;
 
-    margin:
-        auto;
+    margin: auto;
 
-    overflow-x:
-        auto;
-
-    border:
-        1px solid
-        rgba(255,255,255,.09);
-
-    border-radius:
-        22px;
-
-    background:
-        rgba(4,22,11,.75);
-
-}
-
-
-table {
-
-    width:
-        100%;
-
-    border-collapse:
-        collapse;
-
-    min-width:
-        700px;
-
-}
-
-
-th,
-td {
-
-    padding:
-        20px;
-
-    text-align:
-        left;
-
-    border-bottom:
-        1px solid
-        rgba(255,255,255,.07);
-
-}
-
-
-th {
-
-    color:
-        var(--green);
-
-    font-size:
-        .85rem;
-
-    text-transform:
-        uppercase;
-
-    letter-spacing:
-        1px;
-
-}
-
-
-td {
-
-    color:
-        #d5e2d5;
-
-    font-size:
-        .9rem;
-
-}
-
-
-td:first-child {
-
-    color:
-        white;
-
-    font-weight:
-        800;
-
-}
-
-
-tr:last-child td {
-
-    border-bottom:
-        none;
-
-}
-
-
-/* =========================================================
-   GREAT APE EXPLAINER
-========================================================= */
-
-.explainer {
-
-    max-width:
-        1050px;
-
-    margin:
-        auto;
-
-    display:
-        grid;
+    display: grid;
 
     grid-template-columns:
-        1fr 1fr;
+        repeat(2,1fr);
 
-    gap:
-        25px;
+    gap: 18px;
 
 }
 
 
-.explainer-card {
+.difference-card {
 
-    padding:
-        35px;
+    padding: 30px;
 
     background:
-        linear-gradient(
-            145deg,
-            rgba(8,35,17,.85),
-            rgba(3,19,9,.75)
-        );
+        rgba(7,30,15,.75);
 
     border:
         1px solid
         rgba(255,255,255,.08);
 
-    border-radius:
-        22px;
+    border-radius: 20px;
 
 }
 
 
-.explainer-card h3 {
+.difference-card h3 {
 
-    font-size:
-        1.5rem;
+    color: var(--green);
 
-    margin-bottom:
-        15px;
+    margin-bottom: 10px;
 
 }
 
 
-.explainer-card p {
+.difference-card p {
 
-    color:
-        var(--muted);
+    color: var(--muted);
 
-    line-height:
-        1.8;
-
-}
-
-
-.explainer-card strong {
-
-    color:
-        var(--green);
+    line-height: 1.7;
 
 }
 
@@ -1051,33 +800,27 @@ tr:last-child td {
    FACTS
 ========================================================= */
 
-.fact-grid {
+.facts {
 
-    max-width:
-        1000px;
+    max-width: 1000px;
 
-    margin:
-        auto;
+    margin: auto;
 
-    display:
-        grid;
+    display: grid;
 
     grid-template-columns:
-        repeat(auto-fit,minmax(210px,1fr));
+        repeat(auto-fit,minmax(200px,1fr));
 
-    gap:
-        18px;
+    gap: 18px;
 
 }
 
 
 .fact {
 
-    text-align:
-        center;
+    text-align: center;
 
-    padding:
-        32px 22px;
+    padding: 35px 25px;
 
     background:
         rgba(6,28,13,.75);
@@ -1086,151 +829,64 @@ tr:last-child td {
         1px solid
         rgba(255,255,255,.08);
 
-    border-radius:
-        20px;
-
-    transition:
-        .3s;
+    border-radius: 20px;
 
 }
 
 
-.fact:hover {
+.fact strong {
 
-    transform:
-        translateY(-6px);
+    display: block;
 
-    border-color:
-        rgba(168,255,114,.25);
+    color: var(--green);
 
-}
+    font-size: 2.3rem;
 
-
-.fact-icon {
-
-    font-size:
-        2.5rem;
-
-    margin-bottom:
-        12px;
+    margin-bottom: 8px;
 
 }
 
 
-.fact h3 {
+.fact span {
 
-    font-size:
-        1.1rem;
+    color: var(--muted);
 
-    margin-bottom:
-        9px;
-
-}
-
-
-.fact p {
-
-    color:
-        var(--muted);
-
-    font-size:
-        .88rem;
-
-    line-height:
-        1.6;
+    line-height: 1.5;
 
 }
 
 
 /* =========================================================
-   CTA
+   BACK BUTTON
 ========================================================= */
 
-.cta {
+.back-area {
 
-    max-width:
-        1000px;
-
-    margin:
-        auto;
+    text-align: center;
 
     padding:
-        55px 35px;
-
-    text-align:
-        center;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            rgba(35,80,32,.48),
-            rgba(4,25,12,.88)
-        );
-
-    border:
-        1px solid
-        rgba(168,255,114,.18);
-
-    border-radius:
-        28px;
-
-}
-
-
-.cta h2 {
-
-    font-size:
-        clamp(2rem,5vw,3.5rem);
-
-    margin-bottom:
-        15px;
-
-}
-
-
-.cta p {
-
-    max-width:
-        650px;
-
-    margin:
-        0 auto 28px;
-
-    color:
-        var(--muted);
-
-    line-height:
-        1.8;
+        20px 7% 90px;
 
 }
 
 
 .btn {
 
-    display:
-        inline-block;
+    display: inline-block;
 
-    padding:
-        15px 24px;
+    padding: 15px 24px;
 
-    border:
-        none;
+    border: none;
 
-    border-radius:
-        12px;
+    border-radius: 12px;
 
-    cursor:
-        pointer;
+    cursor: pointer;
 
-    font-weight:
-        900;
+    font-weight: 900;
 
-    text-decoration:
-        none;
+    text-decoration: none;
 
-    transition:
-        .25s;
+    transition: .25s;
 
 }
 
@@ -1258,32 +914,15 @@ tr:last-child td {
 }
 
 
-.secondary {
-
-    background:
-        rgba(255,255,255,.07);
-
-    color:
-        white;
-
-    border:
-        1px solid
-        rgba(255,255,255,.12);
-
-}
-
-
 /* =========================================================
    FOOTER
 ========================================================= */
 
 footer {
 
-    padding:
-        55px 7%;
+    padding: 55px 7%;
 
-    text-align:
-        center;
+    text-align: center;
 
     background:
         rgba(1,10,5,.9);
@@ -1297,22 +936,18 @@ footer {
 
 footer strong {
 
-    color:
-        var(--green);
+    color: var(--green);
 
 }
 
 
 footer p {
 
-    color:
-        var(--muted);
+    color: var(--muted);
 
-    margin-top:
-        10px;
+    margin-top: 10px;
 
-    font-size:
-        .85rem;
+    font-size: .85rem;
 
 }
 
@@ -1321,54 +956,57 @@ footer p {
    MOBILE
 ========================================================= */
 
-@media(max-width:750px) {
-
-    nav {
-
-        padding:
-            15px 5%;
-
-    }
+@media(max-width:800px) {
 
     .nav-links {
 
-        display:
-            none;
+        display: none;
 
     }
 
     .hero {
 
+        min-height: 65vh;
+
         padding:
-            120px 6% 80px;
+            120px 6% 70px;
 
     }
 
     .hero h1 {
 
-        letter-spacing:
-            -3px;
+        letter-spacing: -3px;
 
     }
 
     section {
 
         padding:
-            80px 6%;
+            75px 6%;
 
     }
 
-    .explainer {
+    .intro-grid {
 
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
 
     }
 
-    .ape-card {
+    .bonobo-frame img {
 
-        min-height:
-            330px;
+        height: 330px;
+
+    }
+
+    .intro-text {
+
+        padding: 28px;
+
+    }
+
+    .difference-grid {
+
+        grid-template-columns: 1fr;
 
     }
 
@@ -1399,21 +1037,8 @@ footer p {
 <div class="drop"></div>
 <div class="drop"></div>
 <div class="drop"></div>
-```
-
-</div>
-
-<!-- =====================================================
-     FLOATING LEAVES
-===================================================== -->
-
-<div class="leaves">
-
-```
-<div class="leaf">🍃</div>
-<div class="leaf">🌿</div>
-<div class="leaf">🍃</div>
-<div class="leaf">🌿</div>
+<div class="drop"></div>
+<div class="drop"></div>
 ```
 
 </div>
@@ -1442,19 +1067,20 @@ footer p {
         Species
     </a>
 
-    <a
-        href="great-apes.html"
-        class="active"
-    >
-        Great Apes
+    <a href="index.html#facts">
+        Facts
     </a>
 
-    <a href="index.html#quiz">
+    <a href="quiz.html">
         Quiz
     </a>
 
-    <a href="index.html#personality">
+    <a href="personality.html">
         Personality
+    </a>
+
+    <a href="great-apes.html">
+        Great Apes
     </a>
 
 </div>
@@ -1472,9 +1098,7 @@ footer p {
 <div class="hero-content">
 
     <div class="badge">
-
         🦍 THE GREAT APES
-
     </div>
 
 
@@ -1489,10 +1113,10 @@ footer p {
 
     <p>
 
-        They're intelligent, social, powerful and
-        remarkably complex. Step beyond the monkey
-        world and discover the fascinating relatives
-        that make up the great ape family.
+        Discover the intelligent, powerful and
+        fascinating relatives of monkeys — from
+        chimpanzees and bonobos to gorillas,
+        orangutans and humans.
 
     </p>
 
@@ -1502,26 +1126,117 @@ footer p {
 </section>
 
 <!-- =====================================================
-     APE SPECIES
+     INTRO + BONOBO IMAGE
 ===================================================== -->
 
-<section id="apes">
+<section class="intro-section">
 
 ```
 <div class="section-header">
 
     <div class="label">
-        THE APE FAMILY
+        BEYOND MONKEYS
     </div>
 
     <h2>
-        Meet The Great Apes
+        What Makes An Ape?
+    </h2>
+
+    <p>
+        Great apes are some of the most intelligent
+        and socially complex animals on Earth.
+    </p>
+
+</div>
+
+
+<div class="intro-grid">
+
+
+    <div class="intro-text">
+
+        <h3>
+            🧠 Intelligence & Social Life
+        </h3>
+
+        <p>
+
+            Great apes are known for their remarkable
+            intelligence. They can use tools, solve
+            problems, communicate with one another
+            and learn from their surroundings.
+
+        </p>
+
+
+        <p>
+
+            Unlike monkeys, great apes generally do
+            not have tails. They also tend to have
+            larger brains relative to their body size
+            and highly flexible shoulders and arms.
+
+        </p>
+
+
+        <p>
+
+            Great apes include orangutans, gorillas,
+            chimpanzees and bonobos — as well as
+            humans.
+
+        </p>
+
+    </div>
+
+
+    <!-- BONOBO FRAMED IMAGE -->
+
+    <div class="bonobo-frame">
+
+        <div class="bonobo-frame-inner">
+
+            <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp9BYUFtvDqwo2CHncAf0zuw3KhgR8GYlb6SMXPgxiFA&s=10"
+                alt="Bonobo"
+            >
+
+            <div class="bonobo-caption">
+
+                🦍 Bonobo
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- =====================================================
+     SPECIES
+===================================================== -->
+
+<section>
+
+```
+<div class="section-header">
+
+    <div class="label">
+        GREAT APE SPECIES
+    </div>
+
+    <h2>
+        The Great Apes
     </h2>
 
     <p>
 
-        Great apes are among the most intelligent
-        and socially complex animals on Earth.
+        Each great ape has its own unique
+        personality, habitat and way of life.
 
     </p>
 
@@ -1531,106 +1246,9 @@ footer p {
 <div class="ape-grid">
 
 
-    <!-- CHIMPANZEE -->
-
-    <div class="ape-card">
-
-        <div class="ape-number">
-            01 / GREAT APE
-        </div>
-
-        <div class="ape-icon">
-            🐒
-        </div>
-
-        <h3>
-            Chimpanzee
-        </h3>
-
-        <p>
-
-            Highly intelligent and social apes
-            known for using tools, solving problems
-            and living in complex communities.
-
-        </p>
-
-        <span class="ape-tag">
-            🧠 INTELLIGENT
-        </span>
-
-    </div>
-
-
-    <!-- BONOBO -->
-
-    <div class="ape-card">
-
-        <div class="ape-number">
-            02 / GREAT APE
-        </div>
-
-        <div class="ape-icon">
-            🐵
-        </div>
-
-        <h3>
-            Bonobo
-        </h3>
-
-        <p>
-
-            Close relatives of chimpanzees known
-            for their highly social groups,
-            cooperation and strong relationships.
-
-        </p>
-
-        <span class="ape-tag">
-            ❤️ SOCIAL
-        </span>
-
-    </div>
-
-
-    <!-- GORILLA -->
-
-    <div class="ape-card">
-
-        <div class="ape-number">
-            03 / GREAT APE
-        </div>
-
-        <div class="ape-icon">
-            🦍
-        </div>
-
-        <h3>
-            Gorilla
-        </h3>
-
-        <p>
-
-            Powerful but generally peaceful
-            herbivores that live in close family
-            groups led by a dominant silverback.
-
-        </p>
-
-        <span class="ape-tag">
-            💪 POWERFUL
-        </span>
-
-    </div>
-
-
     <!-- ORANGUTAN -->
 
     <div class="ape-card">
-
-        <div class="ape-number">
-            04 / GREAT APE
-        </div>
 
         <div class="ape-icon">
             🦧
@@ -1640,17 +1258,103 @@ footer p {
             Orangutan
         </h3>
 
+        <div class="scientific">
+            Pongo
+        </div>
+
         <p>
 
-            Remarkably intelligent forest apes
-            famous for their problem-solving skills,
-            long arms and mostly solitary lifestyle.
+            Orangutans are highly intelligent apes
+            native to the rainforests of Borneo and
+            Sumatra. They spend much of their lives
+            in trees and are famous for their
+            reddish-orange hair.
 
         </p>
 
-        <span class="ape-tag">
-            🌳 TREE-DWELLER
-        </span>
+    </div>
+
+
+    <!-- GORILLA -->
+
+    <div class="ape-card">
+
+        <div class="ape-icon">
+            🦍
+        </div>
+
+        <h3>
+            Gorilla
+        </h3>
+
+        <div class="scientific">
+            Gorilla
+        </div>
+
+        <p>
+
+            Gorillas are the largest living primates.
+            Despite their impressive size and strength,
+            they are generally peaceful, social animals
+            that live in family groups.
+
+        </p>
+
+    </div>
+
+
+    <!-- CHIMPANZEE -->
+
+    <div class="ape-card">
+
+        <div class="ape-icon">
+            🐵
+        </div>
+
+        <h3>
+            Chimpanzee
+        </h3>
+
+        <div class="scientific">
+            Pan troglodytes
+        </div>
+
+        <p>
+
+            Chimpanzees are extremely intelligent and
+            closely related to humans. They use tools,
+            form complex social relationships and can
+            learn from one another.
+
+        </p>
+
+    </div>
+
+
+    <!-- BONOBO -->
+
+    <div class="ape-card">
+
+        <div class="ape-icon">
+            🐒
+        </div>
+
+        <h3>
+            Bonobo
+        </h3>
+
+        <div class="scientific">
+            Pan paniscus
+        </div>
+
+        <p>
+
+            Bonobos are found in the forests of the
+            Democratic Republic of the Congo. They
+            are highly social and are particularly
+            known for their peaceful social behavior.
+
+        </p>
 
     </div>
 
@@ -1658,10 +1362,6 @@ footer p {
     <!-- HUMAN -->
 
     <div class="ape-card">
-
-        <div class="ape-number">
-            05 / GREAT APE
-        </div>
 
         <div class="ape-icon">
             🧑
@@ -1671,17 +1371,18 @@ footer p {
             Human
         </h3>
 
+        <div class="scientific">
+            Homo sapiens
+        </div>
+
         <p>
 
-            Humans are great apes too. We share
-            many anatomical and genetic features
-            with our other great ape relatives.
+            Humans are also great apes. We share a
+            common evolutionary history with the other
+            great apes and are especially known for
+            language, technology and complex culture.
 
         </p>
-
-        <span class="ape-tag">
-            🧬 GREAT APE
-        </span>
 
     </div>
 
@@ -1692,249 +1393,101 @@ footer p {
 </section>
 
 <!-- =====================================================
-     MONKEY VS GREAT APE
+     APE VS MONKEY
 ===================================================== -->
 
-<section class="comparison-section">
+<section class="difference">
 
 ```
 <div class="section-header">
 
     <div class="label">
-        KNOW THE DIFFERENCE
+        DID YOU KNOW?
     </div>
 
     <h2>
-        Monkey vs Great Ape
+        Ape vs Monkey
     </h2>
 
     <p>
 
-        They are both primates, but there are
-        several important differences.
+        They may look similar, but there are some
+        important differences.
 
     </p>
 
 </div>
 
 
-<div class="comparison">
-
-    <table>
-
-        <thead>
-
-            <tr>
-
-                <th>
-                    Feature
-                </th>
-
-                <th>
-                    Monkeys
-                </th>
-
-                <th>
-                    Great Apes
-                </th>
-
-            </tr>
-
-        </thead>
+<div class="difference-grid">
 
 
-        <tbody>
-
-            <tr>
-
-                <td>
-                    Tail
-                </td>
-
-                <td>
-                    Many species have tails
-                </td>
-
-                <td>
-                    No external tail
-                </td>
-
-            </tr>
-
-
-            <tr>
-
-                <td>
-                    Body Shape
-                </td>
-
-                <td>
-                    Generally more varied
-                </td>
-
-                <td>
-                    Broad chests and flexible shoulders
-                </td>
-
-            </tr>
-
-
-            <tr>
-
-                <td>
-                    Intelligence
-                </td>
-
-                <td>
-                    Many species are highly intelligent
-                </td>
-
-                <td>
-                    Exceptional problem-solving abilities
-                </td>
-
-            </tr>
-
-
-            <tr>
-
-                <td>
-                    Movement
-                </td>
-
-                <td>
-                    Varies greatly by species
-                </td>
-
-                <td>
-                    Extremely flexible shoulders and arms
-                </td>
-
-            </tr>
-
-
-            <tr>
-
-                <td>
-                    Examples
-                </td>
-
-                <td>
-                    Capuchins, macaques, baboons
-                </td>
-
-                <td>
-                    Gorillas, chimpanzees, orangutans
-                </td>
-
-            </tr>
-
-        </tbody>
-
-    </table>
-
-</div>
-```
-
-</section>
-
-<!-- =====================================================
-     WHAT MAKES AN APE?
-===================================================== -->
-
-<section>
-
-```
-<div class="section-header">
-
-    <div class="label">
-        PRIMATE SCIENCE
-    </div>
-
-    <h2>
-        What Makes An Ape?
-    </h2>
-
-    <p>
-
-        Great apes share several characteristics
-        that distinguish them from monkeys.
-
-    </p>
-
-</div>
-
-
-<div class="explainer">
-
-
-    <div class="explainer-card">
+    <div class="difference-card">
 
         <h3>
-            🦴 No External Tail
+            🐒 Monkeys
         </h3>
 
         <p>
 
-            One of the easiest ways to distinguish
-            great apes from many monkeys is the
-            absence of an external tail. Great apes
-            have a tailbone internally, but no visible
-            tail.
+            Many monkeys have tails, although there
+            are exceptions. Monkeys are generally
+            smaller than great apes and belong to
+            several different groups of primates.
 
         </p>
 
     </div>
 
 
-    <div class="explainer-card">
+    <div class="difference-card">
 
         <h3>
-            🧠 Large Brains
+            🦍 Great Apes
         </h3>
 
         <p>
 
-            Great apes have relatively large brains
-            and demonstrate sophisticated behaviours
-            including learning, communication,
-            memory and problem-solving.
+            Great apes do not have tails. They
+            generally have larger brains, more
+            flexible shoulders and complex social
+            behavior.
 
         </p>
 
     </div>
 
 
-    <div class="explainer-card">
+    <div class="difference-card">
 
         <h3>
-            🤸 Flexible Shoulders
+            🧠 Intelligence
         </h3>
 
         <p>
 
-            Their shoulder structure allows great
-            apes to move their arms through a wide
-            range of motion. This is especially useful
-            for climbing and moving through trees.
+            Both monkeys and apes can be highly
+            intelligent, but great apes are especially
+            well known for advanced problem-solving,
+            tool use and learning.
 
         </p>
 
     </div>
 
 
-    <div class="explainer-card">
+    <div class="difference-card">
 
         <h3>
-            👥 Complex Societies
+            🌳 Life In The Trees
         </h3>
 
         <p>
 
-            Many great apes live in complex social
-            groups. They can form long-lasting
-            relationships, learn from one another
-            and cooperate with members of their group.
+            Some great apes, particularly orangutans,
+            spend a huge amount of time in trees.
+            Others, such as gorillas, spend much more
+            time on the ground.
 
         </p>
 
@@ -1956,104 +1509,69 @@ footer p {
 <div class="section-header">
 
     <div class="label">
-        DID YOU KNOW?
+        APE KNOWLEDGE
     </div>
 
     <h2>
-        Great Ape Facts
+        Quick Facts
     </h2>
-
-    <p>
-
-        A few things that make great apes
-        seriously impressive.
-
-    </p>
 
 </div>
 
 
-<div class="fact-grid">
+<div class="facts">
 
 
     <div class="fact">
 
-        <div class="fact-icon">
+        <strong>
             🧠
-        </div>
+        </strong>
 
-        <h3>
-            Tool Users
-        </h3>
-
-        <p>
-
-            Some great apes use objects as tools
-            to help obtain food or solve problems.
-
-        </p>
+        <span>
+            Great apes are among the most intelligent
+            animals on Earth.
+        </span>
 
     </div>
 
 
     <div class="fact">
 
-        <div class="fact-icon">
-            🌳
-        </div>
+        <strong>
+            🦧
+        </strong>
 
-        <h3>
-            Amazing Climbers
-        </h3>
-
-        <p>
-
-            Their powerful arms and flexible
-            shoulders make many apes excellent
-            climbers.
-
-        </p>
+        <span>
+            Orangutans are famous for their
+            reddish-orange fur.
+        </span>
 
     </div>
 
 
     <div class="fact">
 
-        <div class="fact-icon">
-            ❤️
-        </div>
+        <strong>
+            🦍
+        </strong>
 
-        <h3>
-            Strong Relationships
-        </h3>
-
-        <p>
-
-            Great apes can develop long-lasting
-            social bonds with other members of
-            their communities.
-
-        </p>
+        <span>
+            Gorillas are the largest living primates.
+        </span>
 
     </div>
 
 
     <div class="fact">
 
-        <div class="fact-icon">
-            🧬
-        </div>
+        <strong>
+            👨‍👩‍👧
+        </strong>
 
-        <h3>
-            Our Relatives
-        </h3>
-
-        <p>
-
-            Humans share a common evolutionary
-            history with the other great apes.
-
-        </p>
+        <span>
+            Humans are members of the great ape family.
+        </span>
 
     </div>
 
@@ -2064,41 +1582,23 @@ footer p {
 </section>
 
 <!-- =====================================================
-     CTA
+     BACK TO MONKEYWORLD
 ===================================================== -->
 
-<section>
+<div class="back-area">
 
 ```
-<div class="cta">
+<a
+    href="index.html"
+    class="btn primary"
+>
 
-    <h2>
-        Ready To Explore The Jungle?
-    </h2>
+    🐒 Back To MonkeyWorld
 
-    <p>
-
-        Head back to Monkey World and explore
-        more monkey species, test your knowledge
-        and discover which monkey matches your
-        personality.
-
-    </p>
-
-
-    <a
-        href="index.html"
-        class="btn primary"
-    >
-
-        🐒 BACK TO MONKEY WORLD
-
-    </a>
+</a>
+```
 
 </div>
-```
-
-</section>
 
 <!-- =====================================================
      FOOTER
@@ -2112,9 +1612,7 @@ footer p {
 </strong>
 
 <p>
-
-    Explore. Learn. Discover your inner monkey. 🌿
-
+    Explore. Learn. Discover the world of primates. 🌿
 </p>
 ```
 
