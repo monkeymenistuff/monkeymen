@@ -6,18 +6,14 @@
 
 <meta charset="UTF-8">
 
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0"
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
->
-
-<title>Monkey World 🐒</title>
+<title>MonkeyWorld 🐒 | Explore the Jungle</title>
 
 <style>
 
 /* =========================================================
-   BASIC RESET
+   RESET
 ========================================================= */
 
 * {
@@ -31,19 +27,17 @@ html {
 }
 
 body {
-
     font-family:
         Arial,
         Helvetica,
         sans-serif;
 
-    color: white;
+    color: #f4fff2;
 
     background:
-        #031008;
+        #020b05;
 
     overflow-x: hidden;
-
 }
 
 
@@ -54,31 +48,43 @@ body {
 :root {
 
     --green:
-        #a8ff72;
+        #b8ff5c;
 
-    --bright-green:
-        #62e66e;
+    --lime:
+        #72ff65;
 
-    --dark-green:
-        #031008;
+    --bright:
+        #d7ff83;
+
+    --dark:
+        #020b05;
 
     --forest:
-        #082414;
+        #062414;
+
+    --forest2:
+        #0b351b;
 
     --card:
-        rgba(7, 30, 15, .78);
+        rgba(8, 43, 20, .82);
 
     --muted:
-        #aab9aa;
+        #b7c9b7;
 
     --white:
         #f4fff2;
+
+    --gold:
+        #ffd84d;
+
+    --cyan:
+        #63f5d2;
 
 }
 
 
 /* =========================================================
-   MAIN RAINFOREST BACKGROUND
+   BACKGROUND
 ========================================================= */
 
 body::before {
@@ -89,13 +95,13 @@ body::before {
 
     inset: 0;
 
-    z-index: -10;
+    z-index: -20;
 
     background:
 
         linear-gradient(
-            rgba(1, 12, 5, .72),
-            rgba(1, 15, 7, .90)
+            rgba(1, 12, 5, .62),
+            rgba(1, 13, 6, .88)
         ),
 
         url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLh-zhEqgezfM8iIm1yztPEFNOGt_TVvC4gwh9gMxJuQ&s=10")
@@ -105,10 +111,6 @@ body::before {
 }
 
 
-/* =========================================================
-   GREEN ATMOSPHERIC GLOW
-========================================================= */
-
 body::after {
 
     content: "";
@@ -117,29 +119,96 @@ body::after {
 
     inset: 0;
 
-    z-index: -9;
+    z-index: -19;
 
     pointer-events: none;
 
     background:
 
         radial-gradient(
-            circle at 15% 20%,
-            rgba(98,230,110,.12),
+            circle at 15% 15%,
+            rgba(114,255,101,.18),
             transparent 28%
         ),
 
         radial-gradient(
-            circle at 85% 70%,
-            rgba(168,255,114,.08),
-            transparent 30%
+            circle at 85% 25%,
+            rgba(99,245,210,.10),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 50% 90%,
+            rgba(184,255,92,.12),
+            transparent 35%
         );
 
 }
 
 
 /* =========================================================
-   SUBTLE RAIN
+   GLOWING ORBS
+========================================================= */
+
+.glow {
+
+    position: fixed;
+
+    width: 250px;
+    height: 250px;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: -5;
+
+    filter: blur(70px);
+
+    opacity: .18;
+
+}
+
+.glow.one {
+
+    background: #65ff6d;
+
+    top: 15%;
+    left: -100px;
+
+    animation:
+        glowMove 10s ease-in-out infinite alternate;
+
+}
+
+.glow.two {
+
+    background: #00ffd0;
+
+    right: -120px;
+    top: 55%;
+
+    animation:
+        glowMove 13s ease-in-out infinite alternate-reverse;
+
+}
+
+
+@keyframes glowMove {
+
+    from {
+        transform: translateY(-40px);
+    }
+
+    to {
+        transform: translateY(80px);
+    }
+
+}
+
+
+/* =========================================================
+   RAIN
 ========================================================= */
 
 .rain {
@@ -152,7 +221,7 @@ body::after {
 
     pointer-events: none;
 
-    opacity: .15;
+    opacity: .20;
 
     overflow: hidden;
 
@@ -162,14 +231,16 @@ body::after {
 
     position: absolute;
 
+    top: -100px;
+
     width: 1px;
 
-    height: 45px;
+    height: 55px;
 
     background:
         linear-gradient(
             transparent,
-            rgba(200,255,220,.7)
+            rgba(210,255,220,.8)
         );
 
     animation:
@@ -178,160 +249,93 @@ body::after {
 }
 
 .drop:nth-child(1) {
-    left: 5%;
+    left: 4%;
     animation-duration: 1.8s;
-    animation-delay: -.5s;
 }
 
 .drop:nth-child(2) {
-    left: 12%;
+    left: 11%;
     animation-duration: 2.4s;
-    animation-delay: -1s;
+    animation-delay: -.5s;
 }
 
 .drop:nth-child(3) {
     left: 18%;
     animation-duration: 1.9s;
-    animation-delay: -1.5s;
+    animation-delay: -1s;
 }
 
 .drop:nth-child(4) {
-    left: 25%;
+    left: 26%;
     animation-duration: 2.7s;
-    animation-delay: -.2s;
+    animation-delay: -.8s;
 }
 
 .drop:nth-child(5) {
-    left: 32%;
+    left: 34%;
     animation-duration: 2.1s;
-    animation-delay: -1.2s;
+    animation-delay: -1.4s;
 }
 
 .drop:nth-child(6) {
-    left: 40%;
+    left: 42%;
     animation-duration: 2.5s;
-    animation-delay: -.7s;
+    animation-delay: -.3s;
 }
 
 .drop:nth-child(7) {
-    left: 47%;
+    left: 50%;
     animation-duration: 1.7s;
     animation-delay: -1.8s;
 }
 
 .drop:nth-child(8) {
-    left: 54%;
+    left: 58%;
     animation-duration: 2.3s;
-    animation-delay: -.4s;
+    animation-delay: -.6s;
 }
 
 .drop:nth-child(9) {
-    left: 61%;
+    left: 66%;
     animation-duration: 2.8s;
-    animation-delay: -1.1s;
+    animation-delay: -1.2s;
 }
 
 .drop:nth-child(10) {
-    left: 68%;
+    left: 74%;
     animation-duration: 1.8s;
     animation-delay: -.9s;
 }
 
 .drop:nth-child(11) {
-    left: 75%;
+    left: 82%;
     animation-duration: 2.6s;
     animation-delay: -1.6s;
 }
 
 .drop:nth-child(12) {
-    left: 82%;
+    left: 90%;
     animation-duration: 2s;
-    animation-delay: -.3s;
+    animation-delay: -.4s;
 }
 
 .drop:nth-child(13) {
-    left: 89%;
-    animation-duration: 2.2s;
-    animation-delay: -1.4s;
-}
-
-.drop:nth-child(14) {
-    left: 95%;
-    animation-duration: 2.7s;
-    animation-delay: -.8s;
+    left: 97%;
+    animation-duration: 2.5s;
+    animation-delay: -1.1s;
 }
 
 
 @keyframes rainFall {
 
-    0% {
+    from {
         transform:
             translateY(-100px);
     }
 
-    100% {
+    to {
         transform:
             translateY(110vh);
-    }
-
-}
-
-
-/* =========================================================
-   MIST
-========================================================= */
-
-.mist {
-
-    position: fixed;
-
-    left: -10%;
-
-    bottom: 5%;
-
-    width: 120%;
-
-    height: 180px;
-
-    z-index: 3;
-
-    pointer-events: none;
-
-    background:
-
-        radial-gradient(
-            ellipse,
-            rgba(210,255,218,.07),
-            transparent 65%
-        );
-
-    filter:
-        blur(25px);
-
-    animation:
-        mistMove 16s ease-in-out infinite alternate;
-
-}
-
-
-@keyframes mistMove {
-
-    from {
-
-        transform:
-            translateX(-4%);
-
-        opacity: .35;
-
-    }
-
-    to {
-
-        transform:
-            translateX(4%);
-
-        opacity: .7;
-
     }
 
 }
@@ -347,9 +351,9 @@ body::after {
 
     inset: 0;
 
-    pointer-events: none;
+    z-index: 3;
 
-    z-index: 4;
+    pointer-events: none;
 
     overflow: hidden;
 
@@ -359,47 +363,39 @@ body::after {
 
     position: absolute;
 
-    font-size: 20px;
+    font-size: 24px;
 
-    opacity: .22;
+    opacity: .20;
 
     animation:
-        leafFloat 12s linear infinite;
+        leafFloat 14s linear infinite;
 
 }
 
 .leaf:nth-child(1) {
 
     left: 8%;
-    top: 10%;
-
     animation-delay: -2s;
 
 }
 
 .leaf:nth-child(2) {
 
-    left: 22%;
-    top: 45%;
-
+    left: 25%;
     animation-delay: -7s;
 
 }
 
 .leaf:nth-child(3) {
 
-    left: 78%;
-    top: 25%;
-
-    animation-delay: -5s;
+    left: 72%;
+    animation-delay: -4s;
 
 }
 
 .leaf:nth-child(4) {
 
     left: 90%;
-    top: 65%;
-
     animation-delay: -10s;
 
 }
@@ -407,15 +403,15 @@ body::after {
 
 @keyframes leafFloat {
 
-    0% {
+    from {
 
         transform:
-            translateY(100vh)
+            translateY(110vh)
             rotate(0deg);
 
     }
 
-    100% {
+    to {
 
         transform:
             translateY(-120vh)
@@ -438,43 +434,57 @@ nav {
     left: 0;
     right: 0;
 
-    z-index: 50;
+    z-index: 100;
 
     display: flex;
 
-    justify-content: space-between;
-
     align-items: center;
 
+    justify-content: space-between;
+
+    gap: 25px;
+
     padding:
-        18px 7%;
+        15px 5%;
 
     background:
-        rgba(2,15,7,.70);
+        rgba(1,15,7,.82);
 
     backdrop-filter:
-        blur(18px);
+        blur(20px);
 
     border-bottom:
         1px solid
-        rgba(255,255,255,.08);
+        rgba(184,255,92,.18);
+
+    box-shadow:
+        0 8px 35px
+        rgba(0,0,0,.30);
 
 }
 
 
 .logo {
 
+    flex-shrink: 0;
+
     font-size:
-        1.3rem;
+        1.25rem;
 
     font-weight:
-        900;
+        1000;
+
+    letter-spacing:
+        .5px;
 
     color:
         var(--green);
 
-}
+    text-shadow:
+        0 0 18px
+        rgba(184,255,92,.35);
 
+}
 
 .logo span {
 
@@ -489,25 +499,46 @@ nav {
     display:
         flex;
 
-    gap:
-        25px;
+    align-items:
+        center;
 
+    gap:
+        8px;
+
+    overflow-x:
+        auto;
+
+    scrollbar-width:
+        none;
+
+}
+
+.nav-links::-webkit-scrollbar {
+    display: none;
 }
 
 
 .nav-links a {
 
+    flex-shrink: 0;
+
+    padding:
+        10px 13px;
+
     color:
-        #d9e8d8;
+        #dcebdc;
 
     text-decoration:
         none;
 
     font-size:
-        .9rem;
+        .85rem;
 
     font-weight:
-        700;
+        800;
+
+    border-radius:
+        10px;
 
     transition:
         .25s;
@@ -518,7 +549,17 @@ nav {
 .nav-links a:hover {
 
     color:
+        #051207;
+
+    background:
         var(--green);
+
+    box-shadow:
+        0 0 20px
+        rgba(184,255,92,.25);
+
+    transform:
+        translateY(-2px);
 
 }
 
@@ -538,11 +579,11 @@ nav {
     align-items:
         center;
 
-    padding:
-        130px 7% 90px;
-
     position:
         relative;
+
+    padding:
+        150px 7% 100px;
 
 }
 
@@ -550,7 +591,7 @@ nav {
 .hero-content {
 
     max-width:
-        850px;
+        900px;
 
 }
 
@@ -558,17 +599,23 @@ nav {
 .badge {
 
     display:
-        inline-block;
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
 
     padding:
-        9px 16px;
+        10px 17px;
 
     border:
         1px solid
-        rgba(168,255,114,.25);
+        rgba(184,255,92,.35);
 
     background:
-        rgba(168,255,114,.07);
+        rgba(184,255,92,.09);
 
     color:
         var(--green);
@@ -586,7 +633,11 @@ nav {
         2px;
 
     margin-bottom:
-        25px;
+        28px;
+
+    box-shadow:
+        0 0 30px
+        rgba(184,255,92,.08);
 
 }
 
@@ -594,16 +645,20 @@ nav {
 .hero h1 {
 
     font-size:
-        clamp(3.5rem, 10vw, 8rem);
+        clamp(4rem, 11vw, 9rem);
 
     line-height:
-        .86;
+        .82;
 
     letter-spacing:
-        -6px;
+        -7px;
 
     margin-bottom:
-        30px;
+        32px;
+
+    text-shadow:
+        0 12px 50px
+        rgba(0,0,0,.5);
 
 }
 
@@ -615,7 +670,7 @@ nav {
 
     text-shadow:
         0 0 35px
-        rgba(168,255,114,.2);
+        rgba(184,255,92,.28);
 
 }
 
@@ -623,16 +678,16 @@ nav {
 .hero p {
 
     max-width:
-        650px;
+        680px;
 
     color:
         var(--muted);
 
     font-size:
-        1.15rem;
+        1.12rem;
 
     line-height:
-        1.8;
+        1.85;
 
     margin-bottom:
         35px;
@@ -640,16 +695,20 @@ nav {
 }
 
 
+/* =========================================================
+   BUTTONS
+========================================================= */
+
 .buttons {
 
     display:
         flex;
 
-    gap:
-        14px;
-
     flex-wrap:
         wrap;
+
+    gap:
+        13px;
 
 }
 
@@ -657,25 +716,28 @@ nav {
 .btn {
 
     display:
-        inline-block;
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
 
     padding:
-        15px 24px;
-
-    border:
-        none;
+        15px 23px;
 
     border-radius:
-        12px;
+        13px;
 
-    cursor:
-        pointer;
+    text-decoration:
+        none;
 
     font-weight:
         900;
 
-    text-decoration:
-        none;
+    cursor:
+        pointer;
 
     transition:
         .25s;
@@ -686,52 +748,126 @@ nav {
 .btn:hover {
 
     transform:
-        translateY(-4px);
+        translateY(-5px);
 
 }
 
 
 .primary {
 
-    background:
-        var(--green);
-
     color:
-        #06140a;
+        #061108;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d7ff83,
+            #72ff65
+        );
 
     box-shadow:
-        0 10px 40px
-        rgba(168,255,114,.18);
+        0 12px 40px
+        rgba(114,255,101,.22);
+
+}
+
+
+.primary:hover {
+
+    box-shadow:
+        0 18px 55px
+        rgba(114,255,101,.38);
 
 }
 
 
 .secondary {
 
-    background:
-        rgba(255,255,255,.07);
-
     color:
         white;
 
+    background:
+        rgba(255,255,255,.07);
+
     border:
         1px solid
-        rgba(255,255,255,.12);
+        rgba(255,255,255,.14);
+
+}
+
+
+.secondary:hover {
+
+    border-color:
+        rgba(184,255,92,.45);
+
+    background:
+        rgba(184,255,92,.08);
 
 }
 
 
 /* =========================================================
-   SECTIONS
+   HERO DECORATION
+========================================================= */
+
+.hero-monkey {
+
+    position:
+        absolute;
+
+    right:
+        8%;
+
+    bottom:
+        12%;
+
+    font-size:
+        clamp(5rem,12vw,10rem);
+
+    opacity:
+        .18;
+
+    filter:
+        drop-shadow(
+            0 0 30px
+            rgba(184,255,92,.25)
+        );
+
+    animation:
+        monkeyFloat 4s ease-in-out infinite;
+
+}
+
+
+@keyframes monkeyFloat {
+
+    0%,100% {
+        transform:
+            translateY(0)
+            rotate(-3deg);
+    }
+
+    50% {
+        transform:
+            translateY(-18px)
+            rotate(3deg);
+    }
+
+}
+
+
+/* =========================================================
+   SECTION
 ========================================================= */
 
 section {
 
-    padding:
-        110px 7%;
-
     position:
         relative;
+
+    padding:
+        110px 7%;
 
 }
 
@@ -739,7 +875,7 @@ section {
 .section-header {
 
     max-width:
-        750px;
+        760px;
 
     margin:
         0 auto 55px;
@@ -759,10 +895,10 @@ section {
         .72rem;
 
     font-weight:
-        900;
+        1000;
 
     letter-spacing:
-        2px;
+        3px;
 
     margin-bottom:
         14px;
@@ -773,7 +909,10 @@ section {
 .section-header h2 {
 
     font-size:
-        clamp(2.2rem,5vw,4rem);
+        clamp(2.3rem,5vw,4.2rem);
+
+    line-height:
+        1;
 
     margin-bottom:
         18px;
@@ -793,56 +932,13 @@ section {
 
 
 /* =========================================================
-   VINE DECORATION
-========================================================= */
-
-.vine {
-
-    position:
-        absolute;
-
-    font-size:
-        5rem;
-
-    opacity:
-        .12;
-
-    pointer-events:
-        none;
-
-}
-
-
-.vine.left {
-
-    left:
-        -10px;
-
-    top:
-        30px;
-
-}
-
-
-.vine.right {
-
-    right:
-        -10px;
-
-    bottom:
-        30px;
-
-}
-
-
-/* =========================================================
-   SPECIES CARDS
+   SPECIES
 ========================================================= */
 
 .monkey-grid {
 
     max-width:
-        1200px;
+        1250px;
 
     margin:
         auto;
@@ -854,7 +950,7 @@ section {
         repeat(auto-fit,minmax(220px,1fr));
 
     gap:
-        18px;
+        20px;
 
 }
 
@@ -862,48 +958,69 @@ section {
 .monkey-card {
 
     min-height:
-        230px;
+        245px;
 
     padding:
-        28px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(10,40,19,.85),
-            rgba(4,20,10,.75)
-        );
-
-    border:
-        1px solid
-        rgba(255,255,255,.08);
-
-    border-radius:
-        22px;
-
-    transition:
-        .3s;
-
-    overflow:
-        hidden;
+        29px;
 
     position:
         relative;
 
+    overflow:
+        hidden;
+
+    border-radius:
+        23px;
+
+    border:
+        1px solid
+        rgba(184,255,92,.12);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(11,53,27,.88),
+            rgba(3,20,10,.82)
+        );
+
+    box-shadow:
+        0 15px 50px
+        rgba(0,0,0,.20);
+
+    transition:
+        .3s;
+
 }
 
 
-.monkey-card:hover {
+.monkey-card::before {
 
-    transform:
-        translateY(-9px);
+    content:
+        "";
 
-    border-color:
-        rgba(168,255,114,.3);
+    position:
+        absolute;
 
-    box-shadow:
-        0 20px 60px
-        rgba(0,0,0,.3);
+    width:
+        120px;
+
+    height:
+        120px;
+
+    border-radius:
+        50%;
+
+    top:
+        -60px;
+
+    right:
+        -50px;
+
+    background:
+        rgba(184,255,92,.15);
+
+    filter:
+        blur(20px);
 
 }
 
@@ -920,10 +1037,10 @@ section {
         12px;
 
     bottom:
-        8px;
+        5px;
 
     font-size:
-        3rem;
+        3.5rem;
 
     opacity:
         .08;
@@ -931,13 +1048,28 @@ section {
 }
 
 
+.monkey-card:hover {
+
+    transform:
+        translateY(-10px);
+
+    border-color:
+        rgba(184,255,92,.45);
+
+    box-shadow:
+        0 20px 60px
+        rgba(87,255,90,.12);
+
+}
+
+
 .monkey-emoji {
 
     font-size:
-        3rem;
+        3.1rem;
 
     margin-bottom:
-        17px;
+        18px;
 
 }
 
@@ -945,7 +1077,7 @@ section {
 .monkey-card h3 {
 
     font-size:
-        1.2rem;
+        1.25rem;
 
     margin-bottom:
         10px;
@@ -959,10 +1091,10 @@ section {
         var(--muted);
 
     font-size:
-        .9rem;
+        .91rem;
 
     line-height:
-        1.65;
+        1.7;
 
 }
 
@@ -974,7 +1106,7 @@ section {
 .facts {
 
     max-width:
-        1000px;
+        1050px;
 
     margin:
         auto;
@@ -983,31 +1115,49 @@ section {
         grid;
 
     grid-template-columns:
-        repeat(auto-fit,minmax(200px,1fr));
+        repeat(auto-fit,minmax(210px,1fr));
 
     gap:
-        18px;
+        20px;
 
 }
 
 
 .fact {
 
+    padding:
+        38px 25px;
+
     text-align:
         center;
 
-    padding:
-        35px 25px;
+    border-radius:
+        22px;
 
     background:
-        rgba(6,28,13,.75);
+        linear-gradient(
+            145deg,
+            rgba(8,47,22,.9),
+            rgba(3,22,11,.85)
+        );
 
     border:
         1px solid
-        rgba(255,255,255,.08);
+        rgba(184,255,92,.14);
 
-    border-radius:
-        20px;
+    transition:
+        .3s;
+
+}
+
+
+.fact:hover {
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(184,255,92,.4);
 
 }
 
@@ -1021,10 +1171,14 @@ section {
         var(--green);
 
     font-size:
-        2.5rem;
+        2.8rem;
 
     margin-bottom:
-        8px;
+        10px;
+
+    text-shadow:
+        0 0 20px
+        rgba(184,255,92,.22);
 
 }
 
@@ -1034,6 +1188,248 @@ section {
     color:
         var(--muted);
 
+    line-height:
+        1.5;
+
+}
+
+
+/* =========================================================
+   EXPLORE CARDS
+========================================================= */
+
+.explore-grid {
+
+    max-width:
+        1000px;
+
+    margin:
+        auto;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:
+        25px;
+
+}
+
+
+.explore-card {
+
+    padding:
+        40px;
+
+    min-height:
+        260px;
+
+    border-radius:
+        28px;
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid
+        rgba(255,255,255,.10);
+
+    transition:
+        .3s;
+
+}
+
+
+.explore-card:hover {
+
+    transform:
+        translateY(-8px);
+
+}
+
+
+.explore-card.apes {
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(69,38,14,.95),
+            rgba(16,29,10,.9)
+        );
+
+    border-color:
+        rgba(255,202,89,.25);
+
+}
+
+
+.explore-card.game {
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(8,61,37,.95),
+            rgba(3,28,18,.9)
+        );
+
+    border-color:
+        rgba(99,245,210,.25);
+
+}
+
+
+.explore-icon {
+
+    font-size:
+        4rem;
+
+    margin-bottom:
+        18px;
+
+}
+
+
+.explore-card h3 {
+
+    font-size:
+        1.8rem;
+
+    margin-bottom:
+        12px;
+
+}
+
+
+.explore-card p {
+
+    color:
+        #c4d4c5;
+
+    line-height:
+        1.7;
+
+    margin-bottom:
+        25px;
+
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta {
+
+    max-width:
+        1050px;
+
+    margin:
+        auto;
+
+    padding:
+        65px 35px;
+
+    text-align:
+        center;
+
+    border-radius:
+        30px;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(184,255,92,.17),
+            transparent 45%
+        ),
+
+        rgba(6,34,16,.88);
+
+    border:
+        1px solid
+        rgba(184,255,92,.20);
+
+    box-shadow:
+        0 30px 100px
+        rgba(0,0,0,.3);
+
+}
+
+
+.cta h2 {
+
+    font-size:
+        clamp(2rem,5vw,3.5rem);
+
+    margin-bottom:
+        15px;
+
+}
+
+
+.cta p {
+
+    color:
+        var(--muted);
+
+    margin-bottom:
+        25px;
+
+    line-height:
+        1.7;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    padding:
+        55px 7%;
+
+    text-align:
+        center;
+
+    background:
+        rgba(1,8,4,.95);
+
+    border-top:
+        1px solid
+        rgba(184,255,92,.12);
+
+}
+
+
+footer strong {
+
+    color:
+        var(--green);
+
+    font-size:
+        1.1rem;
+
+}
+
+
+footer p {
+
+    color:
+        var(--muted);
+
+    margin-top:
+        10px;
+
+    font-size:
+        .85rem;
+
 }
 
 
@@ -1041,40 +1437,139 @@ section {
    MOBILE
 ========================================================= */
 
-@media(max-width:700px) {
+@media(max-width:800px) {
 
     nav {
 
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+        gap:
+            10px;
+
         padding:
-            15px 5%;
+            13px 5%;
 
     }
 
     .nav-links {
 
-        display:
-            none;
+        width:
+            100%;
+
+        padding-bottom:
+            3px;
 
     }
 
     .hero {
 
         padding:
-            120px 6% 80px;
+            165px 6% 90px;
 
     }
 
     .hero h1 {
 
         letter-spacing:
-            -3px;
+            -4px;
+
+    }
+
+    .hero-monkey {
+
+        right:
+            5%;
+
+        bottom:
+            7%;
+
+        opacity:
+            .10;
 
     }
 
     section {
 
         padding:
-            80px 6%;
+            85px 6%;
+
+    }
+
+    .explore-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+}
+
+
+@media(max-width:500px) {
+
+    .nav-links a {
+
+        font-size:
+            .78rem;
+
+        padding:
+            9px 10px;
+
+    }
+
+    .hero h1 {
+
+        font-size:
+            clamp(3.5rem,18vw,6rem);
+
+    }
+
+    .hero p {
+
+        font-size:
+            1rem;
+
+    }
+
+    .buttons {
+
+        flex-direction:
+            column;
+
+    }
+
+    .btn {
+
+        width:
+            100%;
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media(prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        scroll-behavior:
+            auto !important;
 
     }
 
@@ -1087,8 +1582,11 @@ section {
 <body>
 
 <!-- =====================================================
-     RAIN
+     ATMOSPHERIC EFFECTS
 ===================================================== -->
+
+<div class="glow one"></div>
+<div class="glow two"></div>
 
 <div class="rain">
 
@@ -1106,12 +1604,9 @@ section {
 <div class="drop"></div>
 <div class="drop"></div>
 <div class="drop"></div>
-<div class="drop"></div>
 ```
 
 </div>
-
-<div class="mist"></div>
 
 <div class="leaves">
 
@@ -1140,35 +1635,29 @@ section {
 
 <div class="nav-links">
 
-    <!-- MAIN PAGE -->
-
     <a href="index.html">
-        Home
+        🏠 Home
     </a>
 
+    <a href="#monkeys">
+        🐒 Species
+    </a>
 
-    <!-- GREAT APES PAGE -->
+    <a href="#facts">
+        🌿 Facts
+    </a>
 
     <a href="great-apes.html">
-        Great Apes
+        🦍 Great Apes
     </a>
-
-
-    <!-- PERSONALITY PAGE -->
 
     <a href="personality.html">
-        Personality
+        🧠 Personality
     </a>
-
-
-    <!-- KNOWLEDGE QUIZ PAGE -->
 
     <a href="quiz.html">
-        Quiz
+        ❓ Quiz
     </a>
-
-
-    <!-- MONKEY GUESSING GAME -->
 
     <a href="monkey-game.html">
         🎮 Monkey Game
@@ -1191,9 +1680,10 @@ section {
 ```
 <div class="hero-content">
 
+
     <div class="badge">
 
-        🌿 WELCOME TO THE RAINFOREST
+        🌿 WELCOME TO MONKEYWORLD
 
     </div>
 
@@ -1209,10 +1699,11 @@ section {
 
     <p>
 
-        Explore the fascinating world of monkeys.
-        Learn about incredible species, discover
-        strange facts, test your knowledge and
-        discover your inner monkey.
+        Welcome to MonkeyWorld — your ultimate
+        jungle adventure. Explore incredible monkey
+        species, discover amazing facts, meet the
+        great apes, test your knowledge and see
+        how quickly you can recognise different monkeys.
 
     </p>
 
@@ -1224,7 +1715,7 @@ section {
             class="btn primary"
         >
 
-            🎮 Play Monkey Game
+            🎮 PLAY MONKEY GAME
 
         </a>
 
@@ -1234,11 +1725,18 @@ section {
             class="btn secondary"
         >
 
-            🦍 Explore Great Apes
+            🦍 EXPLORE GREAT APES
 
         </a>
 
     </div>
+
+</div>
+
+
+<div class="hero-monkey">
+
+    🐒
 
 </div>
 ```
@@ -1252,25 +1750,23 @@ section {
 <section id="monkeys">
 
 ```
-<div class="vine left">
-    🌿
-</div>
-
-
 <div class="section-header">
 
     <div class="label">
         THE JUNGLE
     </div>
 
+
     <h2>
         Meet The Monkeys
     </h2>
 
+
     <p>
 
         From tiny tamarins to powerful mandrills,
-        the monkey world is incredibly diverse.
+        monkeys come in an incredible variety of
+        shapes, sizes and personalities.
 
     </p>
 
@@ -1333,7 +1829,7 @@ section {
         <p>
 
             Their enormous calls can travel
-            surprisingly far through the rainforest.
+            surprisingly far through tropical forests.
 
         </p>
 
@@ -1352,7 +1848,7 @@ section {
 
         <p>
 
-            Tiny, energetic and extremely social
+            Tiny, energetic and highly social
             monkeys that live in groups.
 
         </p>
@@ -1373,7 +1869,7 @@ section {
         <p>
 
             Famous for their enormous noses and
-            their love of swampy habitats.
+            their preference for swampy habitats.
 
         </p>
 
@@ -1412,7 +1908,7 @@ section {
 
         <p>
 
-            Social Ethiopian primates known
+            Highly social Ethiopian primates known
             for living in large groups.
 
         </p>
@@ -1432,7 +1928,7 @@ section {
 
         <p>
 
-            Also called snow monkeys, they're
+            Also called snow monkeys, they are
             famous for enjoying hot springs.
 
         </p>
@@ -1452,7 +1948,7 @@ section {
 
         <p>
 
-            One of the world's most colorful
+            One of the world's most colourful
             mammals, with a spectacular face.
 
         </p>
@@ -1498,14 +1994,16 @@ section {
         JUNGLE KNOWLEDGE
     </div>
 
+
     <h2>
         Monkey Facts
     </h2>
 
+
     <p>
 
-        Some facts about monkeys that might
-        surprise you.
+        Think you know monkeys? Here are a few
+        things that make these animals so fascinating.
 
     </p>
 
@@ -1522,7 +2020,7 @@ section {
         </strong>
 
         <span>
-            Monkey species exist
+            Monkey species exist around the world
         </span>
 
     </div>
@@ -1548,7 +2046,7 @@ section {
         </strong>
 
         <span>
-            Howler monkeys have incredibly powerful calls
+            Howler monkeys produce incredibly powerful calls
         </span>
 
     </div>
@@ -1557,7 +2055,7 @@ section {
     <div class="fact">
 
         <strong>
-            🌴
+            🌎
         </strong>
 
         <span>
@@ -1566,13 +2064,14 @@ section {
 
     </div>
 
+
 </div>
 ```
 
 </section>
 
 <!-- =====================================================
-     GAME CTA
+     EXPLORE OTHER PAGES
 ===================================================== -->
 
 <section>
@@ -1581,34 +2080,149 @@ section {
 <div class="section-header">
 
     <div class="label">
-        CAN YOU RECOGNISE THEM?
+        KEEP EXPLORING
     </div>
 
+
     <h2>
-        Guess The Monkey
+        Enter Another Part Of The Jungle
     </h2>
+
 
     <p>
 
-        A picture appears on screen.
-        Guess the monkey as quickly as you can
-        and try to beat the leaderboard.
+        MonkeyWorld isn't just one page.
+        Explore the great apes or challenge
+        yourself in the Monkey Game.
 
     </p>
 
+</div>
 
-    <div
-        style="
-            margin-top:30px;
-        "
-    >
+
+<div class="explore-grid">
+
+
+    <!-- GREAT APES -->
+
+    <div class="explore-card apes">
+
+
+        <div class="explore-icon">
+            🦍
+        </div>
+
+
+        <h3>
+            Great Apes
+        </h3>
+
+
+        <p>
+
+            Meet gorillas, chimpanzees, bonobos,
+            orangutans and humans — and learn
+            what makes great apes different.
+
+        </p>
+
+
+        <a
+            href="great-apes.html"
+            class="btn primary"
+        >
+
+            🦍 Explore Great Apes →
+
+        </a>
+
+    </div>
+
+
+    <!-- MONKEY GAME -->
+
+    <div class="explore-card game">
+
+
+        <div class="explore-icon">
+            🎮
+        </div>
+
+
+        <h3>
+            Monkey Game
+        </h3>
+
+
+        <p>
+
+            A monkey appears on screen.
+            Can you recognise it? Race against
+            the clock and try to get the fastest time.
+
+        </p>
+
 
         <a
             href="monkey-game.html"
             class="btn primary"
         >
 
-            🎮 PLAY THE MONKEY GAME
+            🎮 Play Now →
+
+        </a>
+
+    </div>
+
+
+</div>
+```
+
+</section>
+
+<!-- =====================================================
+     FINAL CTA
+===================================================== -->
+
+<section>
+
+```
+<div class="cta">
+
+
+    <h2>
+        🐒 Ready To Enter The Jungle?
+    </h2>
+
+
+    <p>
+
+        Test your monkey knowledge, discover
+        amazing species and see how fast
+        you can identify them.
+
+    </p>
+
+
+    <div class="buttons"
+         style="justify-content:center;">
+
+        <a
+            href="monkey-game.html"
+            class="btn primary"
+        >
+
+            🎮 START GAME
+
+        </a>
+
+
+        <a
+            href="personality.html"
+            class="btn secondary"
+        >
+
+            🧠 TAKE PERSONALITY TEST
 
         </a>
 
@@ -1629,6 +2243,7 @@ section {
 <strong>
     🐒 MONKEYWORLD
 </strong>
+
 
 <p>
 
