@@ -1,5 +1,5 @@
-```html
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -7,8 +7,9 @@
 <meta charset="UTF-8">
 
 <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+
 >
 
 <title>Monkey World 🐒</title>
@@ -30,51 +31,98 @@ html {
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    background: #031008;
-    overflow-x: hidden;
-}
 
-:root {
-    --green: #a8ff72;
-    --bright-green: #62e66e;
-    --dark-green: #031008;
-    --forest: #082414;
-    --card: rgba(7, 30, 15, .78);
-    --muted: #aab9aa;
-    --white: #f4fff2;
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: white;
+
+    background:
+        #031008;
+
+    overflow-x: hidden;
+
 }
 
 
 /* =========================================================
-   RAINFOREST BACKGROUND
+   COLORS
+========================================================= */
+
+:root {
+
+    --green:
+        #a8ff72;
+
+    --bright-green:
+        #62e66e;
+
+    --dark-green:
+        #031008;
+
+    --forest:
+        #082414;
+
+    --card:
+        rgba(7, 30, 15, .78);
+
+    --muted:
+        #aab9aa;
+
+    --white:
+        #f4fff2;
+
+}
+
+
+/* =========================================================
+   MAIN RAINFOREST BACKGROUND
 ========================================================= */
 
 body::before {
+
     content: "";
+
     position: fixed;
+
     inset: 0;
+
     z-index: -10;
 
     background:
+
         linear-gradient(
             rgba(1, 12, 5, .72),
             rgba(1, 15, 7, .90)
         ),
+
         url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLh-zhEqgezfM8iIm1yztPEFNOGt_TVvC4gwh9gMxJuQ&s=10")
+
         center / cover no-repeat;
+
 }
 
 
+/* =========================================================
+   GREEN ATMOSPHERIC GLOW
+========================================================= */
+
 body::after {
+
     content: "";
+
     position: fixed;
+
     inset: 0;
+
     z-index: -9;
+
     pointer-events: none;
 
     background:
+
         radial-gradient(
             circle at 15% 20%,
             rgba(98,230,110,.12),
@@ -86,25 +134,36 @@ body::after {
             rgba(168,255,114,.08),
             transparent 30%
         );
+
 }
 
 
 /* =========================================================
-   RAIN
+   SUBTLE RAIN
 ========================================================= */
 
 .rain {
+
     position: fixed;
+
     inset: 0;
+
     z-index: 2;
+
     pointer-events: none;
+
     opacity: .15;
+
     overflow: hidden;
+
 }
 
 .drop {
+
     position: absolute;
+
     width: 1px;
+
     height: 45px;
 
     background:
@@ -113,7 +172,9 @@ body::after {
             rgba(200,255,220,.7)
         );
 
-    animation: rainFall linear infinite;
+    animation:
+        rainFall linear infinite;
+
 }
 
 .drop:nth-child(1) {
@@ -200,14 +261,17 @@ body::after {
     animation-delay: -.8s;
 }
 
+
 @keyframes rainFall {
 
     0% {
-        transform: translateY(-100px);
+        transform:
+            translateY(-100px);
     }
 
     100% {
-        transform: translateY(110vh);
+        transform:
+            translateY(110vh);
     }
 
 }
@@ -218,37 +282,56 @@ body::after {
 ========================================================= */
 
 .mist {
+
     position: fixed;
+
     left: -10%;
+
     bottom: 5%;
+
     width: 120%;
+
     height: 180px;
+
     z-index: 3;
+
     pointer-events: none;
 
     background:
+
         radial-gradient(
             ellipse,
             rgba(210,255,218,.07),
             transparent 65%
         );
 
-    filter: blur(25px);
+    filter:
+        blur(25px);
 
     animation:
         mistMove 16s ease-in-out infinite alternate;
+
 }
+
 
 @keyframes mistMove {
 
     from {
-        transform: translateX(-4%);
+
+        transform:
+            translateX(-4%);
+
         opacity: .35;
+
     }
 
     to {
-        transform: translateX(4%);
+
+        transform:
+            translateX(4%);
+
         opacity: .7;
+
     }
 
 }
@@ -259,58 +342,85 @@ body::after {
 ========================================================= */
 
 .leaves {
+
     position: fixed;
+
     inset: 0;
+
     pointer-events: none;
+
     z-index: 4;
+
     overflow: hidden;
+
 }
 
 .leaf {
+
     position: absolute;
+
     font-size: 20px;
+
     opacity: .22;
 
     animation:
         leafFloat 12s linear infinite;
+
 }
 
 .leaf:nth-child(1) {
+
     left: 8%;
     top: 10%;
+
     animation-delay: -2s;
+
 }
 
 .leaf:nth-child(2) {
+
     left: 22%;
     top: 45%;
+
     animation-delay: -7s;
+
 }
 
 .leaf:nth-child(3) {
+
     left: 78%;
     top: 25%;
+
     animation-delay: -5s;
+
 }
 
 .leaf:nth-child(4) {
+
     left: 90%;
     top: 65%;
+
     animation-delay: -10s;
+
 }
+
 
 @keyframes leafFloat {
 
     0% {
+
         transform:
             translateY(100vh)
             rotate(0deg);
+
     }
 
     100% {
+
         transform:
             translateY(-120vh)
             rotate(360deg);
+
     }
 
 }
@@ -321,7 +431,9 @@ body::after {
 ========================================================= */
 
 nav {
+
     position: fixed;
+
     top: 0;
     left: 0;
     right: 0;
@@ -329,109 +441,85 @@ nav {
     z-index: 50;
 
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
 
-    padding: 14px 6%;
+    padding:
+        18px 7%;
 
     background:
-        rgba(2,15,7,.82);
+        rgba(2,15,7,.70);
 
     backdrop-filter:
-        blur(20px);
+        blur(18px);
 
     border-bottom:
         1px solid
         rgba(255,255,255,.08);
 
-    box-shadow:
-        0 10px 35px
-        rgba(0,0,0,.2);
 }
 
 
 .logo {
-    font-size: 1.3rem;
-    font-weight: 900;
-    color: var(--green);
-    white-space: nowrap;
+
+    font-size:
+        1.3rem;
+
+    font-weight:
+        900;
+
+    color:
+        var(--green);
+
 }
+
 
 .logo span {
-    color: white;
+
+    color:
+        white;
+
 }
 
-
-/* Main navigation buttons */
 
 .nav-links {
-    display: flex;
-    gap: 8px;
-    align-items: center;
+
+    display:
+        flex;
+
+    gap:
+        25px;
+
 }
+
 
 .nav-links a {
-    color: #d9e8d8;
-    text-decoration: none;
 
-    font-size: .82rem;
-    font-weight: 800;
+    color:
+        #d9e8d8;
 
-    padding: 10px 14px;
+    text-decoration:
+        none;
 
-    border-radius: 10px;
+    font-size:
+        .9rem;
 
-    transition: .25s;
+    font-weight:
+        700;
+
+    transition:
+        .25s;
+
 }
+
 
 .nav-links a:hover {
-    color: var(--green);
 
-    background:
-        rgba(168,255,114,.08);
-
-    transform:
-        translateY(-2px);
-}
-
-
-/* Separate page buttons */
-
-.nav-links a.page-link {
-    border:
-        1px solid
-        rgba(168,255,114,.14);
-
-    background:
-        rgba(168,255,114,.035);
-}
-
-
-/* Great Apes button */
-
-.nav-links a.great-apes-link {
-    color: #06140a;
-
-    background:
+    color:
         var(--green);
 
-    border:
-        1px solid
-        var(--green);
-
-    box-shadow:
-        0 5px 20px
-        rgba(168,255,114,.12);
-}
-
-.nav-links a.great-apes-link:hover {
-    color: #06140a;
-
-    background:
-        #c0ff98;
-
-    transform:
-        translateY(-3px);
 }
 
 
@@ -440,23 +528,37 @@ nav {
 ========================================================= */
 
 .hero {
-    min-height: 100vh;
 
-    display: flex;
-    align-items: center;
+    min-height:
+        100vh;
+
+    display:
+        flex;
+
+    align-items:
+        center;
 
     padding:
-        140px 7% 90px;
+        130px 7% 90px;
 
-    position: relative;
+    position:
+        relative;
+
 }
+
 
 .hero-content {
-    max-width: 850px;
+
+    max-width:
+        850px;
+
 }
 
+
 .badge {
-    display: inline-block;
+
+    display:
+        inline-block;
 
     padding:
         9px 16px;
@@ -485,9 +587,12 @@ nav {
 
     margin-bottom:
         25px;
+
 }
 
+
 .hero h1 {
+
     font-size:
         clamp(3.5rem, 10vw, 8rem);
 
@@ -499,18 +604,24 @@ nav {
 
     margin-bottom:
         30px;
+
 }
 
+
 .hero h1 span {
+
     color:
         var(--green);
 
     text-shadow:
         0 0 35px
         rgba(168,255,114,.2);
+
 }
 
+
 .hero p {
+
     max-width:
         650px;
 
@@ -525,9 +636,12 @@ nav {
 
     margin-bottom:
         35px;
+
 }
 
+
 .buttons {
+
     display:
         flex;
 
@@ -536,9 +650,12 @@ nav {
 
     flex-wrap:
         wrap;
+
 }
 
+
 .btn {
+
     display:
         inline-block;
 
@@ -562,14 +679,20 @@ nav {
 
     transition:
         .25s;
+
 }
+
 
 .btn:hover {
+
     transform:
         translateY(-4px);
+
 }
 
+
 .primary {
+
     background:
         var(--green);
 
@@ -579,9 +702,12 @@ nav {
     box-shadow:
         0 10px 40px
         rgba(168,255,114,.18);
+
 }
 
+
 .secondary {
+
     background:
         rgba(255,255,255,.07);
 
@@ -591,6 +717,7 @@ nav {
     border:
         1px solid
         rgba(255,255,255,.12);
+
 }
 
 
@@ -599,14 +726,18 @@ nav {
 ========================================================= */
 
 section {
+
     padding:
         110px 7%;
 
     position:
         relative;
+
 }
 
+
 .section-header {
+
     max-width:
         750px;
 
@@ -615,9 +746,12 @@ section {
 
     text-align:
         center;
+
 }
 
+
 .label {
+
     color:
         var(--green);
 
@@ -632,30 +766,38 @@ section {
 
     margin-bottom:
         14px;
+
 }
 
+
 .section-header h2 {
+
     font-size:
         clamp(2.2rem,5vw,4rem);
 
     margin-bottom:
         18px;
+
 }
 
+
 .section-header p {
+
     color:
         var(--muted);
 
     line-height:
         1.8;
+
 }
 
 
 /* =========================================================
-   VINE
+   VINE DECORATION
 ========================================================= */
 
 .vine {
+
     position:
         absolute;
 
@@ -667,22 +809,29 @@ section {
 
     pointer-events:
         none;
+
 }
 
+
 .vine.left {
+
     left:
         -10px;
 
     top:
         30px;
+
 }
 
+
 .vine.right {
+
     right:
         -10px;
 
     bottom:
         30px;
+
 }
 
 
@@ -691,6 +840,7 @@ section {
 ========================================================= */
 
 .monkey-grid {
+
     max-width:
         1200px;
 
@@ -705,9 +855,12 @@ section {
 
     gap:
         18px;
+
 }
 
+
 .monkey-card {
+
     min-height:
         230px;
 
@@ -736,9 +889,12 @@ section {
 
     position:
         relative;
+
 }
 
+
 .monkey-card:hover {
+
     transform:
         translateY(-9px);
 
@@ -748,9 +904,12 @@ section {
     box-shadow:
         0 20px 60px
         rgba(0,0,0,.3);
+
 }
 
+
 .monkey-card::after {
+
     content:
         "🍃";
 
@@ -768,25 +927,34 @@ section {
 
     opacity:
         .08;
+
 }
 
+
 .monkey-emoji {
+
     font-size:
         3rem;
 
     margin-bottom:
         17px;
+
 }
 
+
 .monkey-card h3 {
+
     font-size:
         1.2rem;
 
     margin-bottom:
         10px;
+
 }
 
+
 .monkey-card p {
+
     color:
         var(--muted);
 
@@ -795,6 +963,7 @@ section {
 
     line-height:
         1.65;
+
 }
 
 
@@ -803,6 +972,7 @@ section {
 ========================================================= */
 
 .facts {
+
     max-width:
         1000px;
 
@@ -817,9 +987,12 @@ section {
 
     gap:
         18px;
+
 }
 
+
 .fact {
+
     text-align:
         center;
 
@@ -835,9 +1008,12 @@ section {
 
     border-radius:
         20px;
+
 }
 
+
 .fact strong {
+
     display:
         block;
 
@@ -849,164 +1025,15 @@ section {
 
     margin-bottom:
         8px;
+
 }
+
 
 .fact span {
-    color:
-        var(--muted);
-}
 
-
-/* =========================================================
-   EXPLORE PAGES SECTION
-========================================================= */
-
-.explore-section {
-    padding-top:
-        70px;
-
-    padding-bottom:
-        120px;
-}
-
-.explore-grid {
-    max-width:
-        1100px;
-
-    margin:
-        auto;
-
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap:
-        20px;
-}
-
-.explore-card {
-    display:
-        flex;
-
-    flex-direction:
-        column;
-
-    justify-content:
-        space-between;
-
-    min-height:
-        260px;
-
-    padding:
-        30px;
-
-    text-decoration:
-        none;
-
-    color:
-        white;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(9,38,18,.9),
-            rgba(3,18,9,.88)
-        );
-
-    border:
-        1px solid
-        rgba(255,255,255,.09);
-
-    border-radius:
-        24px;
-
-    transition:
-        .3s;
-}
-
-.explore-card:hover {
-    transform:
-        translateY(-8px);
-
-    border-color:
-        rgba(168,255,114,.35);
-
-    box-shadow:
-        0 25px 70px
-        rgba(0,0,0,.3);
-}
-
-.explore-icon {
-    font-size:
-        3.5rem;
-
-    margin-bottom:
-        20px;
-}
-
-.explore-card h3 {
-    font-size:
-        1.5rem;
-
-    margin-bottom:
-        12px;
-}
-
-.explore-card p {
     color:
         var(--muted);
 
-    line-height:
-        1.7;
-
-    margin-bottom:
-        25px;
-}
-
-.explore-arrow {
-    color:
-        var(--green);
-
-    font-weight:
-        900;
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-footer {
-    padding:
-        55px 7%;
-
-    text-align:
-        center;
-
-    background:
-        rgba(1,10,5,.9);
-
-    border-top:
-        1px solid
-        rgba(255,255,255,.08);
-}
-
-footer strong {
-    color:
-        var(--green);
-}
-
-footer p {
-    color:
-        var(--muted);
-
-    margin-top:
-        10px;
-
-    font-size:
-        .85rem;
 }
 
 
@@ -1014,90 +1041,41 @@ footer p {
    MOBILE
 ========================================================= */
 
-@media(max-width:900px) {
-
-    nav {
-        padding:
-            12px 4%;
-    }
-
-    .nav-links {
-        gap:
-            3px;
-    }
-
-    .nav-links a {
-        padding:
-            8px 9px;
-
-        font-size:
-            .75rem;
-    }
-
-    .explore-grid {
-        grid-template-columns:
-            1fr;
-    }
-
-}
-
-
 @media(max-width:700px) {
 
     nav {
-        position:
-            fixed;
 
         padding:
-            10px 5%;
+            15px 5%;
 
-        flex-direction:
-            column;
-
-        gap:
-            9px;
-    }
-
-    .logo {
-        font-size:
-            1.1rem;
     }
 
     .nav-links {
-        width:
-            100%;
 
-        justify-content:
-            center;
+        display:
+            none;
 
-        flex-wrap:
-            wrap;
-
-        gap:
-            4px;
-    }
-
-    .nav-links a {
-        font-size:
-            .7rem;
-
-        padding:
-            7px 8px;
     }
 
     .hero {
+
         padding:
-            160px 6% 80px;
+            120px 6% 80px;
+
     }
 
     .hero h1 {
+
         letter-spacing:
             -3px;
+
     }
 
     section {
+
         padding:
             80px 6%;
+
     }
 
 }
@@ -1106,9 +1084,7 @@ footer p {
 
 </head>
 
-
 <body>
-
 
 <!-- =====================================================
      RAIN
@@ -1116,44 +1092,37 @@ footer p {
 
 <div class="rain">
 
-    <div class="drop"></div>
-    <div class="drop"></div>
-    <div class="drop"></div>
-    <div class="drop"></div>
-    <div class="drop"></div>
-    <div class="drop"></div>
-    <div class="drop"></div>
-    <div class="drop"></div>
-    <div class="drop"></div>
-    <div class="drop"></div>
-    <div class="drop"></div>
-    <div class="drop"></div>
-    <div class="drop"></div>
-    <div class="drop"></div>
+```
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+```
 
 </div>
-
-
-<!-- =====================================================
-     MIST
-===================================================== -->
 
 <div class="mist"></div>
 
-
-<!-- =====================================================
-     FLOATING LEAVES
-===================================================== -->
-
 <div class="leaves">
 
-    <div class="leaf">🍃</div>
-    <div class="leaf">🌿</div>
-    <div class="leaf">🍃</div>
-    <div class="leaf">🌿</div>
+```
+<div class="leaf">🍃</div>
+<div class="leaf">🌿</div>
+<div class="leaf">🍃</div>
+<div class="leaf">🌿</div>
+```
 
 </div>
-
 
 <!-- =====================================================
      NAVIGATION
@@ -1161,50 +1130,54 @@ footer p {
 
 <nav>
 
-    <div class="logo">
-        🐒 MONKEY<span>WORLD</span>
-    </div>
+```
+<div class="logo">
+
+    🐒 MONKEY<span>WORLD</span>
+
+</div>
 
 
-    <div class="nav-links">
+<div class="nav-links">
 
-        <a href="index.html">
-            Home
-        </a>
+    <!-- MAIN PAGE -->
 
-        <a href="#monkeys">
-            Species
-        </a>
+    <a href="index.html">
+        Home
+    </a>
 
-        <a href="#facts">
-            Facts
-        </a>
 
-        <a
-            href="quiz.html"
-            class="page-link"
-        >
-            🧠 Quiz
-        </a>
+    <!-- GREAT APES PAGE -->
 
-        <a
-            href="personality.html"
-            class="page-link"
-        >
-            🐒 Personality
-        </a>
+    <a href="great-apes.html">
+        Great Apes
+    </a>
 
-        <a
-            href="great-apes.html"
-            class="great-apes-link"
-        >
-            🦍 Great Apes
-        </a>
 
-    </div>
+    <!-- PERSONALITY PAGE -->
+
+    <a href="personality.html">
+        Personality
+    </a>
+
+
+    <!-- KNOWLEDGE QUIZ PAGE -->
+
+    <a href="quiz.html">
+        Quiz
+    </a>
+
+
+    <!-- MONKEY GUESSING GAME -->
+
+    <a href="monkey-game.html">
+        🎮 Monkey Game
+    </a>
+
+</div>
+```
 
 </nav>
-
 
 <!-- =====================================================
      HERO
@@ -1215,52 +1188,62 @@ footer p {
     id="home"
 >
 
-    <div class="hero-content">
+```
+<div class="hero-content">
 
-        <div class="badge">
-            🌿 WELCOME TO THE RAINFOREST
-        </div>
+    <div class="badge">
 
-
-        <h1>
-            ENTER THE<br>
-            <span>JUNGLE.</span>
-        </h1>
-
-
-        <p>
-
-            Explore the fascinating world of monkeys.
-            Learn about incredible species, discover
-            strange facts, test your knowledge and find
-            out which monkey matches your personality.
-
-        </p>
-
-
-        <div class="buttons">
-
-            <a
-                href="personality.html"
-                class="btn primary"
-            >
-                🐒 Find My Monkey
-            </a>
-
-
-            <a
-                href="#monkeys"
-                class="btn secondary"
-            >
-                🌿 Explore Species
-            </a>
-
-        </div>
+        🌿 WELCOME TO THE RAINFOREST
 
     </div>
 
-</section>
 
+    <h1>
+
+        ENTER THE<br>
+
+        <span>JUNGLE.</span>
+
+    </h1>
+
+
+    <p>
+
+        Explore the fascinating world of monkeys.
+        Learn about incredible species, discover
+        strange facts, test your knowledge and
+        discover your inner monkey.
+
+    </p>
+
+
+    <div class="buttons">
+
+        <a
+            href="monkey-game.html"
+            class="btn primary"
+        >
+
+            🎮 Play Monkey Game
+
+        </a>
+
+
+        <a
+            href="great-apes.html"
+            class="btn secondary"
+        >
+
+            🦍 Explore Great Apes
+
+        </a>
+
+    </div>
+
+</div>
+```
+
+</section>
 
 <!-- =====================================================
      SPECIES
@@ -1268,218 +1251,239 @@ footer p {
 
 <section id="monkeys">
 
-    <div class="vine left">
-        🌿
+```
+<div class="vine left">
+    🌿
+</div>
+
+
+<div class="section-header">
+
+    <div class="label">
+        THE JUNGLE
     </div>
 
+    <h2>
+        Meet The Monkeys
+    </h2>
 
-    <div class="section-header">
+    <p>
 
-        <div class="label">
-            THE JUNGLE
+        From tiny tamarins to powerful mandrills,
+        the monkey world is incredibly diverse.
+
+    </p>
+
+</div>
+
+
+<div class="monkey-grid">
+
+
+    <div class="monkey-card">
+
+        <div class="monkey-emoji">
+            🐒
         </div>
 
-        <h2>
-            Meet The Monkeys
-        </h2>
+        <h3>
+            Capuchin
+        </h3>
 
         <p>
 
-            From tiny tamarins to powerful mandrills,
-            the monkey world is incredibly diverse.
+            Clever, curious monkeys famous for
+            their impressive problem-solving abilities.
 
         </p>
 
     </div>
 
 
-    <div class="monkey-grid">
+    <div class="monkey-card">
 
-
-        <div class="monkey-card">
-
-            <div class="monkey-emoji">
-                🐒
-            </div>
-
-            <h3>
-                Capuchin
-            </h3>
-
-            <p>
-                Clever, curious monkeys famous for
-                their impressive problem-solving abilities.
-            </p>
-
+        <div class="monkey-emoji">
+            🕷️
         </div>
 
+        <h3>
+            Spider Monkey
+        </h3>
 
-        <div class="monkey-card">
+        <p>
 
-            <div class="monkey-emoji">
-                🕷️
-            </div>
+            Incredible climbers with long limbs
+            and powerful gripping tails.
 
-            <h3>
-                Spider Monkey
-            </h3>
-
-            <p>
-                Incredible climbers with long limbs
-                and powerful gripping tails.
-            </p>
-
-        </div>
-
-
-        <div class="monkey-card">
-
-            <div class="monkey-emoji">
-                📣
-            </div>
-
-            <h3>
-                Howler Monkey
-            </h3>
-
-            <p>
-                Their enormous calls can travel
-                surprisingly far through the rainforest.
-            </p>
-
-        </div>
-
-
-        <div class="monkey-card">
-
-            <div class="monkey-emoji">
-                🐵
-            </div>
-
-            <h3>
-                Squirrel Monkey
-            </h3>
-
-            <p>
-                Tiny, energetic and extremely social
-                monkeys that live in groups.
-            </p>
-
-        </div>
-
-
-        <div class="monkey-card">
-
-            <div class="monkey-emoji">
-                🌴
-            </div>
-
-            <h3>
-                Proboscis Monkey
-            </h3>
-
-            <p>
-                Famous for their enormous noses and
-                their love of swampy habitats.
-            </p>
-
-        </div>
-
-
-        <div class="monkey-card">
-
-            <div class="monkey-emoji">
-                👑
-            </div>
-
-            <h3>
-                Golden Lion Tamarin
-            </h3>
-
-            <p>
-                Small Brazilian monkeys with
-                spectacular golden-orange fur.
-            </p>
-
-        </div>
-
-
-        <div class="monkey-card">
-
-            <div class="monkey-emoji">
-                🏔️
-            </div>
-
-            <h3>
-                Gelada
-            </h3>
-
-            <p>
-                Social Ethiopian primates known
-                for living in large groups.
-            </p>
-
-        </div>
-
-
-        <div class="monkey-card">
-
-            <div class="monkey-emoji">
-                ♨️
-            </div>
-
-            <h3>
-                Japanese Macaque
-            </h3>
-
-            <p>
-                Also called snow monkeys, they're
-                famous for enjoying hot springs.
-            </p>
-
-        </div>
-
-
-        <div class="monkey-card">
-
-            <div class="monkey-emoji">
-                🦁
-            </div>
-
-            <h3>
-                Mandrill
-            </h3>
-
-            <p>
-                One of the world's most colorful
-                mammals, with a spectacular face.
-            </p>
-
-        </div>
-
-
-        <div class="monkey-card">
-
-            <div class="monkey-emoji">
-                🌿
-            </div>
-
-            <h3>
-                Vervet Monkey
-            </h3>
-
-            <p>
-                Clever African monkeys with
-                surprisingly complex communication.
-            </p>
-
-        </div>
-
+        </p>
 
     </div>
 
-</section>
 
+    <div class="monkey-card">
+
+        <div class="monkey-emoji">
+            📣
+        </div>
+
+        <h3>
+            Howler Monkey
+        </h3>
+
+        <p>
+
+            Their enormous calls can travel
+            surprisingly far through the rainforest.
+
+        </p>
+
+    </div>
+
+
+    <div class="monkey-card">
+
+        <div class="monkey-emoji">
+            🐵
+        </div>
+
+        <h3>
+            Squirrel Monkey
+        </h3>
+
+        <p>
+
+            Tiny, energetic and extremely social
+            monkeys that live in groups.
+
+        </p>
+
+    </div>
+
+
+    <div class="monkey-card">
+
+        <div class="monkey-emoji">
+            🌴
+        </div>
+
+        <h3>
+            Proboscis Monkey
+        </h3>
+
+        <p>
+
+            Famous for their enormous noses and
+            their love of swampy habitats.
+
+        </p>
+
+    </div>
+
+
+    <div class="monkey-card">
+
+        <div class="monkey-emoji">
+            👑
+        </div>
+
+        <h3>
+            Golden Lion Tamarin
+        </h3>
+
+        <p>
+
+            Small Brazilian monkeys with
+            spectacular golden-orange fur.
+
+        </p>
+
+    </div>
+
+
+    <div class="monkey-card">
+
+        <div class="monkey-emoji">
+            🏔️
+        </div>
+
+        <h3>
+            Gelada
+        </h3>
+
+        <p>
+
+            Social Ethiopian primates known
+            for living in large groups.
+
+        </p>
+
+    </div>
+
+
+    <div class="monkey-card">
+
+        <div class="monkey-emoji">
+            ♨️
+        </div>
+
+        <h3>
+            Japanese Macaque
+        </h3>
+
+        <p>
+
+            Also called snow monkeys, they're
+            famous for enjoying hot springs.
+
+        </p>
+
+    </div>
+
+
+    <div class="monkey-card">
+
+        <div class="monkey-emoji">
+            🦁
+        </div>
+
+        <h3>
+            Mandrill
+        </h3>
+
+        <p>
+
+            One of the world's most colorful
+            mammals, with a spectacular face.
+
+        </p>
+
+    </div>
+
+
+    <div class="monkey-card">
+
+        <div class="monkey-emoji">
+            🌿
+        </div>
+
+        <h3>
+            Vervet Monkey
+        </h3>
+
+        <p>
+
+            Clever African monkeys with
+            surprisingly complex communication.
+
+        </p>
+
+    </div>
+
+
+</div>
+```
+
+</section>
 
 <!-- =====================================================
      FACTS
@@ -1487,210 +1491,133 @@ footer p {
 
 <section id="facts">
 
-    <div class="section-header">
+```
+<div class="section-header">
 
-        <div class="label">
-            JUNGLE KNOWLEDGE
-        </div>
+    <div class="label">
+        JUNGLE KNOWLEDGE
+    </div>
 
-        <h2>
-            Monkey Facts
-        </h2>
+    <h2>
+        Monkey Facts
+    </h2>
 
-        <p>
-            Some facts about monkeys that might
-            surprise you.
-        </p>
+    <p>
+
+        Some facts about monkeys that might
+        surprise you.
+
+    </p>
+
+</div>
+
+
+<div class="facts">
+
+
+    <div class="fact">
+
+        <strong>
+            200+
+        </strong>
+
+        <span>
+            Monkey species exist
+        </span>
 
     </div>
 
 
-    <div class="facts">
+    <div class="fact">
 
+        <strong>
+            🧠
+        </strong>
 
-        <div class="fact">
-
-            <strong>
-                200+
-            </strong>
-
-            <span>
-                Monkey species exist
-            </span>
-
-        </div>
-
-
-        <div class="fact">
-
-            <strong>
-                🧠
-            </strong>
-
-            <span>
-                Many monkeys display impressive intelligence
-            </span>
-
-        </div>
-
-
-        <div class="fact">
-
-            <strong>
-                📣
-            </strong>
-
-            <span>
-                Howler monkeys have incredibly powerful calls
-            </span>
-
-        </div>
-
-
-        <div class="fact">
-
-            <strong>
-                🌴
-            </strong>
-
-            <span>
-                Monkeys live across many different habitats
-            </span>
-
-        </div>
+        <span>
+            Many monkeys display impressive intelligence
+        </span>
 
     </div>
+
+
+    <div class="fact">
+
+        <strong>
+            📣
+        </strong>
+
+        <span>
+            Howler monkeys have incredibly powerful calls
+        </span>
+
+    </div>
+
+
+    <div class="fact">
+
+        <strong>
+            🌴
+        </strong>
+
+        <span>
+            Monkeys live across many different habitats
+        </span>
+
+    </div>
+
+</div>
+```
 
 </section>
-
 
 <!-- =====================================================
-     EXPLORE OTHER PAGES
+     GAME CTA
 ===================================================== -->
 
-<section class="explore-section">
+<section>
 
-    <div class="section-header">
+```
+<div class="section-header">
 
-        <div class="label">
-            KEEP EXPLORING
-        </div>
+    <div class="label">
+        CAN YOU RECOGNISE THEM?
+    </div>
 
-        <h2>
-            Enter The Jungle
-        </h2>
+    <h2>
+        Guess The Monkey
+    </h2>
 
-        <p>
-            Explore the other parts of MonkeyWorld.
-            Each one has its own page.
-        </p>
+    <p>
+
+        A picture appears on screen.
+        Guess the monkey as quickly as you can
+        and try to beat the leaderboard.
+
+    </p>
+
+
+    <div
+        style="
+            margin-top:30px;
+        "
+    >
+
+        <a
+            href="monkey-game.html"
+            class="btn primary"
+        >
+
+            🎮 PLAY THE MONKEY GAME
+
+        </a>
 
     </div>
 
-
-    <div class="explore-grid">
-
-
-        <!-- QUIZ -->
-
-        <a
-            href="quiz.html"
-            class="explore-card"
-        >
-
-            <div>
-
-                <div class="explore-icon">
-                    🧠🐒
-                </div>
-
-                <h3>
-                    Monkey Knowledge Quiz
-                </h3>
-
-                <p>
-                    Test what you know about monkey
-                    species, habitats, behaviour and
-                    amazing facts.
-                </p>
-
-            </div>
-
-            <div class="explore-arrow">
-                TAKE THE QUIZ →
-            </div>
-
-        </a>
-
-
-        <!-- PERSONALITY -->
-
-        <a
-            href="personality.html"
-            class="explore-card"
-        >
-
-            <div>
-
-                <div class="explore-icon">
-                    🐒✨
-                </div>
-
-                <h3>
-                    Monkey Personality
-                </h3>
-
-                <p>
-                    Answer the personality questions
-                    and discover which monkey matches
-                    your personality.
-                </p>
-
-            </div>
-
-            <div class="explore-arrow">
-                FIND YOUR MONKEY →
-            </div>
-
-        </a>
-
-
-        <!-- GREAT APES -->
-
-        <a
-            href="great-apes.html"
-            class="explore-card"
-        >
-
-            <div>
-
-                <div class="explore-icon">
-                    🦍
-                </div>
-
-                <h3>
-                    Great Apes
-                </h3>
-
-                <p>
-                    Step beyond monkeys and explore
-                    gorillas, chimpanzees, bonobos,
-                    orangutans and humans.
-                </p>
-
-            </div>
-
-            <div class="explore-arrow">
-                EXPLORE GREAT APES →
-            </div>
-
-        </a>
-
-
-    </div>
+</div>
+```
 
 </section>
-
 
 <!-- =====================================================
      FOOTER
@@ -1698,18 +1625,20 @@ footer p {
 
 <footer>
 
-    <strong>
-        🐒 MONKEYWORLD
-    </strong>
+```
+<strong>
+    🐒 MONKEYWORLD
+</strong>
 
-    <p>
-        Explore. Learn. Discover your inner monkey. 🌿
-    </p>
+<p>
+
+    Explore. Learn. Discover your inner monkey. 🌿
+
+</p>
+```
 
 </footer>
-
 
 </body>
 
 </html>
-```
