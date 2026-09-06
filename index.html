@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +12,6 @@
 >
 
 <title>Monkey World 🐒</title>
-
 
 <style>
 
@@ -30,98 +30,51 @@ html {
 }
 
 body {
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
+    font-family: Arial, Helvetica, sans-serif;
     color: white;
-
-    background:
-        #031008;
-
+    background: #031008;
     overflow-x: hidden;
-
 }
-
-
-/* =========================================================
-   COLORS
-========================================================= */
 
 :root {
-
-    --green:
-        #a8ff72;
-
-    --bright-green:
-        #62e66e;
-
-    --dark-green:
-        #031008;
-
-    --forest:
-        #082414;
-
-    --card:
-        rgba(7, 30, 15, .78);
-
-    --muted:
-        #aab9aa;
-
-    --white:
-        #f4fff2;
-
+    --green: #a8ff72;
+    --bright-green: #62e66e;
+    --dark-green: #031008;
+    --forest: #082414;
+    --card: rgba(7, 30, 15, .78);
+    --muted: #aab9aa;
+    --white: #f4fff2;
 }
 
 
 /* =========================================================
-   MAIN RAINFOREST BACKGROUND
+   RAINFOREST BACKGROUND
 ========================================================= */
 
 body::before {
-
     content: "";
-
     position: fixed;
-
     inset: 0;
-
     z-index: -10;
 
     background:
-
         linear-gradient(
             rgba(1, 12, 5, .72),
             rgba(1, 15, 7, .90)
         ),
-
         url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLh-zhEqgezfM8iIm1yztPEFNOGt_TVvC4gwh9gMxJuQ&s=10")
-
         center / cover no-repeat;
-
 }
 
 
-/* =========================================================
-   GREEN ATMOSPHERIC GLOW
-========================================================= */
-
 body::after {
-
     content: "";
-
     position: fixed;
-
     inset: 0;
-
     z-index: -9;
-
     pointer-events: none;
 
     background:
-
         radial-gradient(
             circle at 15% 20%,
             rgba(98,230,110,.12),
@@ -133,37 +86,25 @@ body::after {
             rgba(168,255,114,.08),
             transparent 30%
         );
-
 }
 
 
 /* =========================================================
-   SUBTLE RAIN
+   RAIN
 ========================================================= */
 
 .rain {
-
     position: fixed;
-
     inset: 0;
-
     z-index: 2;
-
     pointer-events: none;
-
     opacity: .15;
-
     overflow: hidden;
-
 }
 
-
 .drop {
-
     position: absolute;
-
     width: 1px;
-
     height: 45px;
 
     background:
@@ -172,11 +113,8 @@ body::after {
             rgba(200,255,220,.7)
         );
 
-    animation:
-        rainFall linear infinite;
-
+    animation: rainFall linear infinite;
 }
-
 
 .drop:nth-child(1) {
     left: 5%;
@@ -262,17 +200,14 @@ body::after {
     animation-delay: -.8s;
 }
 
-
 @keyframes rainFall {
 
     0% {
-        transform:
-            translateY(-100px);
+        transform: translateY(-100px);
     }
 
     100% {
-        transform:
-            translateY(110vh);
+        transform: translateY(110vh);
     }
 
 }
@@ -283,56 +218,37 @@ body::after {
 ========================================================= */
 
 .mist {
-
     position: fixed;
-
     left: -10%;
-
     bottom: 5%;
-
     width: 120%;
-
     height: 180px;
-
     z-index: 3;
-
     pointer-events: none;
 
     background:
-
         radial-gradient(
             ellipse,
             rgba(210,255,218,.07),
             transparent 65%
         );
 
-    filter:
-        blur(25px);
+    filter: blur(25px);
 
     animation:
         mistMove 16s ease-in-out infinite alternate;
-
 }
-
 
 @keyframes mistMove {
 
     from {
-
-        transform:
-            translateX(-4%);
-
+        transform: translateX(-4%);
         opacity: .35;
-
     }
 
     to {
-
-        transform:
-            translateX(4%);
-
+        transform: translateX(4%);
         opacity: .7;
-
     }
 
 }
@@ -343,87 +259,58 @@ body::after {
 ========================================================= */
 
 .leaves {
-
     position: fixed;
-
     inset: 0;
-
     pointer-events: none;
-
     z-index: 4;
-
     overflow: hidden;
-
 }
 
-
 .leaf {
-
     position: absolute;
-
     font-size: 20px;
-
     opacity: .22;
 
     animation:
         leafFloat 12s linear infinite;
-
 }
 
-
 .leaf:nth-child(1) {
-
     left: 8%;
     top: 10%;
-
     animation-delay: -2s;
-
 }
 
 .leaf:nth-child(2) {
-
     left: 22%;
     top: 45%;
-
     animation-delay: -7s;
-
 }
 
 .leaf:nth-child(3) {
-
     left: 78%;
     top: 25%;
-
     animation-delay: -5s;
-
 }
 
 .leaf:nth-child(4) {
-
     left: 90%;
     top: 65%;
-
     animation-delay: -10s;
-
 }
-
 
 @keyframes leafFloat {
 
     0% {
-
         transform:
             translateY(100vh)
             rotate(0deg);
-
     }
 
     100% {
-
         transform:
             translateY(-120vh)
             rotate(360deg);
-
     }
 
 }
@@ -434,9 +321,7 @@ body::after {
 ========================================================= */
 
 nav {
-
     position: fixed;
-
     top: 0;
     left: 0;
     right: 0;
@@ -444,85 +329,109 @@ nav {
     z-index: 50;
 
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
 
-    padding:
-        18px 7%;
+    padding: 14px 6%;
 
     background:
-        rgba(2,15,7,.70);
+        rgba(2,15,7,.82);
 
     backdrop-filter:
-        blur(18px);
+        blur(20px);
 
     border-bottom:
         1px solid
         rgba(255,255,255,.08);
 
+    box-shadow:
+        0 10px 35px
+        rgba(0,0,0,.2);
 }
 
 
 .logo {
-
-    font-size:
-        1.3rem;
-
-    font-weight:
-        900;
-
-    color:
-        var(--green);
-
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: var(--green);
+    white-space: nowrap;
 }
-
 
 .logo span {
-
-    color:
-        white;
-
+    color: white;
 }
 
+
+/* Main navigation buttons */
 
 .nav-links {
-
-    display:
-        flex;
-
-    gap:
-        25px;
-
+    display: flex;
+    gap: 8px;
+    align-items: center;
 }
-
 
 .nav-links a {
+    color: #d9e8d8;
+    text-decoration: none;
 
-    color:
-        #d9e8d8;
+    font-size: .82rem;
+    font-weight: 800;
 
-    text-decoration:
-        none;
+    padding: 10px 14px;
 
-    font-size:
-        .9rem;
+    border-radius: 10px;
 
-    font-weight:
-        700;
+    transition: .25s;
+}
 
-    transition:
-        .25s;
+.nav-links a:hover {
+    color: var(--green);
 
+    background:
+        rgba(168,255,114,.08);
+
+    transform:
+        translateY(-2px);
 }
 
 
-.nav-links a:hover {
+/* Separate page buttons */
 
-    color:
+.nav-links a.page-link {
+    border:
+        1px solid
+        rgba(168,255,114,.14);
+
+    background:
+        rgba(168,255,114,.035);
+}
+
+
+/* Great Apes button */
+
+.nav-links a.great-apes-link {
+    color: #06140a;
+
+    background:
         var(--green);
 
+    border:
+        1px solid
+        var(--green);
+
+    box-shadow:
+        0 5px 20px
+        rgba(168,255,114,.12);
+}
+
+.nav-links a.great-apes-link:hover {
+    color: #06140a;
+
+    background:
+        #c0ff98;
+
+    transform:
+        translateY(-3px);
 }
 
 
@@ -531,37 +440,23 @@ nav {
 ========================================================= */
 
 .hero {
+    min-height: 100vh;
 
-    min-height:
-        100vh;
-
-    display:
-        flex;
-
-    align-items:
-        center;
+    display: flex;
+    align-items: center;
 
     padding:
-        130px 7% 90px;
+        140px 7% 90px;
 
-    position:
-        relative;
-
+    position: relative;
 }
-
 
 .hero-content {
-
-    max-width:
-        850px;
-
+    max-width: 850px;
 }
 
-
 .badge {
-
-    display:
-        inline-block;
+    display: inline-block;
 
     padding:
         9px 16px;
@@ -590,12 +485,9 @@ nav {
 
     margin-bottom:
         25px;
-
 }
 
-
 .hero h1 {
-
     font-size:
         clamp(3.5rem, 10vw, 8rem);
 
@@ -607,24 +499,18 @@ nav {
 
     margin-bottom:
         30px;
-
 }
 
-
 .hero h1 span {
-
     color:
         var(--green);
 
     text-shadow:
         0 0 35px
         rgba(168,255,114,.2);
-
 }
 
-
 .hero p {
-
     max-width:
         650px;
 
@@ -639,12 +525,9 @@ nav {
 
     margin-bottom:
         35px;
-
 }
 
-
 .buttons {
-
     display:
         flex;
 
@@ -653,12 +536,9 @@ nav {
 
     flex-wrap:
         wrap;
-
 }
 
-
 .btn {
-
     display:
         inline-block;
 
@@ -682,20 +562,14 @@ nav {
 
     transition:
         .25s;
-
 }
-
 
 .btn:hover {
-
     transform:
         translateY(-4px);
-
 }
 
-
 .primary {
-
     background:
         var(--green);
 
@@ -705,12 +579,9 @@ nav {
     box-shadow:
         0 10px 40px
         rgba(168,255,114,.18);
-
 }
 
-
 .secondary {
-
     background:
         rgba(255,255,255,.07);
 
@@ -720,7 +591,6 @@ nav {
     border:
         1px solid
         rgba(255,255,255,.12);
-
 }
 
 
@@ -729,18 +599,14 @@ nav {
 ========================================================= */
 
 section {
-
     padding:
         110px 7%;
 
     position:
         relative;
-
 }
 
-
 .section-header {
-
     max-width:
         750px;
 
@@ -749,12 +615,9 @@ section {
 
     text-align:
         center;
-
 }
 
-
 .label {
-
     color:
         var(--green);
 
@@ -769,38 +632,30 @@ section {
 
     margin-bottom:
         14px;
-
 }
 
-
 .section-header h2 {
-
     font-size:
         clamp(2.2rem,5vw,4rem);
 
     margin-bottom:
         18px;
-
 }
 
-
 .section-header p {
-
     color:
         var(--muted);
 
     line-height:
         1.8;
-
 }
 
 
 /* =========================================================
-   VINE DECORATION
+   VINE
 ========================================================= */
 
 .vine {
-
     position:
         absolute;
 
@@ -812,29 +667,22 @@ section {
 
     pointer-events:
         none;
-
 }
 
-
 .vine.left {
-
     left:
         -10px;
 
     top:
         30px;
-
 }
 
-
 .vine.right {
-
     right:
         -10px;
 
     bottom:
         30px;
-
 }
 
 
@@ -843,7 +691,6 @@ section {
 ========================================================= */
 
 .monkey-grid {
-
     max-width:
         1200px;
 
@@ -858,12 +705,9 @@ section {
 
     gap:
         18px;
-
 }
 
-
 .monkey-card {
-
     min-height:
         230px;
 
@@ -892,12 +736,9 @@ section {
 
     position:
         relative;
-
 }
 
-
 .monkey-card:hover {
-
     transform:
         translateY(-9px);
 
@@ -907,12 +748,9 @@ section {
     box-shadow:
         0 20px 60px
         rgba(0,0,0,.3);
-
 }
 
-
 .monkey-card::after {
-
     content:
         "🍃";
 
@@ -930,34 +768,25 @@ section {
 
     opacity:
         .08;
-
 }
 
-
 .monkey-emoji {
-
     font-size:
         3rem;
 
     margin-bottom:
         17px;
-
 }
 
-
 .monkey-card h3 {
-
     font-size:
         1.2rem;
 
     margin-bottom:
         10px;
-
 }
 
-
 .monkey-card p {
-
     color:
         var(--muted);
 
@@ -966,30 +795,6 @@ section {
 
     line-height:
         1.65;
-
-}
-
-
-/* =========================================================
-   GREAT APES BUTTON
-========================================================= */
-
-.great-apes-link {
-
-    text-align:
-        center;
-
-    margin-top:
-        45px;
-
-}
-
-
-.great-apes-link .btn {
-
-    font-size:
-        1rem;
-
 }
 
 
@@ -998,7 +803,6 @@ section {
 ========================================================= */
 
 .facts {
-
     max-width:
         1000px;
 
@@ -1013,12 +817,9 @@ section {
 
     gap:
         18px;
-
 }
 
-
 .fact {
-
     text-align:
         center;
 
@@ -1034,12 +835,9 @@ section {
 
     border-radius:
         20px;
-
 }
 
-
 .fact strong {
-
     display:
         block;
 
@@ -1051,220 +849,55 @@ section {
 
     margin-bottom:
         8px;
-
 }
 
-
 .fact span {
-
     color:
         var(--muted);
-
 }
 
 
 /* =========================================================
-   KNOWLEDGE QUIZ
+   EXPLORE PAGES SECTION
 ========================================================= */
 
-.quiz-box {
+.explore-section {
+    padding-top:
+        70px;
 
+    padding-bottom:
+        120px;
+}
+
+.explore-grid {
     max-width:
-        850px;
+        1100px;
 
     margin:
         auto;
-
-    padding:
-        45px;
-
-    background:
-        rgba(4,22,11,.84);
-
-    backdrop-filter:
-        blur(20px);
-
-    border:
-        1px solid
-        rgba(255,255,255,.1);
-
-    border-radius:
-        28px;
-
-    box-shadow:
-        0 30px 100px
-        rgba(0,0,0,.3);
-
-}
-
-
-.quiz-progress {
-
-    height:
-        8px;
-
-    background:
-        rgba(255,255,255,.07);
-
-    border-radius:
-        50px;
-
-    overflow:
-        hidden;
-
-    margin-bottom:
-        35px;
-
-}
-
-
-.quiz-progress div {
-
-    width:
-        0%;
-
-    height:
-        100%;
-
-    background:
-        linear-gradient(
-            90deg,
-            var(--bright-green),
-            var(--green)
-        );
-
-    transition:
-        .4s;
-
-}
-
-
-.quiz-question {
-
-    font-size:
-        1.8rem;
-
-    line-height:
-        1.4;
-
-    margin-bottom:
-        25px;
-
-}
-
-
-.quiz-answers {
-
-    display:
-        grid;
-
-    gap:
-        12px;
-
-}
-
-
-.quiz-answer {
-
-    width:
-        100%;
-
-    padding:
-        17px;
-
-    text-align:
-        left;
-
-    color:
-        white;
-
-    background:
-        rgba(255,255,255,.045);
-
-    border:
-        1px solid
-        rgba(255,255,255,.1);
-
-    border-radius:
-        13px;
-
-    cursor:
-        pointer;
-
-    font-weight:
-        700;
-
-    transition:
-        .25s;
-
-}
-
-
-.quiz-answer:hover {
-
-    transform:
-        translateX(6px);
-
-    background:
-        rgba(168,255,114,.08);
-
-    border-color:
-        rgba(168,255,114,.35);
-
-}
-
-
-/* =========================================================
-   QUIZ RESULT
-========================================================= */
-
-#knowledgeResult {
-
-    text-align:
-        center;
-
-}
-
-
-#knowledgeResult p {
-
-    color:
-        var(--muted);
-
-    line-height:
-        1.8;
-
-    margin-bottom:
-        25px;
-
-}
-
-
-/* =========================================================
-   PAGE LINKS
-========================================================= */
-
-.page-links {
-
-    max-width:
-        1000px;
-
-    margin:
-        30px auto 0;
 
     display:
         grid;
 
     grid-template-columns:
-        repeat(auto-fit,minmax(250px,1fr));
+        repeat(3, 1fr);
 
     gap:
-        18px;
-
+        20px;
 }
 
+.explore-card {
+    display:
+        flex;
 
-.page-link-card {
+    flex-direction:
+        column;
+
+    justify-content:
+        space-between;
+
+    min-height:
+        260px;
 
     padding:
         30px;
@@ -1278,25 +911,22 @@ section {
     background:
         linear-gradient(
             145deg,
-            rgba(10,40,19,.9),
-            rgba(4,20,10,.8)
+            rgba(9,38,18,.9),
+            rgba(3,18,9,.88)
         );
 
     border:
         1px solid
-        rgba(255,255,255,.08);
+        rgba(255,255,255,.09);
 
     border-radius:
-        22px;
+        24px;
 
     transition:
         .3s;
-
 }
 
-
-.page-link-card:hover {
-
+.explore-card:hover {
     transform:
         translateY(-8px);
 
@@ -1304,42 +934,43 @@ section {
         rgba(168,255,114,.35);
 
     box-shadow:
-        0 20px 60px
+        0 25px 70px
         rgba(0,0,0,.3);
-
 }
 
-
-.page-link-icon {
-
+.explore-icon {
     font-size:
-        3rem;
+        3.5rem;
 
     margin-bottom:
-        15px;
-
+        20px;
 }
 
-
-.page-link-card h3 {
+.explore-card h3 {
+    font-size:
+        1.5rem;
 
     margin-bottom:
-        10px;
-
+        12px;
 }
 
-
-.page-link-card p {
-
+.explore-card p {
     color:
         var(--muted);
 
     line-height:
-        1.6;
+        1.7;
 
-    font-size:
-        .9rem;
+    margin-bottom:
+        25px;
+}
 
+.explore-arrow {
+    color:
+        var(--green);
+
+    font-weight:
+        900;
 }
 
 
@@ -1348,7 +979,6 @@ section {
 ========================================================= */
 
 footer {
-
     padding:
         55px 7%;
 
@@ -1361,20 +991,14 @@ footer {
     border-top:
         1px solid
         rgba(255,255,255,.08);
-
 }
-
 
 footer strong {
-
     color:
         var(--green);
-
 }
 
-
 footer p {
-
     color:
         var(--muted);
 
@@ -1383,7 +1007,6 @@ footer p {
 
     font-size:
         .85rem;
-
 }
 
 
@@ -1391,48 +1014,90 @@ footer p {
    MOBILE
 ========================================================= */
 
-@media(max-width:700px) {
+@media(max-width:900px) {
 
     nav {
-
         padding:
-            15px 5%;
-
+            12px 4%;
     }
 
     .nav-links {
+        gap:
+            3px;
+    }
 
-        display:
-            none;
+    .nav-links a {
+        padding:
+            8px 9px;
 
+        font-size:
+            .75rem;
+    }
+
+    .explore-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+}
+
+
+@media(max-width:700px) {
+
+    nav {
+        position:
+            fixed;
+
+        padding:
+            10px 5%;
+
+        flex-direction:
+            column;
+
+        gap:
+            9px;
+    }
+
+    .logo {
+        font-size:
+            1.1rem;
+    }
+
+    .nav-links {
+        width:
+            100%;
+
+        justify-content:
+            center;
+
+        flex-wrap:
+            wrap;
+
+        gap:
+            4px;
+    }
+
+    .nav-links a {
+        font-size:
+            .7rem;
+
+        padding:
+            7px 8px;
     }
 
     .hero {
-
         padding:
-            120px 6% 80px;
-
+            160px 6% 80px;
     }
 
     .hero h1 {
-
         letter-spacing:
             -3px;
-
     }
 
     section {
-
         padding:
             80px 6%;
-
-    }
-
-    .quiz-box {
-
-        padding:
-            25px 18px;
-
     }
 
 }
@@ -1497,9 +1162,7 @@ footer p {
 <nav>
 
     <div class="logo">
-
         🐒 MONKEY<span>WORLD</span>
-
     </div>
 
 
@@ -1517,16 +1180,25 @@ footer p {
             Facts
         </a>
 
-        <a href="#quiz">
-            Quiz
+        <a
+            href="quiz.html"
+            class="page-link"
+        >
+            🧠 Quiz
         </a>
 
-        <a href="great-apes.html">
-            Great Apes
+        <a
+            href="personality.html"
+            class="page-link"
+        >
+            🐒 Personality
         </a>
 
-        <a href="personality.html">
-            Personality
+        <a
+            href="great-apes.html"
+            class="great-apes-link"
+        >
+            🦍 Great Apes
         </a>
 
     </div>
@@ -1546,18 +1218,13 @@ footer p {
     <div class="hero-content">
 
         <div class="badge">
-
             🌿 WELCOME TO THE RAINFOREST
-
         </div>
 
 
         <h1>
-
             ENTER THE<br>
-
             <span>JUNGLE.</span>
-
         </h1>
 
 
@@ -1565,8 +1232,8 @@ footer p {
 
             Explore the fascinating world of monkeys.
             Learn about incredible species, discover
-            strange facts, test your knowledge and
-            discover your inner monkey.
+            strange facts, test your knowledge and find
+            out which monkey matches your personality.
 
         </p>
 
@@ -1577,9 +1244,7 @@ footer p {
                 href="personality.html"
                 class="btn primary"
             >
-
                 🐒 Find My Monkey
-
             </a>
 
 
@@ -1587,9 +1252,7 @@ footer p {
                 href="#monkeys"
                 class="btn secondary"
             >
-
                 🌿 Explore Species
-
             </a>
 
         </div>
@@ -1644,10 +1307,8 @@ footer p {
             </h3>
 
             <p>
-
                 Clever, curious monkeys famous for
                 their impressive problem-solving abilities.
-
             </p>
 
         </div>
@@ -1664,10 +1325,8 @@ footer p {
             </h3>
 
             <p>
-
                 Incredible climbers with long limbs
                 and powerful gripping tails.
-
             </p>
 
         </div>
@@ -1684,10 +1343,8 @@ footer p {
             </h3>
 
             <p>
-
                 Their enormous calls can travel
                 surprisingly far through the rainforest.
-
             </p>
 
         </div>
@@ -1704,10 +1361,8 @@ footer p {
             </h3>
 
             <p>
-
                 Tiny, energetic and extremely social
                 monkeys that live in groups.
-
             </p>
 
         </div>
@@ -1724,10 +1379,8 @@ footer p {
             </h3>
 
             <p>
-
                 Famous for their enormous noses and
                 their love of swampy habitats.
-
             </p>
 
         </div>
@@ -1744,10 +1397,8 @@ footer p {
             </h3>
 
             <p>
-
                 Small Brazilian monkeys with
                 spectacular golden-orange fur.
-
             </p>
 
         </div>
@@ -1764,10 +1415,8 @@ footer p {
             </h3>
 
             <p>
-
                 Social Ethiopian primates known
                 for living in large groups.
-
             </p>
 
         </div>
@@ -1784,10 +1433,8 @@ footer p {
             </h3>
 
             <p>
-
                 Also called snow monkeys, they're
                 famous for enjoying hot springs.
-
             </p>
 
         </div>
@@ -1804,10 +1451,8 @@ footer p {
             </h3>
 
             <p>
-
                 One of the world's most colorful
                 mammals, with a spectacular face.
-
             </p>
 
         </div>
@@ -1824,30 +1469,12 @@ footer p {
             </h3>
 
             <p>
-
                 Clever African monkeys with
                 surprisingly complex communication.
-
             </p>
 
         </div>
 
-
-    </div>
-
-
-    <!-- GREAT APES LINK -->
-
-    <div class="great-apes-link">
-
-        <a
-            href="great-apes.html"
-            class="btn primary"
-        >
-
-            🦍 Explore The Great Apes
-
-        </a>
 
     </div>
 
@@ -1871,10 +1498,8 @@ footer p {
         </h2>
 
         <p>
-
             Some facts about monkeys that might
             surprise you.
-
         </p>
 
     </div>
@@ -1940,115 +1565,10 @@ footer p {
 
 
 <!-- =====================================================
-     KNOWLEDGE QUIZ
+     EXPLORE OTHER PAGES
 ===================================================== -->
 
-<section id="quiz">
-
-    <div class="section-header">
-
-        <div class="label">
-            TEST YOURSELF
-        </div>
-
-        <h2>
-            Monkey Knowledge Quiz
-        </h2>
-
-        <p>
-
-            Think you know your monkeys?
-            Put your knowledge to the test.
-
-        </p>
-
-    </div>
-
-
-    <div class="quiz-box">
-
-
-        <div id="knowledgeQuiz">
-
-            <div class="quiz-progress">
-
-                <div id="knowledgeProgress">
-                </div>
-
-            </div>
-
-
-            <h3
-                id="knowledgeQuestion"
-                class="quiz-question"
-            >
-            </h3>
-
-
-            <div
-                id="knowledgeAnswers"
-                class="quiz-answers"
-            >
-            </div>
-
-        </div>
-
-
-        <div
-            id="knowledgeResult"
-            style="display:none"
-        >
-
-            <div
-                style="
-                    font-size:6rem;
-                    margin-bottom:15px;
-                "
-            >
-                🧠🐒
-            </div>
-
-
-            <h3
-                id="knowledgeScore"
-                style="
-                    color:#a8ff72;
-                    font-size:2.5rem;
-                    margin-bottom:15px;
-                "
-            >
-            </h3>
-
-
-            <p>
-
-                Nice work! Now discover which monkey
-                matches your personality.
-
-            </p>
-
-
-            <a
-                href="personality.html"
-                class="btn primary"
-            >
-
-                🐒 Find My Monkey
-
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     EXPLORE MORE
-===================================================== -->
-
-<section>
+<section class="explore-section">
 
     <div class="section-header">
 
@@ -2057,64 +1577,112 @@ footer p {
         </div>
 
         <h2>
-            More Of The Jungle
+            Enter The Jungle
         </h2>
 
         <p>
-
-            Ready to go deeper? Explore the great apes
-            or discover which monkey matches your personality.
-
+            Explore the other parts of MonkeyWorld.
+            Each one has its own page.
         </p>
 
     </div>
 
 
-    <div class="page-links">
+    <div class="explore-grid">
 
+
+        <!-- QUIZ -->
 
         <a
-            href="great-apes.html"
-            class="page-link-card"
+            href="quiz.html"
+            class="explore-card"
         >
 
-            <div class="page-link-icon">
-                🦍
+            <div>
+
+                <div class="explore-icon">
+                    🧠🐒
+                </div>
+
+                <h3>
+                    Monkey Knowledge Quiz
+                </h3>
+
+                <p>
+                    Test what you know about monkey
+                    species, habitats, behaviour and
+                    amazing facts.
+                </p>
+
             </div>
 
-            <h3>
-                Great Apes
-            </h3>
-
-            <p>
-
-                Meet gorillas, chimpanzees, bonobos,
-                orangutans and humans.
-
-            </p>
+            <div class="explore-arrow">
+                TAKE THE QUIZ →
+            </div>
 
         </a>
 
 
+        <!-- PERSONALITY -->
+
         <a
             href="personality.html"
-            class="page-link-card"
+            class="explore-card"
         >
 
-            <div class="page-link-icon">
-                🐒
+            <div>
+
+                <div class="explore-icon">
+                    🐒✨
+                </div>
+
+                <h3>
+                    Monkey Personality
+                </h3>
+
+                <p>
+                    Answer the personality questions
+                    and discover which monkey matches
+                    your personality.
+                </p>
+
             </div>
 
-            <h3>
-                Personality Test
-            </h3>
+            <div class="explore-arrow">
+                FIND YOUR MONKEY →
+            </div>
 
-            <p>
+        </a>
 
-                Answer the questions and discover
-                which monkey matches your personality.
 
-            </p>
+        <!-- GREAT APES -->
+
+        <a
+            href="great-apes.html"
+            class="explore-card"
+        >
+
+            <div>
+
+                <div class="explore-icon">
+                    🦍
+                </div>
+
+                <h3>
+                    Great Apes
+                </h3>
+
+                <p>
+                    Step beyond monkeys and explore
+                    gorillas, chimpanzees, bonobos,
+                    orangutans and humans.
+                </p>
+
+            </div>
+
+            <div class="explore-arrow">
+                EXPLORE GREAT APES →
+            </div>
 
         </a>
 
@@ -2135,250 +1703,13 @@ footer p {
     </strong>
 
     <p>
-
         Explore. Learn. Discover your inner monkey. 🌿
-
     </p>
 
 </footer>
 
 
-<script>
-
-
-/* =========================================================
-   KNOWLEDGE QUIZ
-========================================================= */
-
-const knowledgeQuestions = [
-
-    {
-
-        q:
-        "Which monkey is famous for its extremely loud call?",
-
-        answers: [
-
-            "Howler Monkey",
-            "Capuchin",
-            "Spider Monkey",
-            "Squirrel Monkey"
-
-        ],
-
-        correct: 0
-
-    },
-
-
-    {
-
-        q:
-        "Which monkey is famous for relaxing in hot springs?",
-
-        answers: [
-
-            "Mandrill",
-            "Japanese Macaque",
-            "Vervet Monkey",
-            "Gelada"
-
-        ],
-
-        correct: 1
-
-    },
-
-
-    {
-
-        q:
-        "Which monkey is famous for its large nose?",
-
-        answers: [
-
-            "Proboscis Monkey",
-            "Capuchin",
-            "Gelada",
-            "Mandrill"
-
-        ],
-
-        correct: 0
-
-    },
-
-
-    {
-
-        q:
-        "Which monkey is famous for its colorful face?",
-
-        answers: [
-
-            "Spider Monkey",
-            "Mandrill",
-            "Vervet Monkey",
-            "Squirrel Monkey"
-
-        ],
-
-        correct: 1
-
-    },
-
-
-    {
-
-        q:
-        "Which monkey is native to Ethiopia?",
-
-        answers: [
-
-            "Gelada",
-            "Capuchin",
-            "Proboscis Monkey",
-            "Japanese Macaque"
-
-        ],
-
-        correct: 0
-
-    }
-
-];
-
-
-let knowledgeIndex = 0;
-
-let knowledgeScore = 0;
-
-
-/* =========================================================
-   LOAD KNOWLEDGE QUESTION
-========================================================= */
-
-function loadKnowledgeQuestion() {
-
-    const q =
-        knowledgeQuestions[
-            knowledgeIndex
-        ];
-
-
-    document.getElementById(
-        "knowledgeQuestion"
-    ).textContent =
-        q.q;
-
-
-    document.getElementById(
-        "knowledgeProgress"
-    ).style.width =
-        `${(knowledgeIndex / knowledgeQuestions.length) * 100}%`;
-
-
-    const container =
-        document.getElementById(
-            "knowledgeAnswers"
-        );
-
-
-    container.innerHTML = "";
-
-
-    q.answers.forEach(
-        (answer,index) => {
-
-            const button =
-                document.createElement(
-                    "button"
-                );
-
-
-            button.className =
-                "quiz-answer";
-
-
-            button.textContent =
-                answer;
-
-
-            button.onclick =
-                () => {
-
-                    if (
-                        index ===
-                        q.correct
-                    ) {
-
-                        knowledgeScore++;
-
-                    }
-
-
-                    knowledgeIndex++;
-
-
-                    if (
-                        knowledgeIndex >=
-                        knowledgeQuestions.length
-                    ) {
-
-                        document.getElementById(
-                            "knowledgeQuiz"
-                        ).style.display =
-                            "none";
-
-
-                        document.getElementById(
-                            "knowledgeResult"
-                        ).style.display =
-                            "block";
-
-
-                        document.getElementById(
-                            "knowledgeProgress"
-                        ).style.width =
-                            "100%";
-
-
-                        document.getElementById(
-                            "knowledgeScore"
-                        ).textContent =
-                            `${knowledgeScore} / ${knowledgeQuestions.length} Correct! 🐒`;
-
-                    }
-
-                    else {
-
-                        loadKnowledgeQuestion();
-
-                    }
-
-                };
-
-
-            container.appendChild(
-                button
-            );
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   START QUIZ
-========================================================= */
-
-loadKnowledgeQuestion();
-
-
-</script>
-
-
 </body>
 
 </html>
+```
