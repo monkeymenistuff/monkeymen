@@ -1,0 +1,1680 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Monkey Knowledge Quiz 🐒</title>
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: white;
+
+    background:
+        #031008;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+}
+
+
+/* =========================================================
+   COLORS
+========================================================= */
+
+:root {
+
+    --green:
+        #a8ff72;
+
+    --bright-green:
+        #62e66e;
+
+    --dark-green:
+        #031008;
+
+    --forest:
+        #082414;
+
+    --card:
+        rgba(7, 30, 15, .82);
+
+    --muted:
+        #aab9aa;
+
+    --white:
+        #f4fff2;
+
+}
+
+
+/* =========================================================
+   RAINFOREST BACKGROUND
+========================================================= */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -10;
+
+    background:
+
+        linear-gradient(
+            rgba(1, 12, 5, .72),
+            rgba(1, 15, 7, .92)
+        ),
+
+        url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLh-zhEqgezfM8iIm1yztPEFNOGt_TVvC4gwh9gMxJuQ&s=10")
+
+        center / cover no-repeat;
+
+}
+
+
+/* =========================================================
+   GREEN GLOW
+========================================================= */
+
+body::after {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -9;
+
+    pointer-events: none;
+
+    background:
+
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(98,230,110,.12),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 85% 70%,
+            rgba(168,255,114,.08),
+            transparent 30%
+        );
+
+}
+
+
+/* =========================================================
+   RAIN
+========================================================= */
+
+.rain {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    opacity: .15;
+
+    overflow: hidden;
+
+}
+
+.drop {
+
+    position: absolute;
+
+    width: 1px;
+
+    height: 45px;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(200,255,220,.7)
+        );
+
+    animation:
+        rainFall linear infinite;
+
+}
+
+.drop:nth-child(1) {
+    left: 5%;
+    animation-duration: 1.8s;
+    animation-delay: -.5s;
+}
+
+.drop:nth-child(2) {
+    left: 12%;
+    animation-duration: 2.4s;
+    animation-delay: -1s;
+}
+
+.drop:nth-child(3) {
+    left: 18%;
+    animation-duration: 1.9s;
+    animation-delay: -1.5s;
+}
+
+.drop:nth-child(4) {
+    left: 25%;
+    animation-duration: 2.7s;
+    animation-delay: -.2s;
+}
+
+.drop:nth-child(5) {
+    left: 32%;
+    animation-duration: 2.1s;
+    animation-delay: -1.2s;
+}
+
+.drop:nth-child(6) {
+    left: 40%;
+    animation-duration: 2.5s;
+    animation-delay: -.7s;
+}
+
+.drop:nth-child(7) {
+    left: 47%;
+    animation-duration: 1.7s;
+    animation-delay: -1.8s;
+}
+
+.drop:nth-child(8) {
+    left: 54%;
+    animation-duration: 2.3s;
+    animation-delay: -.4s;
+}
+
+.drop:nth-child(9) {
+    left: 61%;
+    animation-duration: 2.8s;
+    animation-delay: -1.1s;
+}
+
+.drop:nth-child(10) {
+    left: 68%;
+    animation-duration: 1.8s;
+    animation-delay: -.9s;
+}
+
+.drop:nth-child(11) {
+    left: 75%;
+    animation-duration: 2.6s;
+    animation-delay: -1.6s;
+}
+
+.drop:nth-child(12) {
+    left: 82%;
+    animation-duration: 2s;
+    animation-delay: -.3s;
+}
+
+.drop:nth-child(13) {
+    left: 89%;
+    animation-duration: 2.2s;
+    animation-delay: -1.4s;
+}
+
+.drop:nth-child(14) {
+    left: 95%;
+    animation-duration: 2.7s;
+    animation-delay: -.8s;
+}
+
+
+@keyframes rainFall {
+
+    0% {
+        transform: translateY(-100px);
+    }
+
+    100% {
+        transform: translateY(110vh);
+    }
+
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 50;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding:
+        18px 7%;
+
+    background:
+        rgba(2,15,7,.75);
+
+    backdrop-filter:
+        blur(18px);
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.08);
+
+}
+
+
+.logo {
+
+    font-size:
+        1.3rem;
+
+    font-weight:
+        900;
+
+    color:
+        var(--green);
+
+}
+
+
+.logo span {
+
+    color:
+        white;
+
+}
+
+
+.nav-links {
+
+    display:
+        flex;
+
+    gap:
+        25px;
+
+}
+
+
+.nav-links a {
+
+    color:
+        #d9e8d8;
+
+    text-decoration:
+        none;
+
+    font-size:
+        .9rem;
+
+    font-weight:
+        700;
+
+    transition:
+        .25s;
+
+}
+
+
+.nav-links a:hover {
+
+    color:
+        var(--green);
+
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+main {
+
+    min-height:
+        100vh;
+
+    padding:
+        140px 7% 100px;
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.quiz-header {
+
+    max-width:
+        800px;
+
+    margin:
+        0 auto 50px;
+
+    text-align:
+        center;
+
+}
+
+
+.label {
+
+    color:
+        var(--green);
+
+    font-size:
+        .72rem;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        2px;
+
+    margin-bottom:
+        15px;
+
+}
+
+
+.quiz-header h1 {
+
+    font-size:
+        clamp(2.8rem, 7vw, 5.5rem);
+
+    line-height:
+        .95;
+
+    letter-spacing:
+        -3px;
+
+    margin-bottom:
+        20px;
+
+}
+
+
+.quiz-header h1 span {
+
+    color:
+        var(--green);
+
+    text-shadow:
+        0 0 35px
+        rgba(168,255,114,.2);
+
+}
+
+
+.quiz-header p {
+
+    color:
+        var(--muted);
+
+    font-size:
+        1.05rem;
+
+    line-height:
+        1.8;
+
+}
+
+
+/* =========================================================
+   QUIZ BOX
+========================================================= */
+
+.quiz-box {
+
+    max-width:
+        850px;
+
+    margin:
+        auto;
+
+    padding:
+        45px;
+
+    background:
+        rgba(4,22,11,.86);
+
+    backdrop-filter:
+        blur(20px);
+
+    border:
+        1px solid
+        rgba(255,255,255,.1);
+
+    border-radius:
+        28px;
+
+    box-shadow:
+        0 30px 100px
+        rgba(0,0,0,.4);
+
+}
+
+
+/* =========================================================
+   QUIZ TOP
+========================================================= */
+
+.quiz-top {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    margin-bottom:
+        15px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        .9rem;
+
+    font-weight:
+        800;
+
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.quiz-progress {
+
+    height:
+        9px;
+
+    background:
+        rgba(255,255,255,.07);
+
+    border-radius:
+        50px;
+
+    overflow:
+        hidden;
+
+    margin-bottom:
+        40px;
+
+}
+
+
+#quizProgress {
+
+    width:
+        0%;
+
+    height:
+        100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--bright-green),
+            var(--green)
+        );
+
+    transition:
+        width .4s ease;
+
+}
+
+
+/* =========================================================
+   QUESTION
+========================================================= */
+
+.quiz-question {
+
+    font-size:
+        clamp(1.5rem,4vw,2.2rem);
+
+    line-height:
+        1.4;
+
+    margin-bottom:
+        28px;
+
+}
+
+
+/* =========================================================
+   ANSWERS
+========================================================= */
+
+.quiz-answers {
+
+    display:
+        grid;
+
+    gap:
+        13px;
+
+}
+
+
+.quiz-answer {
+
+    width:
+        100%;
+
+    padding:
+        18px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        15px;
+
+    color:
+        white;
+
+    text-align:
+        left;
+
+    background:
+        rgba(255,255,255,.045);
+
+    border:
+        1px solid
+        rgba(255,255,255,.1);
+
+    border-radius:
+        15px;
+
+    cursor:
+        pointer;
+
+    font-size:
+        1rem;
+
+    font-weight:
+        700;
+
+    transition:
+        .25s;
+
+}
+
+
+.quiz-answer span {
+
+    width:
+        38px;
+
+    height:
+        38px;
+
+    min-width:
+        38px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border-radius:
+        10px;
+
+    color:
+        var(--green);
+
+    background:
+        rgba(168,255,114,.1);
+
+    font-weight:
+        900;
+
+}
+
+
+.quiz-answer:hover {
+
+    transform:
+        translateX(7px);
+
+    background:
+        rgba(168,255,114,.08);
+
+    border-color:
+        rgba(168,255,114,.35);
+
+}
+
+
+/* =========================================================
+   RESULT
+========================================================= */
+
+.result {
+
+    text-align:
+        center;
+
+}
+
+
+.result-monkey {
+
+    font-size:
+        7rem;
+
+    margin-bottom:
+        20px;
+
+}
+
+
+.result h2 {
+
+    color:
+        var(--green);
+
+    font-size:
+        clamp(2rem,6vw,3.5rem);
+
+    margin-bottom:
+        15px;
+
+}
+
+
+.result p {
+
+    color:
+        var(--muted);
+
+    line-height:
+        1.8;
+
+    max-width:
+        600px;
+
+    margin:
+        0 auto 30px;
+
+}
+
+
+/* =========================================================
+   SCORE CIRCLE
+========================================================= */
+
+.score {
+
+    width:
+        150px;
+
+    height:
+        150px;
+
+    margin:
+        0 auto 30px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(168,255,114,.15),
+            rgba(168,255,114,.03)
+        );
+
+    border:
+        2px solid
+        rgba(168,255,114,.35);
+
+}
+
+
+#scoreNumber {
+
+    font-size:
+        2.5rem;
+
+    font-weight:
+        900;
+
+    color:
+        var(--green);
+
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.buttons {
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    gap:
+        12px;
+
+    flex-wrap:
+        wrap;
+
+}
+
+
+.btn {
+
+    display:
+        inline-block;
+
+    padding:
+        15px 24px;
+
+    border:
+        none;
+
+    border-radius:
+        12px;
+
+    cursor:
+        pointer;
+
+    font-weight:
+        900;
+
+    text-decoration:
+        none;
+
+    transition:
+        .25s;
+
+}
+
+
+.btn:hover {
+
+    transform:
+        translateY(-4px);
+
+}
+
+
+.primary {
+
+    background:
+        var(--green);
+
+    color:
+        #06140a;
+
+    box-shadow:
+        0 10px 40px
+        rgba(168,255,114,.18);
+
+}
+
+
+.secondary {
+
+    background:
+        rgba(255,255,255,.07);
+
+    color:
+        white;
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    padding:
+        45px 7%;
+
+    text-align:
+        center;
+
+    background:
+        rgba(1,10,5,.9);
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.08);
+
+}
+
+
+footer strong {
+
+    color:
+        var(--green);
+
+}
+
+
+footer p {
+
+    color:
+        var(--muted);
+
+    margin-top:
+        10px;
+
+    font-size:
+        .85rem;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:700px) {
+
+    nav {
+
+        padding:
+            15px 5%;
+
+    }
+
+    .nav-links {
+
+        display:
+            none;
+
+    }
+
+    main {
+
+        padding:
+            120px 6% 70px;
+
+    }
+
+    .quiz-box {
+
+        padding:
+            25px 18px;
+
+    }
+
+    .quiz-top {
+
+        flex-direction:
+            column;
+
+        align-items:
+        flex-start;
+
+        gap:
+            7px;
+
+    }
+
+    .quiz-answer {
+
+        padding:
+            15px;
+
+    }
+
+    .result-monkey {
+
+        font-size:
+            5rem;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     RAIN
+===================================================== -->
+
+<div class="rain">
+
+    <div class="drop"></div>
+    <div class="drop"></div>
+    <div class="drop"></div>
+    <div class="drop"></div>
+    <div class="drop"></div>
+    <div class="drop"></div>
+    <div class="drop"></div>
+    <div class="drop"></div>
+    <div class="drop"></div>
+    <div class="drop"></div>
+    <div class="drop"></div>
+    <div class="drop"></div>
+    <div class="drop"></div>
+    <div class="drop"></div>
+
+</div>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav>
+
+    <div class="logo">
+
+        🐒 MONKEY<span>WORLD</span>
+
+    </div>
+
+
+    <div class="nav-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="great-apes.html">
+            Great Apes
+        </a>
+
+        <a href="quiz.html">
+            Quiz
+        </a>
+
+        <a href="personality.html">
+            Personality
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main>
+
+
+    <div class="quiz-header">
+
+        <div class="label">
+            🧠 TEST YOURSELF
+        </div>
+
+
+        <h1>
+
+            MONKEY <span>KNOWLEDGE</span> QUIZ
+
+        </h1>
+
+
+        <p>
+
+            Think you know your monkeys?
+            Answer the questions below and see
+            how much you really know about the
+            incredible world of primates.
+
+        </p>
+
+    </div>
+
+
+    <!-- =================================================
+         QUIZ
+    ================================================= -->
+
+    <div class="quiz-box">
+
+
+        <div id="quiz">
+
+
+            <div class="quiz-top">
+
+                <span id="questionNumber">
+                    Question 1 of 10
+                </span>
+
+                <span>
+                    🐒 Monkey Knowledge
+                </span>
+
+            </div>
+
+
+            <div class="quiz-progress">
+
+                <div id="quizProgress"></div>
+
+            </div>
+
+
+            <h2
+                id="question"
+                class="quiz-question"
+            ></h2>
+
+
+            <div
+                id="answers"
+                class="quiz-answers"
+            ></div>
+
+
+        </div>
+
+
+        <!-- =================================================
+             RESULT
+        ================================================= -->
+
+        <div
+            id="result"
+            class="result"
+            style="display:none"
+        >
+
+            <div class="result-monkey">
+                🧠🐒
+            </div>
+
+
+            <div class="score">
+
+                <span id="scoreNumber">
+                    0 / 10
+                </span>
+
+            </div>
+
+
+            <h2 id="resultTitle">
+                Great Job!
+            </h2>
+
+
+            <p id="resultText">
+                Nice work!
+            </p>
+
+
+            <div class="buttons">
+
+                <button
+                    class="btn primary"
+                    onclick="restartQuiz()"
+                >
+
+                    🔄 Take Quiz Again
+
+                </button>
+
+
+                <a
+                    href="personality.html"
+                    class="btn secondary"
+                >
+
+                    🐒 Find My Monkey
+
+                </a>
+
+
+                <a
+                    href="index.html"
+                    class="btn secondary"
+                >
+
+                    🏠 Home
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <strong>
+        🐒 MONKEYWORLD
+    </strong>
+
+    <p>
+        Explore. Learn. Discover your inner monkey. 🌿
+    </p>
+
+</footer>
+
+
+<script>
+
+/* =========================================================
+   QUIZ QUESTIONS
+========================================================= */
+
+const questions = [
+
+    {
+        question:
+            "Which monkey is famous for its extremely loud call?",
+
+        answers: [
+            "Howler Monkey",
+            "Capuchin",
+            "Spider Monkey",
+            "Squirrel Monkey"
+        ],
+
+        correct: 0
+    },
+
+
+    {
+        question:
+            "Which monkey is famous for relaxing in hot springs?",
+
+        answers: [
+            "Mandrill",
+            "Japanese Macaque",
+            "Vervet Monkey",
+            "Gelada"
+        ],
+
+        correct: 1
+    },
+
+
+    {
+        question:
+            "Which monkey is famous for its large nose?",
+
+        answers: [
+            "Proboscis Monkey",
+            "Capuchin",
+            "Gelada",
+            "Mandrill"
+        ],
+
+        correct: 0
+    },
+
+
+    {
+        question:
+            "Which monkey is famous for its colorful face?",
+
+        answers: [
+            "Spider Monkey",
+            "Mandrill",
+            "Vervet Monkey",
+            "Squirrel Monkey"
+        ],
+
+        correct: 1
+    },
+
+
+    {
+        question:
+            "Which monkey is native to Ethiopia?",
+
+        answers: [
+            "Gelada",
+            "Capuchin",
+            "Proboscis Monkey",
+            "Japanese Macaque"
+        ],
+
+        correct: 0
+    },
+
+
+    {
+        question:
+            "Which monkey is known for its long, powerful gripping tail?",
+
+        answers: [
+            "Spider Monkey",
+            "Gelada",
+            "Mandrill",
+            "Vervet Monkey"
+        ],
+
+        correct: 0
+    },
+
+
+    {
+        question:
+            "Which monkey has distinctive golden-orange fur?",
+
+        answers: [
+            "Golden Lion Tamarin",
+            "Howler Monkey",
+            "Japanese Macaque",
+            "Proboscis Monkey"
+        ],
+
+        correct: 0
+    },
+
+
+    {
+        question:
+            "Which monkey is known for living in large social groups?",
+
+        answers: [
+            "Gelada",
+            "Spider Monkey",
+            "Proboscis Monkey",
+            "Mandrill"
+        ],
+
+        correct: 0
+    },
+
+
+    {
+        question:
+            "Which monkey is also known as a snow monkey?",
+
+        answers: [
+            "Japanese Macaque",
+            "Squirrel Monkey",
+            "Capuchin",
+            "Vervet Monkey"
+        ],
+
+        correct: 0
+    },
+
+
+    {
+        question:
+            "Which monkey is known for its distinctive red, blue and purple facial coloring?",
+
+        answers: [
+            "Mandrill",
+            "Howler Monkey",
+            "Spider Monkey",
+            "Gelada"
+        ],
+
+        correct: 0
+    }
+
+];
+
+
+/* =========================================================
+   QUIZ VARIABLES
+========================================================= */
+
+let currentQuestion = 0;
+
+let score = 0;
+
+
+/* =========================================================
+   LOAD QUESTION
+========================================================= */
+
+function loadQuestion() {
+
+    const q =
+        questions[currentQuestion];
+
+
+    document.getElementById(
+        "questionNumber"
+    ).textContent =
+        `Question ${currentQuestion + 1} of ${questions.length}`;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        `${(currentQuestion / questions.length) * 100}%`;
+
+
+    document.getElementById(
+        "question"
+    ).textContent =
+        q.question;
+
+
+    const answersContainer =
+        document.getElementById(
+            "answers"
+        );
+
+
+    answersContainer.innerHTML = "";
+
+
+    q.answers.forEach(
+        (answer, index) => {
+
+            const button =
+                document.createElement(
+                    "button"
+                );
+
+
+            button.className =
+                "quiz-answer";
+
+
+            button.innerHTML = `
+
+                <span>
+                    ${String.fromCharCode(65 + index)}
+                </span>
+
+                ${answer}
+
+            `;
+
+
+            button.onclick =
+                () => {
+
+                    checkAnswer(index);
+
+                };
+
+
+            answersContainer.appendChild(
+                button
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   CHECK ANSWER
+========================================================= */
+
+function checkAnswer(selectedAnswer) {
+
+    const correctAnswer =
+        questions[
+            currentQuestion
+        ].correct;
+
+
+    if (
+        selectedAnswer ===
+        correctAnswer
+    ) {
+
+        score++;
+
+    }
+
+
+    currentQuestion++;
+
+
+    if (
+        currentQuestion >=
+        questions.length
+    ) {
+
+        showResult();
+
+    }
+
+    else {
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =========================================================
+   SHOW RESULT
+========================================================= */
+
+function showResult() {
+
+    document.getElementById(
+        "quiz"
+    ).style.display =
+        "none";
+
+
+    document.getElementById(
+        "result"
+    ).style.display =
+        "block";
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        "100%";
+
+
+    document.getElementById(
+        "scoreNumber"
+    ).textContent =
+        `${score} / ${questions.length}`;
+
+
+    const percentage =
+        (score / questions.length) * 100;
+
+
+    const resultTitle =
+        document.getElementById(
+            "resultTitle"
+        );
+
+
+    const resultText =
+        document.getElementById(
+            "resultText"
+        );
+
+
+    if (percentage === 100) {
+
+        resultTitle.textContent =
+            "Perfect Score! 🏆";
+
+
+        resultText.textContent =
+            "You're a true monkey expert! Your jungle knowledge is seriously impressive.";
+
+    }
+
+    else if (percentage >= 80) {
+
+        resultTitle.textContent =
+            "Amazing! 🐒";
+
+
+        resultText.textContent =
+            "You really know your monkeys! You've got some serious jungle knowledge.";
+
+    }
+
+    else if (percentage >= 60) {
+
+        resultTitle.textContent =
+            "Nice Work! 🌿";
+
+
+        resultText.textContent =
+            "You've got a solid understanding of the monkey world. Keep exploring and learning!";
+
+    }
+
+    else if (percentage >= 40) {
+
+        resultTitle.textContent =
+            "Not Bad! 🐵";
+
+
+        resultText.textContent =
+            "You've got some monkey knowledge, but there's plenty more jungle to explore.";
+
+    }
+
+    else {
+
+        resultTitle.textContent =
+            "Time to Explore! 🌴";
+
+
+        resultText.textContent =
+            "Looks like it's time for another trip into the jungle. Try again and see if you can beat your score!";
+
+    }
+
+}
+
+
+/* =========================================================
+   RESTART
+========================================================= */
+
+function restartQuiz() {
+
+    currentQuestion = 0;
+
+    score = 0;
+
+
+    document.getElementById(
+        "result"
+    ).style.display =
+        "none";
+
+
+    document.getElementById(
+        "quiz"
+    ).style.display =
+        "block";
+
+
+    loadQuestion();
+
+}
+
+
+/* =========================================================
+   START QUIZ
+========================================================= */
+
+loadQuestion();
+
+</script>
+
+
+</body>
+
+</html>
